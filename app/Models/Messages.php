@@ -24,6 +24,6 @@ class Messages extends Model
 
     {
 
-        return $this->belongsTo(Message_Type::class);
+        return $this->belongsTo(Message_type::class);
     }
 }

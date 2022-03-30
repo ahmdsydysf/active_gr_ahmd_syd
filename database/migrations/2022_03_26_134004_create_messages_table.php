@@ -24,7 +24,7 @@ class CreateMessagesTable extends Migration
             $table->string('message')->nullable();
             $table->timestamps();
 
-            $table->foreign('message_type_id')->references('id')->on('message_type')->onDelete('cascade');
+            $table->foreign('message_type_id')->references('id')->on('message_type');
         });
     }
 

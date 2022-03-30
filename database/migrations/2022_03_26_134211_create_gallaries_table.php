@@ -22,7 +22,7 @@ class CreateGallariesTable extends Migration
             $table->string('description_ar')->nullable();
             $table->timestamps();
 
-            $table->foreign('category_id')->references('id')->on('gallary_categories')->onDelete('cascade');
+            $table->foreign('category_id')->references('id')->on('gallary_categories');
         });
     }
 

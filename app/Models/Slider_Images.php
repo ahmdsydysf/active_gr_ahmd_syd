@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Slider_Images extends Model
+class Slider_images extends Model
 {
     use HasFactory;
     protected $fillable = [
