@@ -5,22 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Message_type extends Model
+class Product_category extends Model
 {
     use HasFactory;
-
-
     protected $fillable = [
 
-        'message_type_en',
-        'message_type_ar'
+        'category_en',
+        'category_ar',
+        'order'
 
     ];
-
-    public function messages()
-
-    {
-
-        return $this->hasMany(Messages::class);
-    }
 }

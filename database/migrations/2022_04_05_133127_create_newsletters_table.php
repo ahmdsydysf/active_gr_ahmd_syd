@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMessageTypesTable extends Migration
+class CreateNewslettersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateMessageTypesTable extends Migration
      */
     public function up()
     {
-        Schema::create('message_types', function (Blueprint $table) {
+        Schema::create('newsletters', function (Blueprint $table) {
             $table->id();
-            $table->string('message_type_en')->nullable();
-            $table->string('message_type_ar')->nullable();
+            $table->dateTime('newsletter_date', 6)->nullable();
+            $table->string('email')->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateMessageTypesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('message_types');
+        Schema::dropIfExists('newsletters');
     }
 }

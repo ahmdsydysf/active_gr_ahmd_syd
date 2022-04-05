@@ -5,22 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Message_type extends Model
+class Team_member extends Model
 {
     use HasFactory;
-
-
     protected $fillable = [
 
-        'message_type_en',
-        'message_type_ar'
-
+        'name_en',
+        'name_ar',
+        'position_en',
+        'position_ar',
+        'order',
+        'active'
     ];
-
-    public function messages()
-
-    {
-
-        return $this->hasMany(Messages::class);
-    }
 }

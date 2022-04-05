@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGallaryCategoriesTable extends Migration
+class CreateProductCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateGallaryCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('gallary_categories', function (Blueprint $table) {
+        Schema::create('product_categories', function (Blueprint $table) {
             $table->id();
-            $table->string('category_en')->nullable();
+            $table->string('category_en')->nullable()->comment('[- 1 - مبيدات] , [- 2 - اسمدة] , [- 3 - منظمات نمو]');
             $table->string('category_ar')->nullable();
-            $table->string('description_en')->nullable();
-            $table->string('description_ar')->nullable();
             $table->integer('order')->nullable();
             $table->timestamps();
         });
@@ -31,6 +29,6 @@ class CreateGallaryCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('gallary_categories');
+        Schema::dropIfExists('product_categories');
     }
 }

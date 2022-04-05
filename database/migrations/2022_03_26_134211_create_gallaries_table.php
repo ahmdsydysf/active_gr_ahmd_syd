@@ -16,10 +16,12 @@ class CreateGallariesTable extends Migration
         Schema::create('gallaries', function (Blueprint $table) {
             $table->id();
             $table->string('path')->nullable();
-            $table->integer('type')->nullable();
+            $table->integer('type')->nullable()->comment('1->image && 2->video');
             $table->unsignedBigInteger('category_id');
             $table->string('description_en')->nullable();
             $table->string('description_ar')->nullable();
+            $table->integer('order')->nullable();
+            $table->tinyInteger('active')->nullable();
             $table->timestamps();
 
             $table->foreign('category_id')->references('id')->on('gallary_categories');

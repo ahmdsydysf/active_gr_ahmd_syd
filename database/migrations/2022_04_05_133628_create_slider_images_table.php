@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateGallaryCategoriesTable extends Migration
+class CreateSliderImagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,15 @@ class CreateGallaryCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('gallary_categories', function (Blueprint $table) {
+        Schema::create('slider_images', function (Blueprint $table) {
             $table->id();
-            $table->string('category_en')->nullable();
-            $table->string('category_ar')->nullable();
-            $table->string('description_en')->nullable();
-            $table->string('description_ar')->nullable();
+            $table->string('image')->nullable();
+            $table->string('title_en')->nullable();
+            $table->string('title_ar')->nullable();
+            $table->string('text_en')->nullable();
+            $table->string('text_ar')->nullable();
             $table->integer('order')->nullable();
+            $table->tinyInteger('active')->default(1);
             $table->timestamps();
         });
     }
@@ -31,6 +33,6 @@ class CreateGallaryCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('gallary_categories');
+        Schema::dropIfExists('slider_images');
     }
 }
