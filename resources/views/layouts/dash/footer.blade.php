@@ -49,9 +49,17 @@
 
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{asset('adminAsset/dist/js/pages/dashboard.js')}}" type="text/javascript"></script>
+<script src="{{asset('adminAsset/plugins/noty/noty.min.js')}}" type="text/javascript"></script>
 
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('adminAsset/dist/js/demo.js')}}" type="text/javascript"></script>
+
+
+<script>
+    setTimeout(() => {
+        $('.alert.alert-msg').css({"display": "none"});
+    }, 3000);
+</script>
 
 @yield('script')
 </body>

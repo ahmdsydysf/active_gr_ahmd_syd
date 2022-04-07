@@ -51,8 +51,17 @@ Route::get('/services', function () {
 
 // ----------------------------------------------------------
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth'])->name('dashboard');
+
+Route::prefix('dashboard')->middleware(['auth'])->name('dashboard.')->group(function () {
+
+    Route::get('/', function () {
+        return view('dashboard');
+    })->name('index');
+
+    Route::resource('users', 'Dashboard\UserController');
+});
 
 require __DIR__ . '/auth.php';

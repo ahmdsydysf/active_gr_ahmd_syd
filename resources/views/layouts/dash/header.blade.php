@@ -28,7 +28,13 @@
     <link href="{{asset('adminAsset/plugins/daterangepicker/daterangepicker-bs3.css')}}" rel="stylesheet" type="text/css" />
     <!-- bootstrap wysihtml5 - text editor -->
     <link href="{{asset('adminAsset/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css')}}" rel="stylesheet" type="text/css" />
-        @yield('style')
+    <link href="{{asset('adminAsset/plugins/noty/noty.css')}}" rel="stylesheet" type="text/css" />
+        <style>
+            .alert.alert-msg{
+              transition: display 1s ease;
+            }
+        </style>
+    @yield('style')
   </head>
   <body class="skin-green sidebar-mini">
     <div class="wrapper">
@@ -286,7 +292,9 @@
         </nav>
 
       </header>
-
+{{-- ----------------------------------------------------------------------------- --}}
+{{-- -------------------------------sidebar--------------------------------------- --}}
+{{-- ----------------------------------------------------------------------------- --}}
       <!-- Left side column. contains the logo and sidebar -->
       <aside class="main-sidebar">
         <!-- sidebar: style can be found in sidebar.less -->
@@ -314,16 +322,13 @@
           <!-- /.search form -->
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
-            <li class="header">MAIN NAVIGATION</li>
+            <li class="header">اختيارات التحكم</li>
 
             <li class="active treeview">
-              <a href="#">
-                <i class="fa fa-dashboard"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
+              <a href="{{ route('dashboard.users.index') }}">
+                <i class="ion ion-ios-people-outline"></i> <span>المستخدميين</span>
               </a>
-              <ul class="treeview-menu">
-                <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-                <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
-              </ul>
+
             </li>
 
           </ul>
@@ -334,9 +339,9 @@
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
         <!-- Content Header (Page header) -->
-        <section class="content-header">
+        <section class="content-header" style="padding: 35px 20px">
           <h1>
-            Dashboard
+            لوحة التحكم
             <small>@yield('page_title')</small>
           </h1>
 
