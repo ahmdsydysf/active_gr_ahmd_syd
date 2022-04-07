@@ -34,16 +34,57 @@
                         <td>{{$r->email}}</td>
                         <td>{{$r->password}}</td>
                         <td>
-                            <a href="{{ route('dashboard.users.edit' , $r->id) }}" class="label label-primary">تعديل</a>
-                            <a class="label label-danger">حذف</a>
+                            <a href="{{ route('dashboard.users.edit' , $r->id) }}" class="btn btn-primary">تعديل</a>
+                            {{-- <a href="{{ route('dashboard.users.show' , $r->id) }}" class="label label-danger"></a>
+                            --}}
 
+                            <button type="button" class="btn btn-danger" data-toggle="modal"
+                                data-target="#gridSystemModal{{$r->id}}"> حذف</button>
+                            <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel"
+                                id="gridSystemModal{{$r->id}}">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal"
+                                                aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4 class="modal-title" id="gridSystemModalLabel">تأكيد الحذف</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="col-12">هل تريد حذف هذا المستخدم</div>
+                                                <div class="col-md-4 col-md-offset-4 bg-danger">
+                                                    <h1>الاسم : </h1>
+                                                    <h3> {{$r->name}} </h3>
+                                                </div>
+                                                <div class="col-md-4 col-md-offset-4">
+                                                    <h1>الايميل : </h1>
+                                                    <h3> {{$r->email}} </h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default"
+                                                data-dismiss="modal">الغاء</button>
+                                            <form action="{{route('dashboard.users.destroy' , $r->id )}}" method="POST">
+                                                @csrf
+                                                {{method_field('DELETE')}}
+
+                                                <button type="submit" class="btn btn-danger">تاكيد الحذف</button>
+                                            </form>
+
+                                        </div>
+                                    </div><!-- /.modal-content -->
+                                </div><!-- /.modal-dialog -->
+                            </div><!-- /.modal -->
                         </td>
                     </tr>
+
+
                     @endforeach
 
                     @else
                     <tr>
-                    <h1> لا يوجد مستخدميين مسجلين حتي الان </h1>
+                        <h1> لا يوجد مستخدميين مسجلين حتي الان </h1>
                     </tr>
 
                     @endif
