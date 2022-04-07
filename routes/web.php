@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('main_site.index');
-});
+})->name('main_home');
 Route::get('/about', function () {
     return view('main_site.about');
 });
@@ -51,8 +51,17 @@ Route::get('/services', function () {
 
 // ----------------------------------------------------------
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth'])->name('dashboard');
+
+Route::prefix('dashboard')->middleware(['auth'])->name('dashboard.')->group(function () {
+
+    Route::get('/', function () {
+        return view('dashboard');
+    })->name('index');
+
+    Route::resource('users', 'Dashboard\UserController');
+});
 
 require __DIR__ . '/auth.php';
