@@ -51,7 +51,7 @@ class UserController extends Controller
         $newuser = User::create($request_data);
 
         // session()->flash('success', 'تمت الاضافة بنجاح');
-        return redirect()->route('dashboard.users.index')->with('flash_success', 'تم الحفظ بنجاح');;
+        return redirect()->route('dashboard.users.index')->with('flash_success', 'تم اضافة المستخدم بنجاح');
     }
 
     /**
@@ -73,7 +73,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        //
+        return view('dash_site.users.edit')->with('row', $user);
     }
 
     /**
@@ -85,7 +85,19 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        $request->validate([
+            'name'     => 'required|min:5',
+            'email'    => 'required|email',
+            'password' => 'required|min:6'
+        ]);
+
+        $request_data = $request->except('password');
+
+        $request_data['password'] = bcrypt($request->password);
+
+        $user->update($request_data);
+
+        return redirect()->route('dashboard.users.index')->with('flash_success', 'تم التعديل بنجاح');
     }
 
     /**

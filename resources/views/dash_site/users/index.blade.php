@@ -34,7 +34,7 @@
                         <td>{{$r->email}}</td>
                         <td>{{$r->password}}</td>
                         <td>
-                            <a class="label label-primary">تعديل</a>
+                            <a href="{{ route('dashboard.users.edit' , $r->id) }}" class="label label-primary">تعديل</a>
                             <a class="label label-danger">حذف</a>
 
                         </td>
