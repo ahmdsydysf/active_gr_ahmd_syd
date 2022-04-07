@@ -17,11 +17,11 @@ class CreateBlogsTable extends Migration
 
             $table->id();
             $table->dateTime('blog_date', 6)->nullable();
-            $table->string('title_en')->nullable();
-            $table->string('title_ar')->nullable();
-            $table->string('text_en')->nullable();
-            $table->string('text_ar')->nullable();
-            $table->string('image')->nullable();
+            $table->text('title_en')->nullable();
+            $table->text('title_ar')->nullable();
+            $table->longText('text_en')->nullable();
+            $table->longText('text_ar')->nullable();
+            $table->longText('image')->nullable();
             $table->integer('order')->nullable();
             $table->tinyInteger('active')->default(1);
             $table->timestamps();

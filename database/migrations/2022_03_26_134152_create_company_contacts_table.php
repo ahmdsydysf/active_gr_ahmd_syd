@@ -15,19 +15,19 @@ class CreateCompanyContactsTable extends Migration
     {
         Schema::create('company_contacts', function (Blueprint $table) {
             $table->id();
-            $table->string('address_en')->nullable();
-            $table->string('address_ar')->nullable();
+            $table->text('address_en')->nullable();
+            $table->text('address_ar')->nullable();
             $table->string('phones')->nullable();
             $table->string('email')->nullable();
             $table->string('fax')->nullable();
             $table->string('whatsapp')->nullable();
-            $table->string('google_map')->nullable();
-            $table->string('website')->nullable();
-            $table->string('facebook')->nullable();
-            $table->string('twitter')->nullable();
-            $table->string('linkedin')->nullable();
-            $table->string('instagram')->nullable();
-            $table->string('youtube')->nullable();
+            $table->longText('google_map')->nullable();
+            $table->text('website')->nullable();
+            $table->text('facebook')->nullable();
+            $table->text('twitter')->nullable();
+            $table->text('linkedin')->nullable();
+            $table->text('instagram')->nullable();
+            $table->text('youtube')->nullable();
             $table->timestamps();
         });
     }

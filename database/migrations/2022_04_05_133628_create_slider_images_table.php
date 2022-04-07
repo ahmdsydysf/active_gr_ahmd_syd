@@ -15,11 +15,11 @@ class CreateSliderImagesTable extends Migration
     {
         Schema::create('slider_images', function (Blueprint $table) {
             $table->id();
-            $table->string('image')->nullable();
-            $table->string('title_en')->nullable();
-            $table->string('title_ar')->nullable();
-            $table->string('text_en')->nullable();
-            $table->string('text_ar')->nullable();
+            $table->text('image')->nullable();
+            $table->text('title_en')->nullable();
+            $table->text('title_ar')->nullable();
+            $table->longText('text_en')->nullable();
+            $table->longText('text_ar')->nullable();
             $table->integer('order')->nullable();
             $table->tinyInteger('active')->default(1);
             $table->timestamps();
