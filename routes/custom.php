@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\web\IndexController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\web\IndexController;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,10 +19,12 @@ use Illuminate\Support\Facades\Route;
 Route::group(
     [
         'prefix' => LaravelLocalization::setLocale(),
-        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
-    ], function(){ //...
+        'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
+    ],
+    function () { //...
         Route::get('/', function () {
-    return view('web.layout.web');
-});
-Route::get('/', [IndexController::class,'index']);
-    });
+            return view('web.layout.web');
+        });
+        Route::get('/', [IndexController::class, 'index']);
+    }
+);
