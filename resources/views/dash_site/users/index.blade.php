@@ -3,13 +3,13 @@
 @section('page_title' , 'كل المستخدميين')
 
 @section('content')
-<div class="col-xs-12">
+<div class="col ">
     <div class="box ">
-        <div class="box-header d-flex justify-content-between">
-            <h3 class="box-title">بيانات كل المستخدميين</h3>
+        <div class="box-header ">
+            <h3 class="box-title pull-left">بيانات كل المستخدميين</h3>
 
 
-            <a class="btn bg-olive margin" href="{{ route('dashboard.users.create') }}"><i class="fa fa-plus"></i> اضافة
+            <a class="btn bg-olive margin pull-right" href="{{ route('dashboard.users.create') }}"><i class="fa fa-plus"></i> اضافة
                 مستخدم </a>
 
 
@@ -21,7 +21,7 @@
                         <th>ID</th>
                         <th>الاسم</th>
                         <th>الايميل</th>
-                        <th>الباسوورد</th>
+
                         <th>المزيد</th>
                     </tr>
 
@@ -32,7 +32,7 @@
                         <td>- {{$r->id}} -</td>
                         <td>{{$r->name}}</td>
                         <td>{{$r->email}}</td>
-                        <td>{{$r->password}}</td>
+
                         <td>
                             <a href="{{ route('dashboard.users.edit' , $r->id) }}" class="btn btn-primary">تعديل</a>
                             {{-- <a href="{{ route('dashboard.users.show' , $r->id) }}" class="label label-danger"></a>

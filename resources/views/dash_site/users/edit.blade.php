@@ -33,14 +33,14 @@
 
         <div class="form-group">
           <label for="exampleInputPassword1">كلمة السر</label>
-          <input type="text" name="password" value="{{$row->password}}" class="form-control" id="exampleInputPassword1" placeholder="برجاء ادخال كلمة السر">
+          <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="برجاء ادخال كلمة السر">
         </div>
 
       </div><!-- /.box-body -->
 
       <div class="box-footer">
-        <button type="submit" class="btn btn-success"><i class="fa fa-plus"></i>تعديل</button>
-        <a href="{{route('dashboard.users.index')}}" class="btn btn-danger"><i class="fa fa-plus"></i>الغاء</a>
+        <button type="submit" class="btn btn-success">تعديل</button>
+        <a href="{{route('dashboard.users.index')}}" class="btn btn-danger">الغاء</a>
       </div>
 
     </form>

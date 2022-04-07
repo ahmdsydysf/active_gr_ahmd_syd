@@ -87,13 +87,15 @@ class UserController extends Controller
     {
         $request->validate([
             'name'     => 'required|min:5',
-            'email'    => 'required|email|unique:users',
-            'password' => 'required|min:6'
+            'email'    => 'required|email',
+            // 'password' => 'required|min:6'
         ]);
 
         $request_data = $request->except('password');
 
-        $request_data['password'] = bcrypt($request->password);
+        if (isset($request->password)) {
+            $request_data['password'] = bcrypt($request->password);
+        }
 
         $user->update($request_data);
 
