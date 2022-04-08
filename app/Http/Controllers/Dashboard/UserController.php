@@ -38,11 +38,31 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name'     => 'required|min:5',
-            'email'    => 'required|email|unique:users',
-            'password' => 'required|confirmed|min:6'
-        ]);
+        // $request->validate([
+        //     'name'     => 'required|min:5',
+        //     'email'    => 'required|email|unique:users',
+        //     'password' => 'required|confirmed|min:6'
+        // ]);
+
+        $this->validate(
+            $request,
+            [
+                'name'     => 'required|min:5',
+                'email'    => 'required|email|unique:users',
+                'password' => 'required|confirmed|min:6'
+            ],
+            [
+                'name.required' => 'برجاء ادخال الاسم',
+                'name.min' => 'برجاء ادخال الاسم لايقل عن 5',
+                'email.required' => 'برجاء ادخال الايميل',
+                'email.email' => 'صيغة الايميل غير صالحة',
+                'email.unique' => 'هذا الايميل مستخدم من قبل',
+                'password.min' => 'الباسوورد يجب الا يقل عن 6',
+                'password.required' => 'يجب ادخال الباسوورد',
+                'password.confirmed' => 'يجب تأكيد الباسوورد',
+            ]
+        );
+
 
         $request_data = $request->except('password', 'password_confirmation');
 
