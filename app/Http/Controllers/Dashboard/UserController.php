@@ -40,7 +40,7 @@ class UserController extends Controller
     {
         $request->validate([
             'name'     => 'required|min:5',
-            'email'    => 'required|email',
+            'email'    => 'required|email|unique:users',
             'password' => 'required|confirmed|min:6'
         ]);
 
@@ -88,12 +88,14 @@ class UserController extends Controller
         $request->validate([
             'name'     => 'required|min:5',
             'email'    => 'required|email',
-            'password' => 'required|min:6'
+            // 'password' => 'required|min:6'
         ]);
 
         $request_data = $request->except('password');
 
-        $request_data['password'] = bcrypt($request->password);
+        if (isset($request->password)) {
+            $request_data['password'] = bcrypt($request->password);
+        }
 
         $user->update($request_data);
 
@@ -108,6 +110,7 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        $user->delete();
+        return redirect()->route('dashboard.users.index')->with('flash_success', 'تم الحذف بنجاح');
     }
 }

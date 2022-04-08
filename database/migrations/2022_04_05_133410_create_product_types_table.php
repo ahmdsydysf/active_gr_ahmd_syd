@@ -17,7 +17,7 @@ class CreateProductTypesTable extends Migration
             $table->id();
             $table->string('type_en')->nullable()->comment('((مبيدات [-1-فطرية] [-2-حشرية] [-3- نيناتودية])) , ((اسمدة[-1- عناصر كبيري] [-2- عناصر صغري] [-3- اسمدة متخصصة])) , ((منظمات نمو[-1- منظمات نمو]))');
             $table->string('type_ar')->nullable();
-            $table->unsignedBigInteger('category_id');
+            $table->unsignedBigInteger('category_id')->nullable();
             $table->integer('order')->nullable();
             $table->timestamps();
 

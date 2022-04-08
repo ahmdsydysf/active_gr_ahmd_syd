@@ -3,8 +3,9 @@
 use App\Http\Controllers\web\AboutController;
 use App\Http\Controllers\web\BlogController;
 use App\Http\Controllers\web\ContactController;
-use App\Http\Controllers\web\IndexController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\web\IndexController;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,11 +22,11 @@ use Illuminate\Support\Facades\Route;
 Route::group(
     [
         'prefix' => LaravelLocalization::setLocale(),
-        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
-    ], function(){ //...
-        Route::get('/', function () {
-    return view('web.layout.web');
-});
+        'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
+    ],
+    function () { //...
+
+
 Route::get('/', [IndexController::class,'index']);
 Route::get('/about', [AboutController::class,'index'])->name('about');
 Route::post('/contact-message', [AboutController::class,'sendMessage']);
@@ -34,3 +35,4 @@ Route::get('/blog', [BlogController::class,'index'])->name('blog');
 Route::get('/single-blog/{id}/{slug?}',[BlogController::class,'singleBlog'])->name('single-blog.show');
 
     });
+

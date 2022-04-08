@@ -33,6 +33,16 @@
             .alert.alert-msg{
               transition: display 1s ease;
             }
+            .box-header{
+                display: flex !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+            }
+            .modal-footer{
+                display: flex;
+                justify-content: space-around;
+            }
+
         </style>
     @yield('style')
   </head>
@@ -41,7 +51,7 @@
 
       <header class="main-header">
         <!-- Logo -->
-        <a href="{{route('main_home')}}" class="logo">
+        <a href="{{route('dashboard.index')}}" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>A</b>G</span>
           <!-- logo for regular state and mobile devices -->

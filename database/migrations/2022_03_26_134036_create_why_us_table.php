@@ -17,7 +17,7 @@ class CreateWhyUsTable extends Migration
             $table->id();
             $table->string('name_en')->nullable();
             $table->string('name_ar')->nullable();
-            $table->string('logo')->nullable();
+            $table->longText('logo')->nullable();
             $table->integer('order')->nullable();
             $table->timestamps();
         });

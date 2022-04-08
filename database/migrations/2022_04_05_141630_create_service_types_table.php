@@ -15,7 +15,7 @@ class CreateServiceTypesTable extends Migration
     {
         Schema::create('service_types', function (Blueprint $table) {
             $table->id();
-            $table->string('service_type')->nullable()->comment('[استشارات فنية - 1 -] , [نصائح فنية - 2 -] , [نصائح عامة - 3 -] , [نصائح زراعية - 4 -]');
+            $table->text('service_type')->nullable()->comment('[استشارات فنية - 1 -] , [نصائح فنية - 2 -] , [نصائح عامة - 3 -] , [نصائح زراعية - 4 -]');
             $table->timestamps();
         });
     }

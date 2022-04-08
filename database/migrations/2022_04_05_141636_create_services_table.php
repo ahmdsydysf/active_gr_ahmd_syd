@@ -15,16 +15,16 @@ class CreateServicesTable extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->id();
-            $table->string('title_en')->nullable();
-            $table->string('service_en')->nullable();
-            $table->string('text_en')->nullable();
-            $table->string('text_ar')->nullable();
-            $table->string('image')->nullable();
-            $table->string('video')->nullable();
+            $table->text('title_en')->nullable();
+            $table->longText('service_en')->nullable();
+            $table->longText('text_en')->nullable();
+            $table->longText('text_ar')->nullable();
+            $table->longText('image')->nullable();
+            $table->longText('video')->nullable();
             $table->dateTime('post_date', 6)->nullable();
-            $table->string('pdf_en')->nullable();
-            $table->string('pdf_ar')->nullable();
-            $table->unsignedBigInteger('service_type_id');
+            $table->longText('pdf_en')->nullable();
+            $table->longText('pdf_ar')->nullable();
+            $table->unsignedBigInteger('service_type_id')->nullable();
             $table->integer('order')->nullable();
             $table->tinyInteger('active')->default(1);
             $table->timestamps();

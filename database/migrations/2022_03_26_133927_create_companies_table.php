@@ -15,13 +15,13 @@ class CreateCompaniesTable extends Migration
     {
         Schema::create('companies', function (Blueprint $table) {
             $table->id();
-            $table->string('overview_en')->nullable();
-            $table->string('overview_ar')->nullable();
-            $table->string('mission_en')->nullable();
-            $table->string('mission_ar')->nullable();
-            $table->string('vision_en')->nullable();
-            $table->string('vision_ar')->nullable();
-            $table->string('company_video')->nullable();
+            $table->longText('overview_en')->nullable();
+            $table->longText('overview_ar')->nullable();
+            $table->longText('mission_en')->nullable();
+            $table->longText('mission_ar')->nullable();
+            $table->longText('vision_en')->nullable();
+            $table->longText('vision_ar')->nullable();
+            $table->longText('company_video')->nullable();
             $table->timestamps();
         });
     }

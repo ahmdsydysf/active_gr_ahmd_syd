@@ -15,8 +15,8 @@ class CreateFactoriesTable extends Migration
     {
         Schema::create('factories', function (Blueprint $table) {
             $table->id();
-            $table->string('name_en')->nullable();
-            $table->string('name_ar')->nullable();
+            $table->text('name_en')->nullable();
+            $table->text('name_ar')->nullable();
             $table->timestamps();
         });
     }
