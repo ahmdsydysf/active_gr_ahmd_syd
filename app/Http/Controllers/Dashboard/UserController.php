@@ -51,7 +51,7 @@ class UserController extends Controller
         $newuser = User::create($request_data);
 
         // session()->flash('success', 'تمت الاضافة بنجاح');
-        return redirect()->route('dashboard.users.index')->with('flash_success', 'تم اضافة المستخدم بنجاح');
+        return redirect()->route('users.index')->with('flash_success', 'تم اضافة المستخدم بنجاح');
     }
 
     /**
@@ -99,7 +99,7 @@ class UserController extends Controller
 
         $user->update($request_data);
 
-        return redirect()->route('dashboard.users.index')->with('flash_success', 'تم التعديل بنجاح');
+        return redirect()->route('users.index')->with('flash_success', 'تم التعديل بنجاح');
     }
 
     /**
@@ -111,6 +111,6 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         $user->delete();
-        return redirect()->route('dashboard.users.index')->with('flash_success', 'تم الحذف بنجاح');
+        return redirect()->route('users.index')->with('flash_success', 'تم الحذف بنجاح');
     }
 }

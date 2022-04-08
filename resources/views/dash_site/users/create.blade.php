@@ -44,6 +44,7 @@
 
       <div class="box-footer">
         <button type="submit" class="btn btn-success"><i class="fa fa-plus"></i>اضافة</button>
+        <a href="{{ route('users.index') }}" class="btn btn-danger">رجوع</a>
       </div>
 
     </form>
