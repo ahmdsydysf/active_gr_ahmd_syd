@@ -51,7 +51,7 @@
 
       <header class="main-header">
         <!-- Logo -->
-        <a href="{{route('dashboard.index')}}" class="logo">
+        <a href="{{route('index')}}" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>A</b>G</span>
           <!-- logo for regular state and mobile devices -->
@@ -335,7 +335,7 @@
             <li class="header">اختيارات التحكم</li>
 
             <li class="active treeview">
-              <a href="{{ route('dashboard.users.index') }}">
+              <a href="{{ route('users.index') }}">
                 <i class="ion ion-ios-people-outline"></i> <span>المستخدميين</span>
               </a>
 

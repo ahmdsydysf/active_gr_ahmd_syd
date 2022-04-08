@@ -14,7 +14,7 @@
       <h3 class="box-title">اضافة مستخدم جديد</h3>
     </div><!-- /.box-header -->
     <!-- form start -->
-    <form role="form" action="{{route('dashboard.users.store')}}" method="POST">
+    <form role="form" action="{{route('users.store')}}" method="POST">
         @csrf
         {{method_field('POST')}}
       <div class="box-body">

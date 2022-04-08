@@ -14,7 +14,7 @@
       <h3 class="box-title">تعديل البيانات</h3>
     </div><!-- /.box-header -->
     <!-- form start -->
-    <form role="form" action="{{route('dashboard.users.update' , $row->id)}}" method="POST">
+    <form role="form" action="{{route('users.update' , $row->id)}}" method="POST">
         @csrf
         {{method_field('PUT')}}
       <div class="box-body">
@@ -40,7 +40,7 @@
 
       <div class="box-footer">
         <button type="submit" class="btn btn-success">تعديل</button>
-        <a href="{{route('dashboard.users.index')}}" class="btn btn-danger">الغاء</a>
+        <a href="{{route('users.index')}}" class="btn btn-danger">الغاء</a>
       </div>
 
     </form>

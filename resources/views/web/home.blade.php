@@ -338,16 +338,24 @@
         <div class="row">
             <div class="col-lg-6 p-5">
                 <div class="pro-text">
-                    <div class="clients_title">@if (LaravelLocalization::getCurrentLocale() === 'en')
-                        {{ $products_growth[0]->type_en }}
-                    @else
-                        {{ $products_growth[0]->type_ar }}
-                    @endif</div>
-                    <div class="clients_text">@if (LaravelLocalization::getCurrentLocale() === 'en')
-                        {{ $products_growth[0]->description_en }}
-                    @else
-                        {{ $products_growth[0]->description_ar }}
-                    @endif</div>
+                    @isset ($products_growth[0])
+
+                    <div class="clients_title">
+                                @if (LaravelLocalization::getCurrentLocale() === 'en')
+                                {{ $products_growth[0]->type_en }}
+                            @else
+                                {{ $products_growth[0]->type_ar }}
+                            @endif
+                            </div>
+                            <div class="clients_text">
+                                @if (LaravelLocalization::getCurrentLocale() === 'en')
+                                {{ $products_growth[0]->description_en }}
+                            @else
+                                {{ $products_growth[0]->description_ar }}
+                            @endif
+   </div>
+   @endisset
+
                     <div class="clients_btn"><a href="" class="btn hero-btn" tabindex="0">المزيد</a></div>
                 </div>
             </div>
