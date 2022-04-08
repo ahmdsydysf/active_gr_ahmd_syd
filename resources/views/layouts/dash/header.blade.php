@@ -33,6 +33,16 @@
             .alert.alert-msg{
               transition: display 1s ease;
             }
+            .box-header{
+                display: flex !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+            }
+            .modal-footer{
+                display: flex;
+                justify-content: space-around;
+            }
+
         </style>
     @yield('style')
   </head>

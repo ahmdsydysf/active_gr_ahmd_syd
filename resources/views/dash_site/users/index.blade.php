@@ -52,11 +52,11 @@
                                         <div class="modal-body">
                                             <div class="row">
                                                 <div class="col-12">هل تريد حذف هذا المستخدم</div>
-                                                <div class="col-md-4 col-md-offset-4 bg-danger">
+                                                <div class="col-md-4 col-md-offset-4 modle-info">
                                                     <h1>الاسم : </h1>
                                                     <h3> {{$r->name}} </h3>
                                                 </div>
-                                                <div class="col-md-4 col-md-offset-4">
+                                                <div class="col-md-4 col-md-offset-4 modle-info">
                                                     <h1>الايميل : </h1>
                                                     <h3> {{$r->email}} </h3>
                                                 </div>
@@ -65,10 +65,9 @@
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-default"
                                                 data-dismiss="modal">الغاء</button>
-                                            <form action="{{route('dashboard.users.destroy' , $r->id )}}" method="POST">
+                                            <form action="{{ route('dashboard.users.destroy' , $r->id )}}" method="POST">
                                                 @csrf
                                                 {{method_field('DELETE')}}
-
                                                 <button type="submit" class="btn btn-danger">تاكيد الحذف</button>
                                             </form>
 
