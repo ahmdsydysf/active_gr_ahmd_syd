@@ -61,13 +61,12 @@
                                     <nav class="">
                                         <ul id="navigation" class="d-flex justify-content-around">
                                             <li><a href="{{ LaravelLocalization::localizeUrl('/') }}">{{ __('links.home') }}</a></li>
-                                            <li><a href="#">{{ __('links.about_us') }} </a></li>
+                                            <li><a href="{{ LaravelLocalization::localizeUrl('/about') }}">{{ __('links.about_us') }} </a></li>
                                             <li><a href="#">{{ __('links.services') }}</a></li>
                                             <li><a href="#"> {{ __('links.products') }}</a></li>
                                               <li><a href="#"> {{ __('links.partenters') }}</a></li>
-                                            <li><a href="#">{{ __('links.blog') }}</a></li>
+                                            <li><a href="{{ LaravelLocalization::localizeUrl('/blog') }}">{{ __('links.blogs') }}</a></li>
                                             <li><a href="#">{{ __('links.gallery') }}</a></li>
-                                            <li><a href="#"> {{ __('links.contact_us') }}</a></li>
                                         </ul>
                                     </nav>
                                 </div>

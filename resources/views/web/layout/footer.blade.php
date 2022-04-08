@@ -36,10 +36,10 @@
                             <div class="footer-tittle">
                                 <h3>لينكات تهمك</h3>
                                 <ul>
-                                    <li><a href="#">الرئيسية</a></li>
-                                    <li><a href="#"> من نحن</a></li>
-                                    <li><a href="#">خدماتنا</a></li>
-                                    <li><a href="#">منتجاتنا</a></li>
+                                    <li><a href="{{ LaravelLocalization::localizeUrl('/') }}">{{ __('links.home') }}</a></li>
+                                    <li><a href="{{ LaravelLocalization::localizeUrl('/about') }}"> {{ __('links.about_us') }}</a></li>
+                                    <li><a href="#">{{ __('links.services') }}</a></li>
+                                    <li><a href="#">{{ __('links.products') }}</a></li>
 
                                 </ul>
                             </div>
@@ -50,10 +50,10 @@
                             <div class="footer-tittle">
                                 <h3>لينكات تهمك</h3>
                                 <ul>
-                                    <li><a href="#">شركاء النجاح</a></li>
-                                    <li><a href="#">مقالات</a></li>
-                                    <li><a href="#">معرض الصور</a></li>
-                                    <li><a href="#">تواصل معنا</a></li>
+                                    <li><a href="#">{{ __('links.partenters') }}</a></li>
+                                    <li><a href="{{ LaravelLocalization::localizeUrl('/blog') }}">{{ __('links.blogs') }}</a></li>
+                                    <li><a href="#">{{ __('links.gallery') }}</a></li>
+                                    <li><a href="{{ LaravelLocalization::localizeUrl('/contact') }}"> {{ __('links.contact_us') }}</a></li>
 
                                 </ul>
                             </div>
@@ -62,7 +62,7 @@
                     <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
                         <div class="single-footer-caption mb-50">
                             <div class="footer-tittle">
-                                <h3>تواصل معنا</h3>
+                                <h3> {{ __('links.contact_us') }}</h3>
                                 <ul>
                                     <li class="link"><a href="#"><i class="fas fa-phone"></i> {{ $companyContact->phones }} </a></li>
                                     <li class="link"><a href="#"><i class="fas fa-envelope"></i> {{ $companyContact->email }}
@@ -72,12 +72,12 @@
                                     @else
                                         {{ $companyContact->address_ar }}
                                     @endif
-                                            - مدينة نصر القاهره </a></li>
+                </a></li>
                                 </ul>
                                 <!-- Form -->
                                 <div class="input-group mb-3">
-                                    <input type="text" class="form-control" placeholder="البريد الإلكتروني"
-                                        aria-label="البريد الإلكتروني" aria-describedby="basic-addon1">
+                                    <input type="text" class="form-control" placeholder="  {{ __('links.email') }}"
+                                        aria-label="  {{ __('links.email') }}" aria-describedby="basic-addon1">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="basic-addon1"><i
                                                 class="fab fa-telegram-plane"></i></span>

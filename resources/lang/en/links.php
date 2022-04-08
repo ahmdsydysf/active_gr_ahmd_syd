@@ -20,6 +20,7 @@ return [
   'partenters'=>'Our Partenters',
   'gallery' => 'Gallery',
   'blog' => 'Blog',
+  'blogs' => 'Blogs',
   'contact_us' => 'Contact Us',
   'offers'=>'Offers',
   'services'=>'Services',

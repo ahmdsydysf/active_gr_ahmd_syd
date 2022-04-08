@@ -18,7 +18,8 @@ return [
     'products'=>'المنتجات',
     'partenters'=>'شركاء النجاح',
     'gallery' => 'معرض الصور',
-    'blog' => 'المدونة',
+    'blog' => 'المقال',
+    'blogs' => 'المقالات',
     'contact_us' => 'تواصل معنا',
     'offers'=>'العروض',
     'services'=>'خدماتنا',
@@ -122,7 +123,7 @@ return [
 
 
 'feedback'=>'تعليقات',
-'customer_feedback'=>'تعليقات العملاء',
+'customer_feedback'=>'اراء العملاء',
 'materials'=>'الخامات',
 'best_materials'=>'أفضل الخامات',
 'show_more'=>'رؤية المزيد',
@@ -143,7 +144,7 @@ return [
 
 
 /*-----------------blogs-----------------*/
-'popular_blog'=>'أشهر المدونات',
+'popular_blog'=>'أشهر المقالات',
 'tags'=>'علامات التواصل',
 /*-------------------Products-----------------------*/
 'advanced_performance'=>'الأداء المتطور لبريميير',

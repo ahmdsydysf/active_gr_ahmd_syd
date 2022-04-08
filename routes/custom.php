@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\web\AboutController;
+use App\Http\Controllers\web\BlogController;
+use App\Http\Controllers\web\ContactController;
 use App\Http\Controllers\web\IndexController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,4 +27,10 @@ Route::group(
     return view('web.layout.web');
 });
 Route::get('/', [IndexController::class,'index']);
+Route::get('/about', [AboutController::class,'index'])->name('about');
+Route::post('/contact-message', [AboutController::class,'sendMessage']);
+Route::get('/contact', [ContactController::class,'index'])->name('contact');
+Route::get('/blog', [BlogController::class,'index'])->name('blog');
+Route::get('/single-blog/{id}/{slug?}',[BlogController::class,'singleBlog'])->name('single-blog.show');
+
     });
