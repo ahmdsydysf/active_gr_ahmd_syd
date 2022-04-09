@@ -55,13 +55,18 @@ Route::get('/services', function () {
 //     return view('dashboard');
 // })->middleware(['auth'])->name('dashboard');
 
-Route::prefix('dashboard')->middleware(['auth'])->name('dashboard.')->group(function () {
+// Route::prefix('dashboard')->middleware(['auth'])->name('dashboard.')->group(function () {
 
+
+// });
+
+Route::group(['middleware' => 'auth', 'prefix' => 'dashboard'], function () {
     Route::get('/', function () {
         return view('dashboard');
     })->name('index');
 
     Route::resource('users', 'Dashboard\UserController');
+    Route::resource('slider_images', 'Dashboard\ImagesSliderController');
 });
 
 require __DIR__ . '/auth.php';
