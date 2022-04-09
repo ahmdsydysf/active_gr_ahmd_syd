@@ -5,7 +5,7 @@
 @section('content')
 
 
-
+<div class="box-body">
 <div class="box box-success">
 
 
@@ -58,5 +58,5 @@
 
     </form>
   </div>
-
+</div>
 @endsection
