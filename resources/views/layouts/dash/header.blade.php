@@ -147,7 +147,9 @@
           <ul class="sidebar-menu">
             <li class="header">اختيارات التحكم</li>
 
-            <li class="treeview">
+            <li class="treeview active
+
+            ">
               <a href="{{ route('users.index') }}">
                 <i class="ion ion-ios-people-outline"></i> <span>المستخدميين</span>
               </a>
@@ -155,14 +157,14 @@
             </li>
 
             <li class="header">خاص بالموقع</li>
-            <li class="treeview ">
+            <li class="treeview">
                 <a href="#">
                   <i class="fa fa-home"></i> <span>الموقع</span>
                   <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu menu-open" style="display: block;">
                     <li>
-                       <a href="{{ route('users.index') }}">
+                       <a href="{{ route('slider_images.index') }}">
                          <i class="fa fa-image"></i> <span>الصور الرئيسية</span>
                         </a>
                     </li>
@@ -183,7 +185,7 @@
                     </li>
 
                 </ul>
-              </li>
+            </li>
           </ul>
         </section>
         <!-- /.sidebar -->

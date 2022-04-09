@@ -1,6 +1,6 @@
 @extends('layouts.dash.app')
 
-@section('page_title' , 'كل المستخدميين')
+@section('page_title' , 'سلايدر الصور')
 
 @section('content')
 
@@ -19,17 +19,32 @@
                             <thead>
                                 <tr role="row">
                                     <th class="sorting_desc" tabindex="0" aria-controls="example1" rowspan="1"
-                                        colspan="1" style="width: 10%;"
+                                        colspan="1"
                                         aria-label="كود: activate to sort column ascending" aria-sort="descending">كود
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
-                                        style="width: 35%;" aria-label="اسم: activate to sort column ascending">اسم
+                                         aria-label="الصورة: activate to sort column ascending">الصورة
                                     </th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
-                                        style="width: 35%;" aria-label="الايميل: activate to sort column ascending">
-                                        الايميل</th>
+                                         aria-label="العنوان عربي: activate to sort column ascending">
+                                        العنوان عربي</th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
-                                        style="width: 20%;" aria-label="الاعدادات: activate to sort column ascending">
+                                         aria-label="العنوان انجليزي: activate to sort column ascending">
+                                        العنوان انجليزي</th>
+                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
+                                         aria-label="النص عربي: activate to sort column ascending">
+                                        النص عربي</th>
+                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
+                                         aria-label="النص انجليزي: activate to sort column ascending">
+                                        النص انجليزي</th>
+                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
+                                         aria-label="نشط: activate to sort column ascending">
+                                        نشط</th>
+                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
+                                         aria-label="الترتيب: activate to sort column ascending">
+                                         الترتيب</th>
+                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
+                                         aria-label="الاعدادات: activate to sort column ascending">
                                         الاعدادات</th>
                                 </tr>
                             </thead>
@@ -38,8 +53,13 @@
                                 @foreach ( $row as $r )
                                 <tr role="row" class="odd">
                                     <td class="sorting_1">- {{$r->id}} -</td>
-                                    <td>{{$r->name}}</td>
-                                    <td>{{$r->email}}</td>
+                                    <td> <img src="{{asset('uploads/slider_images/' . $r->image)}}" alt="" srcset="" width="200"></td>
+                                    <td>{{$r->title_en}}</td>
+                                    <td>{{$r->title_ar}}</td>
+                                    <td>{{$r->text_en}}</td>
+                                    <td>{{$r->text_ar}}</td>
+                                    <td>{{$r->active}}</td>
+                                    <td>{{$r->order}}</td>
                                     <td>
                                         <a href="{{ route('users.edit' , $r->id) }}" class="btn btn-primary">تعديل</a>
                                         <button type="button" class="btn btn-danger" data-toggle="modal"
@@ -47,6 +67,7 @@
                                             حذف
                                         </button>
                                     </td>
+                                    {{-- Model Of Deleting --}}
                                     <div class="modal modal-danger" tabindex="-1" role="dialog"
                                         aria-labelledby="myModalLabel" id="del{{$r->id}}">
                                         <div class="modal-dialog" role="document">
@@ -75,12 +96,15 @@
                                             </div>
                                         </div>
                                     </div>
+                                    {{-- /Model Of Deleting --}}
+
                                 </tr>
                                 @endforeach
 
                                 @else
                                 <tr>
-                                    <td colspan="4">
+                                    <td colspan="9">
+
                                     <h1>لا يوجد بيانات</h1>
 
                                     </td>
@@ -95,7 +119,7 @@
 
             </div>
 
-            <a class="btn bg-olive" href="{{ route('users.create') }}"><i class="fa fa-plus"></i>
+            <a class="btn bg-olive" href="{{ route('slider_images.create') }}"><i class="fa fa-plus"></i>
                 اضافة
             </a>
 
