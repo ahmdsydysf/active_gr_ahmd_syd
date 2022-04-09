@@ -53,7 +53,7 @@
                                 @foreach ( $row as $r )
                                 <tr role="row" class="odd">
                                     <td class="sorting_1">- {{$r->id}} -</td>
-                                    <td> <img src="{{asset('uploads/slider_images/' . $r->image)}}" alt="" srcset="" width="200"></td>
+                                    <td> <span class="thumbnail" style="background-color: #00A65A"><img src="{{asset('uploads/slider_images/'.$r->image)}}" alt="" srcset="" width="200"></span> </td>
                                     <td>{{$r->title_en}}</td>
                                     <td>{{$r->title_ar}}</td>
                                     <td>{{$r->text_en}}</td>
@@ -61,7 +61,7 @@
                                     <td>{{$r->active}}</td>
                                     <td>{{$r->order}}</td>
                                     <td>
-                                        <a href="{{ route('users.edit' , $r->id) }}" class="btn btn-primary">تعديل</a>
+                                        <a href="{{ route('slider_images.edit' , $r->id) }}" class="btn btn-primary">تعديل</a>
                                         <button type="button" class="btn btn-danger" data-toggle="modal"
                                             data-target="#del{{$r->id}}">
                                             حذف
@@ -86,7 +86,7 @@
                                                     <button type="button" class="btn btn-outline pull-left"
                                                         data-dismiss="modal">الغاء</button>
 
-                                                    <form action="{{route('users.destroy' , $r->id)}}" method="post">
+                                                    <form action="{{route('slider_images.destroy' , $r->id)}}" method="post">
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit" class="btn btn-outline">تأكيد
