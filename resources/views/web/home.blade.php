@@ -463,14 +463,14 @@
                                     <div
                                         class="trends_image d-flex flex-column align-items-center justify-content-center">
                                         <img src="{{ asset('uploads/blogs') }}/{{ $blog->image ?? '' }}" alt="">
-                                        <div class="trends_category"><a href="#">  {{date('d-m-Y', strtotime($blog->blog_date))}} <i
+                                        <div class="trends_category"><a href="{{ LaravelLocalization::localizeUrl('/single-blog/'.$blog->id.'/'.$blog->slug) }}">  {{date('d-m-Y', strtotime($blog->blog_date))}} <i
                                                     class="fas fa-calendar-alt ml-1"></i> </a></div>
                                     </div>
                                     <div class="trends_content">
 
                                         <div class="trends_info clearfix">
                                             <div class="trends_name">
-                                                <a>  @if (LaravelLocalization::getCurrentLocale() === 'en')
+                                                <a href="{{ LaravelLocalization::localizeUrl('/single-blog/'.$blog->id.'/'.$blog->slug) }}">  @if (LaravelLocalization::getCurrentLocale() === 'en')
                                                     {!! $blog->title_en ?? '' !!}
                                                 @else
                                                     {!! $blog->title_ar ?? '' !!}

@@ -25,7 +25,9 @@
 
 	<link rel="stylesheet" href="{{ asset('webassests/assets/css/style.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('webassests/assets/css/responsive.css')}}">
-
+    @if(isset($canonical))
+    <link rel="canonical" href="{{ $canonical }}" />
+    @endif
 	<link href="{{ asset('webassests/assets/plugins/fontawesome-free-5.0.1/css/fontawesome-all.css')}}" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" type="text/css" href="{{ asset('webassests/assets/plugins/OwlCarousel2-2.2.1/owl.carousel.css')}}">
 
