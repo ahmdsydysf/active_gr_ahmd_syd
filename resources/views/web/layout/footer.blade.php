@@ -2,7 +2,7 @@
     <!--? Footer Start-->
     <div class="footer-area bg-1 py-5">
         <span class="top-bg">
-            <img src="images/shape.png" alt="" srcset="">
+            <img src="{{ asset('webassests/images/shape.png')}}" alt="" srcset="">
         </span>
         <div class="container">
             <div class="footer-top footer-padding">
@@ -50,9 +50,9 @@
                             <div class="footer-tittle">
                                 <h3>لينكات تهمك</h3>
                                 <ul>
-                                    <li><a href="#">{{ __('links.partenters') }}</a></li>
+                                    <li><a href="{{ LaravelLocalization::localizeUrl('/partners') }}">{{ __('links.partenters') }}</a></li>
                                     <li><a href="{{ LaravelLocalization::localizeUrl('/blog') }}">{{ __('links.blogs') }}</a></li>
-                                    <li><a href="#">{{ __('links.gallery') }}</a></li>
+                                    <li><a href="{{ LaravelLocalization::localizeUrl('/gallery') }}">{{ __('links.gallery') }}</a></li>
                                     <li><a href="{{ LaravelLocalization::localizeUrl('/contact') }}"> {{ __('links.contact_us') }}</a></li>
 
                                 </ul>
