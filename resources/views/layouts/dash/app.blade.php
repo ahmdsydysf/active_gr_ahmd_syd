@@ -2,8 +2,10 @@
 
 
 @include('layouts.handle.session')
-@yield('content')
 
+<div class="box-body">
+@yield('content')
+</div>
 
 
 @include('layouts.dash.footer')

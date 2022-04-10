@@ -147,13 +147,10 @@
           <ul class="sidebar-menu">
             <li class="header">اختيارات التحكم</li>
 
-            <li class="treeview  class="{{  request()->routeIs('users.*') ? 'active' : ''  }}"
-
-            ">
+            <li class="treeview  class="{{  request()->routeIs('users.*') ? 'active' : ''  }}"">
               <a href="{{ route('users.index') }}">
                 <i class="ion ion-ios-people-outline"></i> <span>المستخدميين</span>
               </a>
-
             </li>
 
             <li class="header">خاص بالموقع</li>
@@ -176,6 +173,11 @@
                     <li class="{{  request()->routeIs('company_contact.*') ? 'active' : ''  }}">
                        <a href="{{ route('company_contact.index') }}">
                          <i class="fa fa-tty"></i> <span>التواصل</span>
+                        </a>
+                    </li>
+                    <li class="{{  request()->routeIs('why_us.*') ? 'active' : ''  }}">
+                       <a href="{{ route('why_us.index') }}">
+                         <i class="fa fa-graduation-cap"></i> <span>لماذا نحن</span>
                         </a>
                     </li>
 
