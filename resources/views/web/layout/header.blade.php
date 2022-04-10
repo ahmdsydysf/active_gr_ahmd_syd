@@ -63,8 +63,11 @@
                                             <li><a href="{{ LaravelLocalization::localizeUrl('/') }}">{{ __('links.home') }}</a></li>
                                             <li><a href="{{ LaravelLocalization::localizeUrl('/about') }}">{{ __('links.about_us') }} </a></li>
                                             <li><a href="#">{{ __('links.services') }}</a></li>
-                                            <li><a href="#"> {{ __('links.products') }}</a></li>
-                                            <li><a href="#"> {{ __('links.products') }}</a></li>
+                                             <li><a href="{{ LaravelLocalization::localizeUrl('/vertProduct') }}"> منتجاتنا فى الاسمدة</a>
+                                                <li><a href="{{ LaravelLocalization::localizeUrl('/pesticideProduct') }}"> منتجاتنا فى المبيدات</a>
+
+                                            </li>
+
                                               <li><a href="{{ LaravelLocalization::localizeUrl('/partners') }}"> {{ __('links.partenters') }}</a></li>
                                             <li><a href="{{ LaravelLocalization::localizeUrl('/blog') }}">{{ __('links.blogs') }}</a></li>
                                             <li><a href="{{ LaravelLocalization::localizeUrl('/gallery') }}">{{ __('links.gallery') }}</a></li>

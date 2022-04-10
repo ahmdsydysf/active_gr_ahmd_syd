@@ -7,6 +7,7 @@ use App\Http\Controllers\web\GalleryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\web\IndexController;
 use App\Http\Controllers\web\PartnerController;
+use App\Http\Controllers\web\ProductController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 /*
@@ -38,6 +39,8 @@ Route::get('/single-blog/{id}/{slug?}',[BlogController::class,'singleBlog']);
 Route::get('blog/fetch_data', [BlogController::class, 'fetch_data']);
 Route::get('/partners', [PartnerController::class,'index']);
 Route::get('/gallery', [GalleryController::class,'index']);
+Route::get('/vertProduct', [ProductController::class,'index']);
+Route::get('/pesticideProduct', [ProductController::class,'acide']);
 
     });
 
