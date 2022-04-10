@@ -67,6 +67,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'dashboard'], function () {
 
     Route::resource('users', 'Dashboard\UserController');
     Route::resource('slider_images', 'Dashboard\ImagesSliderController');
+    Route::resource('company', 'Dashboard\CompanyController');
 });
 
 require __DIR__ . '/auth.php';

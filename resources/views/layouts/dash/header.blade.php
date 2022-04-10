@@ -147,7 +147,7 @@
           <ul class="sidebar-menu">
             <li class="header">اختيارات التحكم</li>
 
-            <li class="treeview active
+            <li class="treeview  class="{{  request()->routeIs('users.*') ? 'active' : ''  }}"
 
             ">
               <a href="{{ route('users.index') }}">
@@ -163,14 +163,14 @@
                   <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu menu-open" style="display: block;">
-                    <li>
+                    <li class="{{  request()->routeIs('slider_images.*') ? 'active' : ''  }}">
                        <a href="{{ route('slider_images.index') }}">
                          <i class="fa fa-image"></i> <span>الصور الرئيسية</span>
                         </a>
                     </li>
-                    <li>
-                       <a href="{{ route('users.index') }}">
-                         <i class="ion ion-ios-people-outline"></i> <span>الصور الرئيسية</span>
+                    <li class="{{  request()->routeIs('company.*') ? 'active' : ''  }}">
+                       <a href="{{ route('company.index') }}">
+                         <i class="fa fa-weixin"></i> <span>عن الشركة</span>
                         </a>
                     </li>
                     <li>
