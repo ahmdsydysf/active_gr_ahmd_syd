@@ -64,9 +64,7 @@
                                     <td>{{$r->vision_ar}}</td>
                                     <td>
                                         {{$r->company_video}}
-                                        <video controls autoplay muted width="250px" height="150px"
-                                            src="{{asset('uploads/company/'.$r->company_video)}}">
-                                        </video>
+
                                     </td>
                                     <td>
                                         <a href="{{ route('company.edit' , $r->id) }}" class="btn btn-primary">تعديل</a>

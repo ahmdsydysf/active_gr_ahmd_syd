@@ -64,10 +64,10 @@ Route::group(['middleware' => 'auth', 'prefix' => 'dashboard'], function () {
     Route::get('/', function () {
         return view('dashboard');
     })->name('index');
-
     Route::resource('users', 'Dashboard\UserController');
     Route::resource('slider_images', 'Dashboard\ImagesSliderController');
     Route::resource('company', 'Dashboard\CompanyController');
+    Route::resource('company_contact', 'Dashboard\CompanyContactController');
 });
 
 require __DIR__ . '/auth.php';
