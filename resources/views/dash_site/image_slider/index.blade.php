@@ -3,10 +3,11 @@
 @section('page_title' , 'سلايدر الصور')
 
 @section('content')
+<div class="box-body">
 
 <div class="col-md-12">
 
-    <div class="box">
+    <div class="box"  style="overflow: auto">
         <div class="box-header bg-green">
             <h3 class="box-title">كل البيانات</h3>
         </div><!-- /.box-header -->
@@ -125,5 +126,6 @@
 
         </div><!-- /.box-body -->
     </div>
+</div>
 </div>
 @endsection
