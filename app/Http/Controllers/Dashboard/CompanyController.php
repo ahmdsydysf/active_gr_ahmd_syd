@@ -81,7 +81,7 @@ class CompanyController extends Controller
             'mission_ar'   => 'required',
             'vision_en'    => 'required',
             'vision_ar'    => 'required',
-            'company_video'    => 'max:2048',
+            'company_video' => 'required',
 
 
         ], [
@@ -91,29 +91,16 @@ class CompanyController extends Controller
             'mission_ar.required'    => 'هذا الحقل مطلوب ',
             'vision_en.required'     => 'هذا الحقل مطلوب ',
             'vision_ar.required'     => 'هذا الحقل مطلوب ',
-            'company_video.uploaded' => 'يجب الا يزيد حجم الفيديو عن 2 ميجا',
+            'company_video.required' => 'هذا الحقل مطلوب ',
 
         ]);
 
         $request_data = $request->except('company_video');
+        $request_data['company_video'] = $request->company_video;
 
-        if ($request->company_video) {
-
-                $videoName = time() . $request->file('company_video')->getClientOriginalName();
-
-                $request_data['company_video'] =  $videoName ;
-
-                $request->company_video->move(public_path('uploads/company/'), $videoName);
-
-                $video_path = public_path() . '/uploads/company/' . $company->company_video;
-
-                unlink($video_path);
-            }
-
-            $company->update($request_data);
+        $company->update($request_data);
 
         return redirect()->route('company.index')->with('flash_success', 'تم التعديل بنجاح');
-
     }
 
     /**

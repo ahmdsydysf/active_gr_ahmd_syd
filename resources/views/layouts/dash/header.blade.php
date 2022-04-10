@@ -173,16 +173,12 @@
                          <i class="fa fa-weixin"></i> <span>عن الشركة</span>
                         </a>
                     </li>
-                    <li>
-                       <a href="{{ route('users.index') }}">
-                         <i class="ion ion-ios-people-outline"></i> <span>الصور الرئيسية</span>
+                    <li class="{{  request()->routeIs('company_contact.*') ? 'active' : ''  }}">
+                       <a href="{{ route('company_contact.index') }}">
+                         <i class="fa fa-tty"></i> <span>التواصل</span>
                         </a>
                     </li>
-                    <li>
-                       <a href="{{ route('users.index') }}">
-                         <i class="ion ion-ios-people-outline"></i> <span>الصور الرئيسية</span>
-                        </a>
-                    </li>
+
 
                 </ul>
             </li>

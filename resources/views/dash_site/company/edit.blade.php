@@ -19,15 +19,8 @@
         {{method_field('PUT')}}
       <div class="box-body">
         <div class="form-group">
-            <div class="embed-responsive embed-responsive-16by9">
-                <video class="embed-responsive-item video-preview" controls autoplay muted  src="{{asset('uploads/company/'.$row->company_video)}}" width="250px" height="150px"></video>
-              </div>
-          <dp-fbi></dp-fbi>
-        </div>
-        <div class="form-group">
-            <label for="exampleInputuser1">اختر الفيديو</label>
-            <input type="file" name="company_video" class="form-control video" id="exampleInputuser1" >
-          <dp-fbi></dp-fbi>
+            <label>لينك الفيديو</label>
+            <textarea  name="company_video" class="form-control" rows="3" placeholder="النص">{{$row->company_video}}</textarea>
         </div>
         @error('company_video')
         <div class="alert alert-danger">{{ $message }}</div>
