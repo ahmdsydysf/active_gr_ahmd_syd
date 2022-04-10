@@ -129,20 +129,27 @@ class ImagesSliderController extends Controller
 
         $request_data = $request->except('image', 'active');
 
-        if ($slider_image->image != 'default_1.png') {
-            $image_path = public_path() . '/uploads/slider_images/' . $slider_image->image;
-            unlink($image_path);
+
+        if ($request->image) {
+
+            if ($slider_image->image != 'default_1.png') {
+                $imageName = $request->image->hashName();
+
+                $request_data['image'] =  $imageName;
+
+                $request->image->move(public_path('uploads/slider_images/'), $imageName);
+
+                $image_path = public_path() . '/uploads/slider_images/' . $slider_image->image;
+
+                unlink($image_path);
+            } else {
+                $imageName = $request->image->hashName();
+
+                $request_data['image'] =  $imageName;
+
+                $request->image->move(public_path('uploads/slider_images/'), $imageName);
+            }
         }
-        if ($request->hasFile('image')) {
-            $imageName = $request->image->hashName();
-
-            $request_data['image'] =  $imageName;
-
-            $request->image->move(public_path('uploads/slider_images/'), $imageName);
-        } else {
-            $request_data['image'] = 'default_1.png';
-        }
-
 
 
         if ($request->has('active')) {
