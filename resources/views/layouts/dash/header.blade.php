@@ -42,7 +42,13 @@
                 display: flex;
                 justify-content: space-around;
             }
-
+            .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+                z-index: 2;
+                color: #fff;
+                background-color: #00A65A;
+                border-color: #00A65A;
+                cursor: default;
+            }
         </style>
     @yield('style')
   </head>

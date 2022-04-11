@@ -106,6 +106,7 @@
             <a class="btn bg-olive" href="{{ route('why_us.create') }}"><i class="fa fa-plus"></i>
                 اضافة
             </a>
+            {{ $row->links("pagination::bootstrap-4") }}
 
         </div><!-- /.box-body -->
     </div>

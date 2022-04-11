@@ -88,16 +88,17 @@
                                 @endif
 
                             </tbody>
-
                         </table>
                     </div>
                 </div>
 
             </div>
 
-            <a class="btn bg-olive" href="{{ route('users.create') }}"><i class="fa fa-plus"></i>
+            <a class="btn bg-olive btn-lg" href="{{ route('users.create') }}"><i class="fa fa-plus"></i>
                 اضافة
             </a>
+
+            {{ $row->links("pagination::bootstrap-4") }}
 
         </div><!-- /.box-body -->
     </div>
