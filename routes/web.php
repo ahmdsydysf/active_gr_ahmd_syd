@@ -69,6 +69,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'dashboard'], function () {
     Route::resource('company', 'Dashboard\CompanyController');
     Route::resource('company_contact', 'Dashboard\CompanyContactController');
     Route::resource('why_us', 'Dashboard\WhyUsController');
+    Route::resource('blog', 'Dashboard\BlogController');
 });
 
 require __DIR__ . '/auth.php';

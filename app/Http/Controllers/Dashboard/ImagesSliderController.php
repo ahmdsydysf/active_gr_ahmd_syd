@@ -171,9 +171,6 @@ class ImagesSliderController extends Controller
      */
     public function destroy(Slider_image $slider_image)
     {
-
-
-
         if ($slider_image->image != 'default_1.png') {
             $image_path = public_path() . '/uploads/slider_images/' . $slider_image->image;
             unlink($image_path);

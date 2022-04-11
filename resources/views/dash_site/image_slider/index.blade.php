@@ -55,10 +55,10 @@
                                 <tr role="row" class="odd">
                                     <td class="sorting_1">- {{$r->id}} -</td>
                                     <td> <span class="thumbnail" style="background-color: #00A65A"><img src="{{asset('uploads/slider_images/'.$r->image)}}" alt="" srcset="" width="200"></span> </td>
-                                    <td>{{$r->title_en}}</td>
                                     <td>{{$r->title_ar}}</td>
-                                    <td>{{$r->text_en}}</td>
+                                    <td>{{$r->title_en}}</td>
                                     <td>{{$r->text_ar}}</td>
+                                    <td>{{$r->text_en}}</td>
                                     <td>{{$r->active}}</td>
                                     <td>{{$r->order}}</td>
                                     <td>

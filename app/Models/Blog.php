@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use Illuminate\Support\Str;
+
 class Blog extends Model
 {
     use HasFactory;
@@ -22,17 +23,18 @@ class Blog extends Model
 
     ];
 
+
+
     public function getSlugAttribute(): string
     {
-        if( LaravelLocalization::getCurrentLocale() == "en"){
+        if (LaravelLocalization::getCurrentLocale() == "en") {
             return str_slug($this->title_en);
-
-        }else{
+        } else {
             // $urlString = str_replace('&', '%26', $this->title_ar);
             return urlencode(strip_tags($this->title_ar));
             // return Str::slug($this->title_ar)==""?strtolower(urlencode($this->title_ar)):Str::slug($this->title_ar);
-// return $urlString;
-// return str_slug($urlString);
+            // return $urlString;
+            // return str_slug($urlString);
         }
     }
 

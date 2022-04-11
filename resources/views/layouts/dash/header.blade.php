@@ -184,6 +184,19 @@
 
                 </ul>
             </li>
+            <li class="treeview">
+                <a href="#">
+                  <i class="fa  fa-leanpub"></i> <span>المقالات</span>
+                  <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu menu-open" style="display: block;">
+                    <li class="{{  request()->routeIs('blog.*') ? 'active' : ''  }}">
+                       <a href="{{ route('blog.index') }}">
+                         <i class="fa fa-pencil-square"></i> <span>المقالات الرئيسية</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
           </ul>
         </section>
         <!-- /.sidebar -->
