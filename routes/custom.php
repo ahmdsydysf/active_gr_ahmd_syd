@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\web\IndexController;
 use App\Http\Controllers\web\PartnerController;
 use App\Http\Controllers\web\ProductController;
+use App\Http\Controllers\web\ServiceController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 /*
@@ -41,6 +42,6 @@ Route::get('/partners', [PartnerController::class,'index']);
 Route::get('/gallery', [GalleryController::class,'index']);
 Route::get('/vertProduct', [ProductController::class,'index']);
 Route::get('/pesticideProduct', [ProductController::class,'acide']);
-
+Route::get('/service', [ServiceController::class,'index']);
     });
 

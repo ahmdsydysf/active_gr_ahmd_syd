@@ -2,7 +2,7 @@
     <!--? Footer Start-->
     <div class="footer-area bg-1 py-5">
         <span class="top-bg">
-            <img src="{{ asset('webassests/images/shape.png')}}" alt="" srcset="">
+            <img src="{{ asset('webassests/images/shape.png') }}" alt="" srcset="">
         </span>
         <div class="container">
             <div class="footer-top footer-padding">
@@ -17,17 +17,20 @@
                                 <div class="footer-pera">
                                     <p class="info1">
                                         @if (LaravelLocalization::getCurrentLocale() === 'en')
-                                        {{ $company->overview_en }}
-                                    @else
-                                        {{ $company->overview_ar }}
-                                    @endif
+                                            {{ $company->overview_en }}
+                                        @else
+                                            {{ $company->overview_ar }}
+                                        @endif
                                     </p>
                                 </div>
                             </div>
                             <div class="footer-social f-right mb-3">
-                                <a href="{{ $companyContact->facebook }}" class="hvr-icon-spin"><i class="fab fa-facebook-f hvr-icon"></i></a>
-                                <a href="{{ $companyContact->twitter }}" class="hvr-icon-spin"><i class="fab fa-twitter hvr-icon"></i></a>
-                                <a href="{{ $companyContact->instagram }}" class="hvr-icon-spin"><i class="fab fa-instagram hvr-icon"></i></a>
+                                <a href="{{ $companyContact->facebook }}" class="hvr-icon-spin"><i
+                                        class="fab fa-facebook-f hvr-icon"></i></a>
+                                <a href="{{ $companyContact->twitter }}" class="hvr-icon-spin"><i
+                                        class="fab fa-twitter hvr-icon"></i></a>
+                                <a href="{{ $companyContact->instagram }}" class="hvr-icon-spin"><i
+                                        class="fab fa-instagram hvr-icon"></i></a>
                             </div>
                         </div>
                     </div>
@@ -36,10 +39,20 @@
                             <div class="footer-tittle">
                                 <h3>لينكات تهمك</h3>
                                 <ul>
-                                    <li><a href="{{ LaravelLocalization::localizeUrl('/') }}">{{ __('links.home') }}</a></li>
-                                    <li><a href="{{ LaravelLocalization::localizeUrl('/about') }}"> {{ __('links.about_us') }}</a></li>
-                                    <li><a href="#">{{ __('links.services') }}</a></li>
-                                    <li><a href="#">{{ __('links.products') }}</a></li>
+                                    <li><a
+                                            href="{{ LaravelLocalization::localizeUrl('/') }}">{{ __('links.home') }}</a>
+                                    </li>
+                                    <li><a href="{{ LaravelLocalization::localizeUrl('/about') }}">
+                                            {{ __('links.about_us') }}</a></li>
+                                    <li><a
+                                            href="{{ LaravelLocalization::localizeUrl('/service') }}">{{ __('links.services') }}</a>
+                                    </li>
+                                    {{-- <li><a href="{{ LaravelLocalization::localizeUrl('/vertProduct') }}"> منتجاتنا فى
+                                            الاسمدة</a>
+                                    <li><a href="{{ LaravelLocalization::localizeUrl('/pesticideProduct') }}">
+                                            منتجاتنا فى المبيدات</a>
+
+                                    </li> --}}
 
                                 </ul>
                             </div>
@@ -50,10 +63,17 @@
                             <div class="footer-tittle">
                                 <h3>لينكات تهمك</h3>
                                 <ul>
-                                    <li><a href="{{ LaravelLocalization::localizeUrl('/partners') }}">{{ __('links.partenters') }}</a></li>
-                                    <li><a href="{{ LaravelLocalization::localizeUrl('/blog') }}">{{ __('links.blogs') }}</a></li>
-                                    <li><a href="{{ LaravelLocalization::localizeUrl('/gallery') }}">{{ __('links.gallery') }}</a></li>
-                                    <li><a href="{{ LaravelLocalization::localizeUrl('/contact') }}"> {{ __('links.contact_us') }}</a></li>
+                                    <li><a
+                                            href="{{ LaravelLocalization::localizeUrl('/partners') }}">{{ __('links.partenters') }}</a>
+                                    </li>
+                                    <li><a
+                                            href="{{ LaravelLocalization::localizeUrl('/blog') }}">{{ __('links.blogs') }}</a>
+                                    </li>
+                                    <li><a
+                                            href="{{ LaravelLocalization::localizeUrl('/gallery') }}">{{ __('links.gallery') }}</a>
+                                    </li>
+                                    <li><a href="{{ LaravelLocalization::localizeUrl('/contact') }}">
+                                            {{ __('links.contact_us') }}</a></li>
 
                                 </ul>
                             </div>
@@ -64,15 +84,18 @@
                             <div class="footer-tittle">
                                 <h3> {{ __('links.contact_us') }}</h3>
                                 <ul>
-                                    <li class="link"><a href="#"><i class="fas fa-phone"></i> {{ $companyContact->phones }} </a></li>
-                                    <li class="link"><a href="#"><i class="fas fa-envelope"></i> {{ $companyContact->email }}
+                                    <li class="link"><a href="#"><i class="fas fa-phone"></i>
+                                            {{ $companyContact->phones }} </a></li>
+                                    <li class="link"><a href="#"><i class="fas fa-envelope"></i>
+                                            {{ $companyContact->email }}
                                         </a></li>
-                                    <li class="link"><a href="#"><i class="fas fa-map-marker-alt"></i>@if (LaravelLocalization::getCurrentLocale() === 'en')
-                                        {{ $companyContact->address_en }}
-                                    @else
-                                        {{ $companyContact->address_ar }}
-                                    @endif
-                </a></li>
+                                    <li class="link"><a href="#"><i class="fas fa-map-marker-alt"></i>
+                                            @if (LaravelLocalization::getCurrentLocale() === 'en')
+                                                {{ $companyContact->address_en }}
+                                            @else
+                                                {{ $companyContact->address_ar }}
+                                            @endif
+                                        </a></li>
                                 </ul>
                                 <!-- Form -->
                                 <div class="input-group mb-3">
@@ -98,7 +121,9 @@
                         <div class="footer-copy-right text-center">
                             <p>
                                 Copyright &copy;
-                                <script>document.write(new Date().getFullYear());</script> <a href="#"><b>Senior
+                                <script>
+                                    document.write(new Date().getFullYear());
+                                </script> <a href="#"><b>Senior
                                         Consulting</b></a>
                             </p>
                         </div>

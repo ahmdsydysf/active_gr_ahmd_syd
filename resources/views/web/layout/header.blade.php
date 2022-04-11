@@ -62,7 +62,7 @@
                                         <ul id="navigation" class="d-flex justify-content-around">
                                             <li><a href="{{ LaravelLocalization::localizeUrl('/') }}">{{ __('links.home') }}</a></li>
                                             <li><a href="{{ LaravelLocalization::localizeUrl('/about') }}">{{ __('links.about_us') }} </a></li>
-                                            <li><a href="#">{{ __('links.services') }}</a></li>
+                                            <li><a href="{{ LaravelLocalization::localizeUrl('/service') }}">{{ __('links.services') }}</a></li>
                                              <li><a href="{{ LaravelLocalization::localizeUrl('/vertProduct') }}"> منتجاتنا فى الاسمدة</a>
                                                 <li><a href="{{ LaravelLocalization::localizeUrl('/pesticideProduct') }}"> منتجاتنا فى المبيدات</a>
 
