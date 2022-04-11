@@ -42,7 +42,13 @@
                 display: flex;
                 justify-content: space-around;
             }
-
+            .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+                z-index: 2;
+                color: #fff;
+                background-color: #00A65A;
+                border-color: #00A65A;
+                cursor: default;
+            }
         </style>
     @yield('style')
   </head>
@@ -147,13 +153,10 @@
           <ul class="sidebar-menu">
             <li class="header">اختيارات التحكم</li>
 
-            <li class="treeview  class="{{  request()->routeIs('users.*') ? 'active' : ''  }}"
-
-            ">
+            <li class="treeview  class="{{  request()->routeIs('users.*') ? 'active' : ''  }}"">
               <a href="{{ route('users.index') }}">
                 <i class="ion ion-ios-people-outline"></i> <span>المستخدميين</span>
               </a>
-
             </li>
 
             <li class="header">خاص بالموقع</li>
@@ -178,8 +181,26 @@
                          <i class="fa fa-tty"></i> <span>التواصل</span>
                         </a>
                     </li>
+                    <li class="{{  request()->routeIs('why_us.*') ? 'active' : ''  }}">
+                       <a href="{{ route('why_us.index') }}">
+                         <i class="fa fa-graduation-cap"></i> <span>لماذا نحن</span>
+                        </a>
+                    </li>
 
 
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                  <i class="fa  fa-leanpub"></i> <span>المقالات</span>
+                  <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu menu-open" style="display: block;">
+                    <li class="{{  request()->routeIs('blog.*') ? 'active' : ''  }}">
+                       <a href="{{ route('blog.index') }}">
+                         <i class="fa fa-pencil-square"></i> <span>المقالات الرئيسية</span>
+                        </a>
+                    </li>
                 </ul>
             </li>
           </ul>

@@ -3,14 +3,14 @@
 @section('page_title' , 'عن الشركة')
 
 @section('content')
-
+<div class="box-body">
 <div class="col-md-12">
 
     <div class="box">
         <div class="box-header bg-green">
             <h3 class="box-title">كل البيانات</h3>
         </div><!-- /.box-header -->
-        <div class="box-body">
+        <div class="box-body" style="overflow: auto">
             <div id="example1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
                 <div class="row">
                     <div class="col-sm-12">
@@ -94,5 +94,6 @@
 
         </div><!-- /.box-body -->
     </div>
+</div>
 </div>
 @endsection

@@ -1,6 +1,6 @@
 @extends('layouts.dash.app')
 
-@section('page_title' , "اضافة لمعرض الصور ")
+@section('page_title' , "اضافة مقال")
 
 @section('content')
 
@@ -11,15 +11,22 @@
 
 
     <div class="box-header">
-      <h3 class="box-title">اضافة لمعرض الصور </h3>
+      <h3 class="box-title">اضافة مقال</h3>
     </div><!-- /.box-header -->
     <!-- form start -->
-    <form role="form" action="{{route('slider_images.store')}}" method="POST" enctype="multipart/form-data">
+    <form role="form" action="{{route('blog.store')}}" method="POST" enctype="multipart/form-data">
         @csrf
         {{method_field('POST')}}
       <div class="box-body">
+        <div class="input-group">
+            <label for="">تاريخ المقال</label>
+            <input type="date" value="{{ old('date', date('Y-m-d')) }}" id="datePicker" name="blog_date" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="" data-maxzpsw="0">
+          </div>
+        @error('blog_date')
+        <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
         <div class="form-group">
-            <img src="{{asset('uploads/slider_images/default_1.png')}}" class="img-thumbnail image-preview" width="350px" height="250px" alt="" srcset="">
+            <img src="{{asset('uploads/blogs/default_blog.png')}}" class="img-thumbnail image-preview" width="350px" height="250px" alt="" srcset="">
           <dp-fbi></dp-fbi>
         </div>
         <div class="form-group">
@@ -85,7 +92,7 @@
 
       <div class="box-footer">
         <button type="submit" class="btn btn-success"><i class="fa fa-plus"></i>اضافة</button>
-        <a href="{{ route('slider_images.index') }}" class="btn btn-danger">رجوع</a>
+        <a href="{{ route('blog.index') }}" class="btn btn-danger">رجوع</a>
       </div>
 
     </form>
@@ -109,5 +116,7 @@
                 }
 
         });
+
+        document.getElementById('datePicker').value = new Date().toDateInputValue();
     </script>
 @endsection
