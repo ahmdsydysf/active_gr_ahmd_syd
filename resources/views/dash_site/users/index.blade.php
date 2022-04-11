@@ -9,7 +9,16 @@
     <div class="box"  style="overflow: auto">
         <div class="box-header bg-green">
             <h3 class="box-title">كل البيانات</h3>
+
         </div><!-- /.box-header -->
+    <form action="{{route('users.index')}}" method="get">
+        <div class="input-group" style="width: 350px;padding:7px 25px">
+            <input type="text" name="table_search" class="form-control input-sm pull-right" placeholder="Search" data-maxzpsw="0">
+            <div class="input-group-btn">
+              <button class="btn btn-sm btn-default" type="submit"><i class="fa fa-search"></i></button>
+            </div>
+        </div>
+    </form>
         <div class="box-body">
             <div id="example1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
                 <div class="row">
@@ -98,7 +107,7 @@
                 اضافة
             </a>
 
-            {{ $row->links("pagination::bootstrap-4") }}
+            {{ $row->appends(request()->query())->links("pagination::bootstrap-4") }}
 
         </div><!-- /.box-body -->
     </div>
