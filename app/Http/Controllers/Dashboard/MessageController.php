@@ -19,7 +19,7 @@ class MessageController extends Controller
         $msgTyp = Message_type::all();
         $msg = Message::orderBy('id', 'DESC')->paginate(5);
 
-        return view('dash_site.message.index', ['row' => $msg, 'row2' => $msgTyp]);
+        return view('dash_site.message.index', ['row' => $msg]);
     }
 
     /**
@@ -85,6 +85,8 @@ class MessageController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $msg = Message::find($id);
+        $msg->delete();
+        return redirect()->route('message.index')->with('flash_success', 'تم الحذف بنجاح');
     }
 }

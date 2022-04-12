@@ -67,7 +67,6 @@
                                     <td>{{$r->message}}</td>
 
                                     <td>
-                                        <a href="{{ route('message.edit' , $r->id) }}" class="btn btn-primary">تعديل</a>
                                         <button type="button" class="btn btn-danger" data-toggle="modal"
                                             data-target="#del{{$r->id}}">
                                             حذف
@@ -125,9 +124,6 @@
 
             </div>
 
-            <a class="btn bg-olive" href="{{ route('message.create') }}"><i class="fa fa-plus"></i>
-                اضافة
-            </a>
             {{ $row->links("pagination::bootstrap-4") }}
 
         </div><!-- /.box-body -->

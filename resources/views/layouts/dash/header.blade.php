@@ -158,6 +158,11 @@
                 <i class="ion ion-ios-people-outline"></i> <span>المستخدميين</span>
               </a>
             </li>
+            <li class="treeview  class="{{  request()->routeIs('product.*') ? 'active' : ''  }}"">
+              <a href="{{ route('product.index') }}">
+                <i class="ion ion-ios-people-outline"></i> <span>المنتجات</span>
+              </a>
+            </li>
 
             <li class="header">خاص بالموقع</li>
             <li class="treeview">
