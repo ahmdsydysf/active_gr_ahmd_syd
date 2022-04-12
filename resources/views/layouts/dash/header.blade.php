@@ -203,6 +203,24 @@
                     </li>
                 </ul>
             </li>
+            <li class="treeview">
+                <a href="#">
+                  <i class="fa   fa-envelope"></i> <span>الرسائل</span>
+                  <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu menu-open" style="display: block;">
+                    <li class="{{  request()->routeIs('message.*') ? 'active' : ''  }}">
+                       <a href="{{ route('message.index') }}">
+                         <i class="fa fa-envelope-o"></i> <span>كل الرسائل</span>
+                        </a>
+                    </li>
+                    <li class="{{  request()->routeIs('message_type.*') ? 'active' : ''  }}">
+                       <a href="{{ route('message_type.index') }}">
+                         <i class="fa fa-envelope-square"></i> <span>انواع الرسائل</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
           </ul>
         </section>
         <!-- /.sidebar -->
