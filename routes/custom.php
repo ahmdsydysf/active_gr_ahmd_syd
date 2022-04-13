@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ExperianceController;
 use App\Http\Controllers\web\AboutController;
 use App\Http\Controllers\web\BlogController;
 use App\Http\Controllers\web\ContactController;
@@ -43,5 +44,11 @@ Route::get('/gallery', [GalleryController::class,'index']);
 Route::get('/vertProduct', [ProductController::class,'index']);
 Route::get('/pesticideProduct', [ProductController::class,'acide']);
 Route::get('/service', [ServiceController::class,'index']);
+Route::post('load-data', [ServiceController::class,'loadMoreData'])->name('load-data');
+Route::post('load-advices', [ServiceController::class,'loadMoreAdvices'])->name('load-advices');
+Route::get('/experience', [ExperianceController::class,'index']);
+//experience
+Route::post('load-data-experience', [ExperianceController::class,'loadMoreData'])->name('load-data-experience');
+Route::post('load-advices-experience', [ExperianceController::class,'loadMoreAdvices'])->name('load-advices-experience');
     });
 
