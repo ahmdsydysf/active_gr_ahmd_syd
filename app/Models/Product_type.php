@@ -13,8 +13,10 @@ class Product_type extends Model
         'type_en',
         'type_ar',
         'category_id',
-        'order'
-
+        'order',
+        'image',
+        'description_en',
+        'description_ar',
     ];
 
     public function product_category()

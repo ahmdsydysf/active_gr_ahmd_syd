@@ -80,6 +80,17 @@ Route::group(['middleware' => 'auth', 'prefix' => 'dashboard'], function () {
     Route::resource('message_type', 'Dashboard\MessageTypeController');
 
     Route::resource('message', 'Dashboard\MessageController');
+
+    // Route::get('product_types/{id}', [
+    //     'as' => 'product_type.index',
+    //     'uses' => 'Dashboard\ProductTypeController@index'
+    // ]);
+
+    // Route::resource('product_type', 'Dashboard\ProductTypeController', ['except' => 'index']);
+
+    Route::resource('mobedat_category', 'Dashboard\MobedatCategoryController');
+    Route::resource('asmeda_category', 'AsmedaCategoryController');
+    Route::resource('monzmat_category', 'MonzmatCategoryController');
 });
 
 require __DIR__ . '/auth.php';
