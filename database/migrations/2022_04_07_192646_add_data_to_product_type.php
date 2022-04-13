@@ -14,10 +14,9 @@ class AddDataToProductType extends Migration
     public function up()
     {
         Schema::table('product_types', function (Blueprint $table) {
-            $table->string('image')->nullable();
+            $table->text('image')->nullable();
             $table->text('description_en')->nullable();
             $table->text('description_ar')->nullable();
-
         });
     }
 

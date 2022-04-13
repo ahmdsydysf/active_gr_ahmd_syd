@@ -64,12 +64,28 @@ Route::group(['middleware' => 'auth', 'prefix' => 'dashboard'], function () {
     Route::get('/', function () {
         return view('dashboard');
     })->name('index');
+
     Route::resource('users', 'Dashboard\UserController');
+
     Route::resource('slider_images', 'Dashboard\ImagesSliderController');
+
     Route::resource('company', 'Dashboard\CompanyController');
+
     Route::resource('company_contact', 'Dashboard\CompanyContactController');
+
     Route::resource('why_us', 'Dashboard\WhyUsController');
+
     Route::resource('blog', 'Dashboard\BlogController');
+
+    Route::resource('message_type', 'Dashboard\MessageTypeController');
+
+    Route::resource('message', 'Dashboard\MessageController');
+
+    Route::resource('mobedat_category', 'Dashboard\MobedatCategoryController');
+    Route::resource('asmeda_category', 'Dashboard\AsmedaCategoryController');
+    Route::resource('monzmat_category', 'Dashboard\MonzmatCategoryController');
+
+    Route::resource('product', 'Dashboard\ProductController');
 });
 
 require __DIR__ . '/auth.php';

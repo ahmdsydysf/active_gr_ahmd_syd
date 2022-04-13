@@ -158,7 +158,49 @@
                 <i class="ion ion-ios-people-outline"></i> <span>المستخدميين</span>
               </a>
             </li>
+            <li class="treeview  class="{{  request()->routeIs('product.*') ? 'active' : ''  }}"">
+              <a href="{{ route('product.index') }}">
+                <i class="fa  fa-shopping-cart"></i> <span>المنتجات</span>
+              </a>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                  <i class="fa  fa-sitemap"></i> <span>انواع المنتجات</span>
+                  <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu menu-open" style="display: block;">
+                    <li class="{{  request()->routeIs('mobedat_category.*') ? 'active' : ''  }}">
+                       <a href="{{ route('mobedat_category.index') }}">
+                         <i class="fa fa-tags"></i> <span>مبيدات</span>
+                        </a>
+                    </li>
+                    <li class="{{  request()->routeIs('asmeda_category.*') ? 'active' : ''  }}">
+                       <a href="{{ route('asmeda_category.index') }}">
+                         <i class="fa fa-tags"></i> <span>اسمدة</span>
+                        </a>
+                    </li>
+                    <li class="{{  request()->routeIs('monzmat_category.*') ? 'active' : ''  }}">
+                       <a href="{{ route('monzmat_category.index') }}">
+                         <i class="fa fa-tags"></i> <span>منظمات نمو</span>
+                        </a>
+                    </li>
+                </ul>
 
+            </li>
+            {{-- <li class="treeview">
+                <a href="#">
+                  <i class="fa  fa-leanpub"></i> <span>المنتجات</span>
+                  <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu menu-open" style="display: block;">
+                    <li class="{{  request()->routeIs('product.*') ? 'active' : ''  }}">
+                       <a href="{{ route('product.index') }}">
+                         <i class="fa fa-pencil-square"></i> <span>المنتجات</span>
+                        </a>
+                    </li>
+                </ul>
+
+            </li> --}}
             <li class="header">خاص بالموقع</li>
             <li class="treeview">
                 <a href="#">
@@ -199,6 +241,24 @@
                     <li class="{{  request()->routeIs('blog.*') ? 'active' : ''  }}">
                        <a href="{{ route('blog.index') }}">
                          <i class="fa fa-pencil-square"></i> <span>المقالات الرئيسية</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                  <i class="fa   fa-envelope"></i> <span>الرسائل</span>
+                  <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu menu-open" style="display: block;">
+                    <li class="{{  request()->routeIs('message.*') ? 'active' : ''  }}">
+                       <a href="{{ route('message.index') }}">
+                         <i class="fa fa-envelope-o"></i> <span>كل الرسائل</span>
+                        </a>
+                    </li>
+                    <li class="{{  request()->routeIs('message_type.*') ? 'active' : ''  }}">
+                       <a href="{{ route('message_type.index') }}">
+                         <i class="fa fa-envelope-square"></i> <span>انواع الرسائل</span>
                         </a>
                     </li>
                 </ul>
