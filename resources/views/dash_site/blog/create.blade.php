@@ -38,7 +38,7 @@
 
             <div class="form-group">
                 <label>العنوان عربي</label>
-                <textarea  name="title_ar" class="form-control" rows="3" placeholder="النص">{{old('title_ar')}}</textarea>
+                <textarea  name="title_ar" class="form-control " rows="3" placeholder="النص">{{old('title_ar')}}</textarea>
             </div>
             @error('title_ar')
             <div class="alert alert-danger">{{ $message }}</div>
@@ -54,14 +54,14 @@
         @enderror
         <div class="form-group">
             <label>النص عربي</label>
-            <textarea  name="text_ar" class="form-control" rows="3" placeholder="النص">{{old('text_ar')}}</textarea>
+            <textarea  name="text_ar" class="form-control ckeditor" rows="3" placeholder="النص">{{old('text_ar')}}</textarea>
         </div>
         @error('text_ar')
         <div class="alert alert-danger">{{ $message }}</div>
         @enderror
         <div class="form-group">
             <label>النص انجليزي</label>
-            <textarea  name="text_en" class="form-control" rows="3" placeholder="النص">{{old('text_en')}}</textarea>
+            <textarea  name="text_en" class="form-control ckeditor" rows="3" placeholder="النص">{{old('text_en')}}</textarea>
         </div>
         @error('text_en')
         <div class="alert alert-danger">{{ $message }}</div>

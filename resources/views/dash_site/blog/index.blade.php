@@ -60,11 +60,11 @@
                                         <td>{{$r->blog_date}}</td>
                                         <td>{{$r->title_ar}}</td>
                                         <td>{{$r->title_en}}</td>
-                                        <td>{{$r->text_ar}}</td>
-                                        <td>{{$r->text_en}}</td>
-                                        <td> <span class="thumbnail" style="background-color: #00A65A"><img
+                                        <td>{!!$r->text_ar!!}</td>
+                                        <td>{!!$r->text_en!!}</td>
+                                        <td> <span class="thumbnail" style="background-color: #00A65A;width='150px'"><img
                                                     src="{{asset('uploads/blogs/'.$r->image)}}" alt="" srcset=""
-                                                    width="200"></span> </td>
+                                                    ></span> </td>
                                         <td>{{$r->active}}</td>
                                         <td>{{$r->order}}</td>
                                         <td>

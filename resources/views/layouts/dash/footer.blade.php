@@ -53,6 +53,7 @@
 
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('adminAsset/dist/js/demo.js')}}" type="text/javascript"></script>
+<script src="{{asset('adminAsset/plugins/ckeditor/ckeditor.js')}}" type="text/javascript"></script>
 
 
 <script>

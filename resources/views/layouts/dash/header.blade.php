@@ -49,6 +49,9 @@
                 border-color: #00A65A;
                 cursor: default;
             }
+            span.thumbnail {
+                width: 150px !important ;
+            }
         </style>
     @yield('style')
   </head>
