@@ -54,129 +54,44 @@
         <div class="container">
             <section>
                 <div class="row filter-3 top-sec">
-                    <div class="itemBox col-lg-4 col-md-6 col-12 p-3 " data-item="sec2">
-                        <div>
-                            <img src="images/02.png" width="100%" height="100%">
 
-                        </div>
-                        <div class="bottom-lorem">
-                            <div class="row">
-                                <h3 class="col-12">مبيدات فطرية <a href="images/01.png" download="download"
-                                        target="_blank"><i class="far fa-file-pdf dwn-icon"></i></a></h3>
-                                <p class="col-12 text-right">خلافا للإعتقاد السائد فإن لوريم إيبسوم ليس نصاَ
-                                    عشوائياً، بل إن له
-                                    جذور في
-                                    45 قبل الميلاد، مما يجعله أكثر من 2000 ع 45 قبل الميلاد، مما يجعله أكثر من 2000
-                                    ع
-                                    الأدب
-                                    اللاتيني الكلاسيكي منذ العام 45 قبل الميلاد، مما يجعله
-                                </p>
-                            </div>
+                    <div id="loadData" class="row">
+                    <?php
+                    $last_id =0 ;
+                   ?>
 
-                        </div>
-                    </div>
+                    @foreach ($services as $row)
                     <div class="itemBox col-lg-4 col-md-6 col-12 p-3 " data-item="sec3">
                         <div>
-                            <img src="images/03.png" width="100%" height="100%">
+                            <img src="{{asset('uploads/services')}}/{{$row->image}}" width="100%" height="100%">
 
                         </div>
                         <div class="bottom-lorem">
                             <div class="row">
-                                <h3 class="col-12">مبيدات حشرية <a href="images/01.png" download="download"
+                                <h3 class="col-12"> @if (LaravelLocalization::getCurrentLocale() === 'en')
+                                    {{ $row->title_en }}
+                                @else
+                                    {{ $row->title_ar }}
+                                @endif<a href="images/01.png" download="download"
                                         target="_blank"><i class="far fa-file-pdf dwn-icon"></i></a></h3>
-                                <p class="col-12 text-right">خلافا للإعتقاد السائد فإن لوريم إيبسوم ليس نصاَ
-                                    عشوائياً، بل إن له
-                                    جذور في
-                                    45 قبل الميلاد، مما يجعله أكثر من 2000 ع 45 قبل الميلاد، مما يجعله أكثر من 2000
-                                    ع
-                                    الأدب
-                                    اللاتيني الكلاسيكي منذ العام 45 قبل الميلاد، مما يجعله
-                                </p>
+                                <p class="col-12 text-right"> @if (LaravelLocalization::getCurrentLocale() === 'en')
+                                    {{ $row->text_en }}
+                                @else
+                                    {{ $row->text_ar }}
+                                @endif</p>
                             </div>
                         </div>
                     </div>
-                    <div class="itemBox col-lg-4 col-md-6 col-12 p-3 " data-item="sec1">
-                        <div>
-                            <img src="images/01.png" width="100%" height="100%">
+                    <?php $last_id = $row->id ;
+                    ?>
+                    @endforeach
 
-                        </div>
-                        <div class="bottom-lorem">
-                            <div class="row">
-                                <h3 class="col-12">مبيدات نيناتوديه <a href="images/01.png" download="download"
-                                        target="_blank"><i class="far fa-file-pdf dwn-icon"></i></a></h3>
-                                <p class="col-12 text-right">خلافا للإعتقاد السائد فإن لوريم إيبسوم ليس نصاَ
-                                    عشوائياً، بل إن له
-                                    جذور في
-                                    45 قبل الميلاد، مما يجعله أكثر من 2000 ع 45 قبل الميلاد، مما يجعله أكثر من 2000
-                                    ع
-                                    الأدب
-                                    اللاتيني الكلاسيكي منذ العام 45 قبل الميلاد، مما يجعله
-                                </p>
-                            </div>
-                        </div>
+      {{-- div id --}}
                     </div>
-                    <div class="itemBox col-lg-4 col-md-6 col-12 p-3 " data-item="sec2">
-                        <div>
-                            <img src="images/05.png" width="100%" height="100%">
-
-                        </div>
-                        <div class="bottom-lorem">
-                            <div class="row">
-                                <h3 class="col-12">مبيدات حشريه <a href="images/01.png" download="download"
-                                        target="_blank"><i class="far fa-file-pdf dwn-icon"></i></a></h3>
-                                <p class="col-12 text-right">خلافا للإعتقاد السائد فإن لوريم إيبسوم ليس نصاَ
-                                    عشوائياً، بل إن له
-                                    جذور في
-                                    45 قبل الميلاد، مما يجعله أكثر من 2000 ع 45 قبل الميلاد، مما يجعله أكثر من 2000
-                                    ع
-                                    الأدب
-                                    اللاتيني الكلاسيكي منذ العام 45 قبل الميلاد، مما يجعله
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="itemBox col-lg-4 col-md-6 col-12 p-3 " data-item="sec3">
-                        <div>
-                            <img src="images/06.png" width="100%" height="100%">
-
-                        </div>
-                        <div class="bottom-lorem">
-                            <div class="row">
-                                <h3 class="col-12">مبيدات نيناتوديه <a href="images/01.png" download="download"
-                                        target="_blank"><i class="far fa-file-pdf dwn-icon"></i></a></h3>
-                                <p class="col-12 text-right">خلافا للإعتقاد السائد فإن لوريم إيبسوم ليس نصاَ
-                                    عشوائياً، بل إن له
-                                    جذور في
-                                    45 قبل الميلاد، مما يجعله أكثر من 2000 ع 45 قبل الميلاد، مما يجعله أكثر من 2000
-                                    ع
-                                    الأدب
-                                    اللاتيني الكلاسيكي منذ العام 45 قبل الميلاد، مما يجعله
-                                </p>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="itemBox col-lg-4 col-md-6 col-12 p-3 " data-item="sec1">
-                        <div>
-                            <img src="images/01.png" width="100%" height="100%">
-
-                        </div>
-                        <div class="bottom-lorem">
-                            <div class="row">
-                                <h3 class="col-12">مبيدات فطرية <a href="images/01.png" download="download"
-                                        target="_blank"><i class="far fa-file-pdf dwn-icon"></i></a></h3>
-                                <p class="col-12 text-right">خلافا للإعتقاد السائد فإن لوريم إيبسوم ليس نصاَ
-                                    عشوائياً، بل إن له
-                                    جذور في
-                                    45 قبل الميلاد، مما يجعله أكثر من 2000 ع 45 قبل الميلاد، مما يجعله أكثر من 2000
-                                    ع
-                                    الأدب
-                                    اللاتيني الكلاسيكي منذ العام 45 قبل الميلاد، مما يجعله
-                                </p>
-                            </div>
-
-                        </div>
-                    </div>
+                    <input type="text" style="opacity: 0;" id="last" value="{{$last_id}}">
+                    @if(count($services) >= 1 && count($allRows) > count($services))
+                    <div class="btn-submit"><button id="loadBtn" onclick="loadMoreData(document.getElementById('last').value);" class="btn hero-btn">  المـزيد</button></div>
+      @endif
                 </div>
             </section>
 
@@ -215,129 +130,44 @@
         <div class="container">
             <section>
                 <div class="row filter-3 top-sec">
-                    <div class="itemBox col-lg-4 col-md-6 col-12 p-3 " data-item="sec2">
-                        <div>
-                            <img src="images/02.png" width="100%" height="100%">
+                    <div id="loadDataAdvices" class="row">
+                        <?php
+                        $lastdevice_id =0 ;
+                       ?>
 
-                        </div>
-                        <div class="bottom-lorem">
-                            <div class="row">
-                                <h3 class="col-12">مبيدات نيناتوديه <a href="images/01.png" download="download"
-                                        target="_blank"><i class="far fa-file-pdf dwn-icon"></i></a></h3>
-                                <p class="col-12 text-right">خلافا للإعتقاد السائد فإن لوريم إيبسوم ليس نصاَ
-                                    عشوائياً، بل إن له
-                                    جذور في
-                                    45 قبل الميلاد، مما يجعله أكثر من 2000 ع 45 قبل الميلاد، مما يجعله أكثر من 2000
-                                    ع
-                                    الأدب
-                                    اللاتيني الكلاسيكي منذ العام 45 قبل الميلاد، مما يجعله
-                                </p>
+                        @foreach ($advices as $row)
+                        <div class="itemBox col-lg-4 col-md-6 col-12 p-3 " >
+                            <div>
+                                <img src="{{asset('uploads/services')}}/{{$row->image}}" width="100%" height="100%">
+
                             </div>
-
-                        </div>
-                    </div>
-                    <div class="itemBox col-lg-4 col-md-6 col-12 p-3 " data-item="sec3">
-                        <div>
-                            <img src="images/03.png" width="100%" height="100%">
-
-                        </div>
-                        <div class="bottom-lorem">
-                            <div class="row">
-                                <h3 class="col-12">مبيدات حشريه <a href="images/01.png" download="download"
-                                        target="_blank"><i class="far fa-file-pdf dwn-icon"></i></a></h3>
-                                <p class="col-12 text-right">خلافا للإعتقاد السائد فإن لوريم إيبسوم ليس نصاَ
-                                    عشوائياً، بل إن له
-                                    جذور في
-                                    45 قبل الميلاد، مما يجعله أكثر من 2000 ع 45 قبل الميلاد، مما يجعله أكثر من 2000
-                                    ع
-                                    الأدب
-                                    اللاتيني الكلاسيكي منذ العام 45 قبل الميلاد، مما يجعله
-                                </p>
+                            <div class="bottom-lorem">
+                                <div class="row">
+                                    <h3 class="col-12"> @if (LaravelLocalization::getCurrentLocale() === 'en')
+                                        {{ $row->title_en }}
+                                    @else
+                                        {{ $row->title_ar }}
+                                    @endif<a href="images/01.png" download="download"
+                                            target="_blank"><i class="far fa-file-pdf dwn-icon"></i></a></h3>
+                                    <p class="col-12 text-right"> @if (LaravelLocalization::getCurrentLocale() === 'en')
+                                        {{ $row->text_en }}
+                                    @else
+                                        {{ $row->text_ar }}
+                                    @endif</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="itemBox col-lg-4 col-md-6 col-12 p-3 " data-item="sec1">
-                        <div>
-                            <img src="images/01.png" width="100%" height="100%">
+                        <?php $lastdevice_id = $row->id ;
+                        ?>
+                        @endforeach
 
+          {{-- div id --}}
                         </div>
-                        <div class="bottom-lorem">
-                            <div class="row">
-                                <h3 class="col-12">مبيدات فطرية <a href="images/01.png" download="download"
-                                        target="_blank"><i class="far fa-file-pdf dwn-icon"></i></a></h3>
-                                <p class="col-12 text-right">خلافا للإعتقاد السائد فإن لوريم إيبسوم ليس نصاَ
-                                    عشوائياً، بل إن له
-                                    جذور في
-                                    45 قبل الميلاد، مما يجعله أكثر من 2000 ع 45 قبل الميلاد، مما يجعله أكثر من 2000
-                                    ع
-                                    الأدب
-                                    اللاتيني الكلاسيكي منذ العام 45 قبل الميلاد، مما يجعله
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="itemBox col-lg-4 col-md-6 col-12 p-3 " data-item="sec2">
-                        <div>
-                            <img src="images/05.png" width="100%" height="100%">
 
-                        </div>
-                        <div class="bottom-lorem">
-                            <div class="row">
-                                <h3 class="col-12">مبيدات فطرية <a href="images/01.png" download="download"
-                                        target="_blank"><i class="far fa-file-pdf dwn-icon"></i></a></h3>
-                                <p class="col-12 text-right">خلافا للإعتقاد السائد فإن لوريم إيبسوم ليس نصاَ
-                                    عشوائياً، بل إن له
-                                    جذور في
-                                    45 قبل الميلاد، مما يجعله أكثر من 2000 ع 45 قبل الميلاد، مما يجعله أكثر من 2000
-                                    ع
-                                    الأدب
-                                    اللاتيني الكلاسيكي منذ العام 45 قبل الميلاد، مما يجعله
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="itemBox col-lg-4 col-md-6 col-12 p-3 " data-item="sec3">
-                        <div>
-                            <img src="images/06.png" width="100%" height="100%">
-
-                        </div>
-                        <div class="bottom-lorem">
-                            <div class="row">
-                                <h3 class="col-12">مبيدات نيناتوديه <a href="images/01.png" download="download"
-                                        target="_blank"><i class="far fa-file-pdf dwn-icon"></i></a></h3>
-                                <p class="col-12 text-right">خلافا للإعتقاد السائد فإن لوريم إيبسوم ليس نصاَ
-                                    عشوائياً، بل إن له
-                                    جذور في
-                                    45 قبل الميلاد، مما يجعله أكثر من 2000 ع 45 قبل الميلاد، مما يجعله أكثر من 2000
-                                    ع
-                                    الأدب
-                                    اللاتيني الكلاسيكي منذ العام 45 قبل الميلاد، مما يجعله
-                                </p>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="itemBox col-lg-4 col-md-6 col-12 p-3 " data-item="sec1">
-                        <div>
-                            <img src="images/01.png" width="100%" height="100%">
-
-                        </div>
-                        <div class="bottom-lorem">
-                            <div class="row">
-                                <h3 class="col-12">مبيدات حشرية <a href="images/01.png" download="download"
-                                        target="_blank"><i class="far fa-file-pdf dwn-icon"></i></a></h3>
-                                <p class="col-12 text-right">خلافا للإعتقاد السائد فإن لوريم إيبسوم ليس نصاَ
-                                    عشوائياً، بل إن له
-                                    جذور في
-                                    45 قبل الميلاد، مما يجعله أكثر من 2000 ع 45 قبل الميلاد، مما يجعله أكثر من 2000
-                                    ع
-                                    الأدب
-                                    اللاتيني الكلاسيكي منذ العام 45 قبل الميلاد، مما يجعله
-                                </p>
-                            </div>
-
-                        </div>
-                    </div>
+                    <input type="text" style="opacity: 0;" id="lastdevice" value="{{$lastdevice_id}}">
+                    @if(count($advices) >= 1 && count($allAdvices) > count($advices))
+                    <div class="btn-submit"><button id="loadBtnAdvice" onclick="loadMoreAdvices(document.getElementById('lastdevice').value);" class="btn hero-btn">  المـزيد</button></div>
+      @endif
                 </div>
             </section>
 
@@ -347,7 +177,7 @@
 
 
 
-    <nav class="blog-pagination justify-content-center d-flex">
+    {{-- <nav class="blog-pagination justify-content-center d-flex">
         <ul class="pagination">
             <li class="page-item">
                 <a href="#" class="page-link" aria-label="Next">
@@ -366,10 +196,72 @@
                 </a>
             </li>
         </ul>
-    </nav>
+    </nav> --}}
     <!-- Gallary -->
     <script>
 
     </script>
 </main>
+@endsection
+@section('scripts')
+<script>
+    function loadMoreAdvices(id){
+        $.ajax({
+    url: '{{url("load-advices")}}',
+    data: {
+        id:id,
+    },
+
+    type: "POST",
+    headers: {
+        'X-CSRF-Token': '{{ csrf_token() }}',
+    },
+    success: function(data){
+      $('#loadDataAdvices').append(data.output);
+        document.getElementById('lastdevice').value=data.lastdevice_id;
+        if(data.lastdevice_id <= 1){
+
+            document.getElementById('loadBtnAdvice').style.display='none';
+        }else{
+
+            document.getElementById('loadBtnAdvice').style.display='block';
+        }
+
+    },
+    error: function(){
+          document.getElementById('loadBtnAdvice').style.display='none';
+     }
+
+    });
+    }
+    function loadMoreData(id){
+$.ajax({
+    url: '{{url("load-data")}}',
+    data: {
+        id:id,
+    },
+
+    type: "POST",
+    headers: {
+        'X-CSRF-Token': '{{ csrf_token() }}',
+    },
+    success: function(data){
+      $('#loadData').append(data.output);
+        document.getElementById('last').value=data.last_id;
+        if(data.last_id <= 1){
+
+            document.getElementById('loadBtn').style.display='none';
+        }else{
+
+            document.getElementById('loadBtn').style.display='block';
+        }
+
+    },
+    error: function(){
+          document.getElementById('loadBtn').style.display='none';
+     }
+
+    });
+}
+</script>
 @endsection

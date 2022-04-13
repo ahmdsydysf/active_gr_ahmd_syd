@@ -20,7 +20,7 @@
 
                                         <!--{{ $properties['native'] }}-->
 
-                                        {{ __('links.ar') }}
+                                        {{-- {{ __('links.ar') }} --}}
                                     </a>
 
                                         @endif
@@ -28,7 +28,8 @@
                                         <a  rel="alternate" hreflang="{{ $localeCode }}"
                                         href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
 
-                                        {{ __('links.en') }} </a>
+                                        {{-- {{ __('links.en') }}  --}}
+                                    </a>
 
                                         @endif
                                         <!--|-->
@@ -36,7 +37,7 @@
                                 @endforeach
                             </li>
                                     <li><a href="">{{ __('links.rks') }}</a></li>
-                                    <li><a href="">{{ __('links.experance') }}</a></li>
+                                    <li><a href="{{ LaravelLocalization::localizeUrl('/experience') }}">{{ __('links.experance') }}</a></li>
                                 </ul>
                             </div>
                         </div>

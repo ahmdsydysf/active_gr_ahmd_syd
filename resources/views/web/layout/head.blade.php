@@ -36,6 +36,13 @@
 	<link rel="stylesheet" type="text/css"
 		href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
 
-
+        <style>
+            #loadBtn:hover{
+                color:#389A1B !important;
+            }
+            #loadBtnAdvice:hover{
+                color:#389A1B !important;
+            }
+        </style>
       @yield('style')
   </head>
