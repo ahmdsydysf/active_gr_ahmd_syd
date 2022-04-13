@@ -3,23 +3,23 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
-use App\Models\Product_category;
+use App\Models\Factory;
+use App\Models\Partner;
+use App\Models\Product;
 use App\Models\Product_type;
 use Illuminate\Http\Request;
 
-class ProductTypeController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id)
+    public function index()
     {
-        $product_cat_name = Product_category::find($id);
-        $product_typs = Product_type::orderBy('id', 'DESC')->paginate(5);
-        return view('dash_site.product_type.index', ['row' => $product_typs, 'pro_cat' => $product_cat_name]);
-        // return redirect('dashboard/product_type/' . $id)->with(['row' => $product_typs, 'pro_cat' => $product_cat_name]);
+        $product = Product::orderBy('id', 'DESC')->paginate(5);
+        return view('dash_site.product.index')->with('row', $product);
     }
 
     /**
@@ -27,13 +27,13 @@ class ProductTypeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($id)
+    public function create()
     {
+        $pro_fac = Factory::all();
+        $pro_par = Partner::all();
+        $pro_typ = Product_type::all();
 
-        $all_pro_cat = Product_category::all();
-        $product_cat_name = Product_category::find($id);
-
-        return view('dash_site.image_slider.create', ['all_pro_cat' => $all_pro_cat, 'pro_cat' => $product_cat_name]);
+        return view('dash_site.product.create', ['pro_fac' => $pro_fac, 'pro_par' => $pro_par, 'pro_typ' => $pro_typ]);
     }
 
     /**

@@ -81,16 +81,11 @@ Route::group(['middleware' => 'auth', 'prefix' => 'dashboard'], function () {
 
     Route::resource('message', 'Dashboard\MessageController');
 
-    // Route::get('product_types/{id}', [
-    //     'as' => 'product_type.index',
-    //     'uses' => 'Dashboard\ProductTypeController@index'
-    // ]);
-
-    // Route::resource('product_type', 'Dashboard\ProductTypeController', ['except' => 'index']);
-
     Route::resource('mobedat_category', 'Dashboard\MobedatCategoryController');
     Route::resource('asmeda_category', 'Dashboard\AsmedaCategoryController');
     Route::resource('monzmat_category', 'Dashboard\MonzmatCategoryController');
+
+    Route::resource('product', 'Dashboard\ProductController');
 });
 
 require __DIR__ . '/auth.php';
