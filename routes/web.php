@@ -89,8 +89,8 @@ Route::group(['middleware' => 'auth', 'prefix' => 'dashboard'], function () {
     // Route::resource('product_type', 'Dashboard\ProductTypeController', ['except' => 'index']);
 
     Route::resource('mobedat_category', 'Dashboard\MobedatCategoryController');
-    Route::resource('asmeda_category', 'AsmedaCategoryController');
-    Route::resource('monzmat_category', 'MonzmatCategoryController');
+    Route::resource('asmeda_category', 'Dashboard\AsmedaCategoryController');
+    Route::resource('monzmat_category', 'Dashboard\MonzmatCategoryController');
 });
 
 require __DIR__ . '/auth.php';
