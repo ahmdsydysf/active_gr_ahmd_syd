@@ -15,6 +15,7 @@
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link href="{{asset('adminAsset/dist/css/skins/_all-skins.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('adminAsset/plugins/datatables/dataTables.bootstrap.css')}}" rel="stylesheet" type="text/css" />
 
     <!-- iCheck -->
     <link href="{{asset('adminAsset/plugins/iCheck/flat/blue.css')}}" rel="stylesheet" type="text/css" />
@@ -25,6 +26,9 @@
     <!-- Date Picker -->
     <link href="{{asset('adminAsset/plugins/datepicker/datepicker3.css')}}" rel="stylesheet" type="text/css" />
     <!-- Daterange picker -->
+    <link rel="stylesheet" href="{{ asset('adminAsset/plugins/data-table/bootstrap-table.css')}}">
+    <link rel="stylesheet" href="{{ asset('adminAsset/plugins/data-table/bootstrap-editable.css')}}">
+
     <link href="{{asset('adminAsset/plugins/daterangepicker/daterangepicker-bs3.css')}}" rel="stylesheet" type="text/css" />
     <!-- bootstrap wysihtml5 - text editor -->
     <link href="{{asset('adminAsset/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css')}}" rel="stylesheet" type="text/css" />
@@ -156,12 +160,15 @@
           <ul class="sidebar-menu">
             <li class="header">اختيارات التحكم</li>
 
-            <li class="treeview  class="{{  request()->routeIs('users.*') ? 'active' : ''  }}"">
+            <li class="treeview {{  request()->routeIs('users.*') ? 'active' : ''  }}">
               <a href="{{ route('users.index') }}">
                 <i class="ion ion-ios-people-outline"></i> <span>المستخدميين</span>
               </a>
             </li>
-            <li class="treeview  class="{{  request()->routeIs('product.*') ? 'active' : ''  }}"">
+
+            <li class="header">ادارة المنتجات</li>
+
+            <li class="treeview {{  request()->routeIs('product.*') ? 'active' : ''  }}">
               <a href="{{ route('product.index') }}">
                 <i class="fa  fa-shopping-cart"></i> <span>المنتجات</span>
               </a>
@@ -190,20 +197,19 @@
                 </ul>
 
             </li>
-            {{-- <li class="treeview">
-                <a href="#">
-                  <i class="fa  fa-leanpub"></i> <span>المنتجات</span>
-                  <i class="fa fa-angle-left pull-right"></i>
-                </a>
-                <ul class="treeview-menu menu-open" style="display: block;">
-                    <li class="{{  request()->routeIs('product.*') ? 'active' : ''  }}">
-                       <a href="{{ route('product.index') }}">
-                         <i class="fa fa-pencil-square"></i> <span>المنتجات</span>
-                        </a>
-                    </li>
-                </ul>
 
-            </li> --}}
+            <li class="header">ادارة المصانع</li>
+            <li class="treeview {{  request()->routeIs('factory.*') ? 'active' : ''  }}">
+                <a href="{{ route('factory.index') }}">
+                  <i class="fa  fa-shopping-cart"></i> <span>المصانع</span>
+                </a>
+            </li>
+            <li class="treeview {{  request()->routeIs('partner.*') ? 'active' : ''  }}">
+                <a href="{{ route('partner.index') }}">
+                  <i class="fa fa-user-secret"></i> <span>الشركاء</span>
+                </a>
+            </li>
+
             <li class="header">خاص بالموقع</li>
             <li class="treeview">
                 <a href="#">
