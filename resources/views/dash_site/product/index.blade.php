@@ -70,7 +70,7 @@
                                     <td>{{$r->name_ar}}</td>
                                     <td>{!!$r->description_en!!}</td>
                                     <td>{!!$r->description_ar!!}</td>
-                                    <td> <span class="thumbnail" style="background-color: #00A65A"><img src="{{asset('uploads/slider_images/'.$r->image)}}" alt="" srcset="" width="200"></span> </td>
+                                    <td> <span class="thumbnail" style="background-color: #00A65A"><img src="{{asset('uploads/products/'.$r->image)}}" alt="" srcset="" width="200"></span> </td>
                                     <td>{{$r->pdf_en}}</td>
                                     <td>{{$r->pdf_ar}}</td>
                                     <td>{{$r->factory->name_ar}}</td>
