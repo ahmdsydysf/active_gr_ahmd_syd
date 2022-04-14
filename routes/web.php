@@ -86,6 +86,10 @@ Route::group(['middleware' => 'auth', 'prefix' => 'dashboard'], function () {
     Route::resource('monzmat_category', 'Dashboard\MonzmatCategoryController');
 
     Route::resource('product', 'Dashboard\ProductController');
+
+    Route::resource('factory', 'Dashboard\FactoryController');
+
+    Route::resource('partner', 'Dashboard\PartnerController');
 });
 
 require __DIR__ . '/auth.php';

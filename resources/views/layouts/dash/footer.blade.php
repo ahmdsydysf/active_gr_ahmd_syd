@@ -46,11 +46,22 @@
 <script src='{{asset('adminAsset/plugins/fastclick/fastclick.min.js')}}'></script>
 <!-- AdminLTE App -->
 <script src="{{asset('adminAsset/dist/js/app.min.js')}}" type="text/javascript"></script>
-
+<script src="{{ asset('adminAsset/plugins/datatables/jquery.dataTables.js') }}" type="text/javascript"></script>
+     <script src="{{ asset('adminAsset/plugins/datatables/dataTables.bootstrap.js') }}" type="text/javascript"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{asset('adminAsset/dist/js/pages/dashboard.js')}}" type="text/javascript"></script>
 <script src="{{asset('adminAsset/plugins/noty/noty.min.js')}}" type="text/javascript"></script>
 
+<script src="{{asset('adminAsset/plugins/data-table/bootstrap-table.js')}}"></script>
+ <script src="{{asset('adminAsset/plugins/data-table/tableExport.js')}}"></script>
+ <script src="{{asset('adminAsset/plugins/data-table/data-table-active.js')}}"></script>
+ <script src="{{asset('adminAsset/plugins/data-table/bootstrap-table-editable.js')}}"></script>
+ <script src="{{asset('adminAsset/plugins/data-table/bootstrap-editable.js')}}"></script>
+ <script src="{{asset('adminAsset/plugins/data-table/bootstrap-table-resizable.js')}}"></script>
+ <script src="{{asset('adminAsset/plugins/data-table/colResizable-1.5.source.js')}}"></script>
+ <script src="{{asset('adminAsset/plugins/data-table/bootstrap-table-export.js')}}"></script>
+
+ <script src="{{asset('adminAsset/plugins/data-table/bootstrap-table-ar-SA.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('adminAsset/dist/js/demo.js')}}" type="text/javascript"></script>
 <script src="{{asset('adminAsset/plugins/ckeditor/ckeditor.js')}}" type="text/javascript"></script>
