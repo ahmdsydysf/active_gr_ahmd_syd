@@ -44,7 +44,60 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $this->validate(
+            $request,
+            [
+                'name_en'            => ['required'],
+                'name_ar'            => ['required'],
+                'description_en'     => ['required'],
+                'description_ar'     => ['required'],
+                'pdf_en'             => ['required'],
+                'pdf_ar'             => ['required'],
+                // 'factory_id'         => ['required'],
+                // 'partner_id'         => ['required'],
+                'type_id'            => ['required'],
+                'active'             => ['required'],
+                'image'              => ['image'],
+            ],
+            [
+                'name_en.required' => 'هذا الحقل مطلوب',
+                'name_ar.required' => 'هذا الحقل مطلوب',
+                'pdf_en.required' => 'هذا الحقل مطلوب',
+                'pdf_ar.required' => 'هذا الحقل مطلوب',
+                'description_en.required' => 'هذا الحقل مطلوب',
+                'description_ar.required' => 'هذا الحقل مطلوب',
+                'factory_id.required' => 'هذا الحقل مطلوب',
+                'partner_id.required' => 'هذا الحقل مطلوب',
+                'type_id.required' => 'هذا الحقل مطلوب',
+                'active.required' => 'هذا الحقل مطلوب',
+                'image.image' => ' مطلوب صورة'
+            ]
+        );
+
+
+        $request_data = $request->except('image', 'active');
+
+        if ($request->hasFile('image')) {
+            $imageName = $request->image->hashName();
+
+            $request_data['image'] =  $imageName;
+
+            $request->image->move(public_path('uploads/products/'), $imageName);
+        } else {
+            $request_data['image'] = 'default_1.png';
+        }
+
+        if ($request->has('active')) {
+            $request_data['active'] = 1;
+        } else {
+            $request_data['active'] = 0;
+        }
+
+
+        Product::create($request_data);
+
+        return redirect()->route('product.index')->with('flash_success', 'تم الاضافة بنجاح');
     }
 
     /**

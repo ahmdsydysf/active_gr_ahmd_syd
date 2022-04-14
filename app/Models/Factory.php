@@ -14,4 +14,9 @@ class Factory extends Model
         'name_ar'
 
     ];
+
+    public function products()
+    {
+        return $this->hasMany(Product::class, 'type_id');
+    }
 }

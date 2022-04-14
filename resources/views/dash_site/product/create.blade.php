@@ -19,7 +19,7 @@
         {{method_field('POST')}}
       <div class="box-body">
         <div class="form-group">
-            <img src="{{asset('uploads/slider_images/default_1.png')}}" class="img-thumbnail image-preview" width="350px" height="250px" alt="" srcset="">
+            <img src="{{asset('uploads/products/default_1.png')}}" class="img-thumbnail image-preview" width="350px" height="250px" alt="" srcset="">
           <dp-fbi></dp-fbi>
         </div>
         <div class="form-group">

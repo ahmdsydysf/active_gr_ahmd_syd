@@ -22,4 +22,9 @@ class Partner extends Model
         'order'
 
     ];
+
+    public function products()
+    {
+        return $this->hasMany(Product::class, 'type_id');
+    }
 }
