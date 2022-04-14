@@ -63,6 +63,7 @@
                             </thead>
                             <tbody>
                                 @if ($row->count() > 0)
+
                                 @foreach ( $row as $r )
                                 <tr role="row" class="odd">
                                     <td class="sorting_1">- {{$r->id}} -</td>
@@ -73,9 +74,9 @@
                                     <td> <span class="thumbnail" style="background-color: #00A65A"><img src="{{asset('uploads/products/'.$r->image)}}" alt="" srcset="" width="200"></span> </td>
                                     <td>{{$r->pdf_en}}</td>
                                     <td>{{$r->pdf_ar}}</td>
-                                    <td>{{$r->factory->name_ar}}</td>
-                                    <td>{{$r->partner->name_ar}}</td>
-                                    <td>{{$r->product_type->type_ar}}</td>
+                                    <td>{{$r->factory->name_ar ?? ''}}</td>
+                                    <td>{{$r->partner->name_ar ?? ''}}</td>
+                                    <td>{{$r->product_type->type_ar ?? ''}}</td>
                                     <td>{{$r->active}}</td>
                                     <td>
                                         <a href="{{ route('product.edit' , $r->id) }}" class="btn btn-primary">تعديل</a>

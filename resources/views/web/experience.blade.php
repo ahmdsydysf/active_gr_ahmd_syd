@@ -176,7 +176,7 @@
                 <input type="text" style="opacity: 0;" id="last" value="{{$last_id}}">
                 @if(count($services) >= 1 && count($allRows) > count($services))
                 <div class="btn-submit"><button id="loadBtn" onclick="loadMoreData(document.getElementById('last').value);" class="btn hero-btn">  المـزيد</button></div>
-  @endif
+         @endif
 
             </div>
         </div>
