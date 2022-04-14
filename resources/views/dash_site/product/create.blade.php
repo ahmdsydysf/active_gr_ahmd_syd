@@ -48,14 +48,14 @@
         @enderror
         <div class="form-group">
             <label>الوصف انجليزي</label>
-            <textarea  name="description_en" class="form-control" rows="3" placeholder="النص">{{old('description_en')}}</textarea>
+            <textarea  name="description_en" id="editor" class="form-control ckeditor" rows="3" placeholder="النص">{{old('description_en')}}</textarea>
         </div>
         @error('description_en')
         <div class="alert alert-danger">{{ $message }}</div>
         @enderror
         <div class="form-group">
             <label>الوصف عربي</label>
-            <textarea  name="description_ar" class="form-control" rows="3" placeholder="النص">{{old('description_ar')}}</textarea>
+            <textarea  name="description_ar" class="form-control ckeditor " rows="3" placeholder="النص">{{old('description_ar')}}</textarea>
         </div>
         @error('description_ar')
         <div class="alert alert-danger">{{ $message }}</div>
@@ -140,6 +140,43 @@
 
 @section('script')
     <script>
+// ClassicEditor
+//     .create( document.querySelector( '#editor' ), {
+//         toolbar: {
+//     items: [
+//         'heading', '|',
+//         'alignment', '|',
+//         'bold', 'italic', 'strikethrough', 'underline', 'subscript', 'superscript', '|',
+//         'link', '|',
+//         'bulletedList', 'numberedList', 'todoList',
+//         '-', // break point
+//         'fontfamily', 'fontsize', 'fontColor', 'fontBackgroundColor', '|',
+//         'code', 'codeBlock', '|',
+//         'insertTable', '|',
+//         'outdent', 'indent', '|',
+//         'uploadImage', 'blockQuote', '|',
+//         'undo', 'redo'
+//     ],
+//     shouldNotGroupWhenFull: true},
+//         heading: {
+//             options: [
+//                 { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
+//                 { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
+//                 { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' }
+//             ]
+//         },
+//         language: {
+//             // The UI will be English.
+//             ui: 'ar',
+
+//             // But the content will be edited in Arabic.
+//             content: 'ar'
+//         }
+//     } )
+//     .catch( error => {
+//         console.log( error );
+//     } );
+
         $(".image").change(function () {
 
                 if (this.files && this.files[0]) {

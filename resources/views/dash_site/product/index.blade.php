@@ -68,8 +68,8 @@
                                     <td class="sorting_1">- {{$r->id}} -</td>
                                     <td>{{$r->name_en}}</td>
                                     <td>{{$r->name_ar}}</td>
-                                    <td>{{$r->description_en}}</td>
-                                    <td>{{$r->description_ar}}</td>
+                                    <td>{!!$r->description_en!!}</td>
+                                    <td>{!!$r->description_ar!!}</td>
                                     <td>{{$r->pdf_en}}</td>
                                     <td>{{$r->pdf_ar}}</td>
                                     <td>{{$r->factory->name_ar}}</td>

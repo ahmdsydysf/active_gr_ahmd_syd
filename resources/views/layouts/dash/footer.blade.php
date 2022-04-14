@@ -54,9 +54,11 @@
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('adminAsset/dist/js/demo.js')}}" type="text/javascript"></script>
 <script src="{{asset('adminAsset/plugins/ckeditor/ckeditor.js')}}" type="text/javascript"></script>
-
+{{-- <script src="https://cdn.ckeditor.com/ckeditor5/33.0.0/classic/ckeditor.js"></script> --}}
 
 <script>
+
+
     setTimeout(() => {
         $('.alert.alert-msg').css({"display": "none"});
     }, 3000);
@@ -67,6 +69,7 @@
     local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
     return local.toJSON().slice(0,10);
 });
+
 </script>
 
 @yield('script')
