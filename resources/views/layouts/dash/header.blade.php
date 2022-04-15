@@ -165,6 +165,11 @@
                 <i class="ion ion-ios-people-outline"></i> <span>المستخدميين</span>
               </a>
             </li>
+            <li class="treeview {{  request()->routeIs('team_member.*') ? 'active' : ''  }}">
+              <a href="{{ route('team_member.index') }}">
+                <i class="fa  fa-male"></i> <span>اعضاء الفريق</span>
+              </a>
+            </li>
 
             <li class="header">ادارة المنتجات</li>
 
@@ -173,6 +178,8 @@
                 <i class="fa  fa-shopping-cart"></i> <span>المنتجات</span>
               </a>
             </li>
+
+
             <li class="treeview">
                 <a href="#">
                   <i class="fa  fa-sitemap"></i> <span>انواع المنتجات</span>
@@ -196,6 +203,12 @@
                     </li>
                 </ul>
 
+            </li>
+            <li class="header">ادارة الخدمات</li>
+            <li class="treeview {{  request()->routeIs('service.*') ? 'active' : ''  }}">
+              <a href="{{ route('service.index') }}">
+                <i class="fa  fa-bullhorn"></i> <span>الخدمات</span>
+              </a>
             </li>
 
             <li class="header">ادارة المصانع</li>

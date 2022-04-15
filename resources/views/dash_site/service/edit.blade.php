@@ -1,22 +1,25 @@
 @extends('layouts.dash.app')
 
-@section('page_title' , "تعديل منتج")
+@section('page_title' , "تعديل خدمة")
 
 @section('content')
 
 <div class="box-body">
 
 <div class="box box-success">
+
+
+
     <div class="box-header">
-      <h3 class="box-title">تعديل منتج</h3>
+      <h3 class="box-title">تعديل خدمة</h3>
     </div><!-- /.box-header -->
     <!-- form start -->
-    <form role="form" action="{{route('product.update' , $row->id)}}" method="POST" enctype="multipart/form-data">
+    <form role="form" action="{{route('service.update' , $row->id)}}" method="POST" enctype="multipart/form-data">
         @csrf
         {{method_field('PUT')}}
       <div class="box-body">
         <div class="form-group">
-            <img src="{{asset('uploads/products/' . $row->image)}}" class="img-thumbnail image-preview" width="350px" height="250px" alt="" srcset="">
+            <img src="{{asset('uploads/services/' . $row->image)}}" class="img-thumbnail image-preview" width="350px" height="250px" alt="" srcset="">
           <dp-fbi></dp-fbi>
         </div>
         <div class="form-group">
@@ -24,39 +27,57 @@
             <input type="file" name="image" class="form-control image" id="exampleInputuser1" >
           <dp-fbi></dp-fbi>
         </div>
+        <div class="form-group">
+            <label>لينك الفيديو</label>
+            <textarea  name="video" class="form-control " rows="3" placeholder="النص">{{$row->video}}</textarea>
+        </div>
+        @error('video')
+        <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
 
         <div class="form-group">
-            <label for="exampleInputuser1">الاسم انجليزي</label>
+            <label for="exampleInputuser1">العنوان انجليزي</label>
 
-          <input type="text" name="name_en" value="{{$row->name_en}}" class="form-control" id="exampleInputuser1" data-maxzpsw="0">
+          <input type="text" name="title_en" value="{{$row->title_en}}" class="form-control" id="exampleInputuser1" data-maxzpsw="0">
         <dp-fbi></dp-fbi>
         </div>
-        @error('name_en')
+        @error('title_en')
         <div class="alert alert-danger">{{ $message }}</div>
         @enderror
-        <div class="form-group">
-            <label for="exampleInputuser1">الاسم عربي</label>
 
-          <input type="text" name="name_ar" value="{{$row->name_ar}}" class="form-control" id="exampleInputuser1" data-maxzpsw="0">
+
+        <div class="form-group">
+            <label for="exampleInputuser1">الخدمة انجليزي</label>
+            <textarea  name="service_en" class="form-control" rows="3" placeholder="النص">{{$row->service_en}}</textarea>
         <dp-fbi></dp-fbi>
         </div>
-        @error('name_ar')
+        @error('service_en')
+        <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+
+
+        <div class="form-group">
+            <label>النص انجليزي</label>
+            <textarea  name="text_en" id="editor" class="form-control" rows="3" placeholder="النص">{{$row->text_en}}</textarea>
+        </div>
+        @error('text_en')
         <div class="alert alert-danger">{{ $message }}</div>
         @enderror
         <div class="form-group">
-            <label>الوصف انجليزي</label>
-            <textarea  name="description_en" id="editor" class="form-control ckeditor" rows="3" placeholder="النص">{{$row->description_en}}</textarea>
+            <label>النص عربي</label>
+            <textarea  name="text_ar" class="form-control " rows="3" placeholder="النص">{{$row->text_ar}}</textarea>
         </div>
-        @error('description_en')
+        @error('text_ar')
         <div class="alert alert-danger">{{ $message }}</div>
         @enderror
-        <div class="form-group">
-            <label>الوصف عربي</label>
-            <textarea  name="description_ar" class="form-control ckeditor " rows="3" placeholder="النص">{{$row->description_ar}}</textarea>
-        </div>
-        @error('description_ar')
+        <div class="input-group">
+            <label for="">تاريخ المنشور</label>
+            <input type="date" value="{{date('Y-m-d', strtotime($row->post_date))}}" id="datePicker" name="post_date" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask="" data-maxzpsw="0">
+          </div>
+        @error('post_date')
         <div class="alert alert-danger">{{ $message }}</div>
         @enderror
+
         <div class="form-group">
             <label>PDF انجليزي</label>
             <textarea  name="pdf_en" class="form-control" rows="3" placeholder="النص">{{$row->pdf_en}}</textarea>
@@ -73,42 +94,25 @@
         @enderror
 
         <div class="form-group">
-            <label>المصنع</label>
-            <select class="form-control" name="factory_id">
-                <option value="">اختر المصنع</option>
-
-                @foreach ( $pro_fac as $fac )
-                <option value="{{$fac->id}}" {{ $row->factory_id == $fac->id ? 'selected' : ' ' }} >{{$fac->name_ar}}</option>
+            <label>نوع الخدمة</label>
+            <select class="form-control" name="service_type_id">
+                <option value="">اختر نوع الخدمة</option>
+                @foreach ( $ser_typ as $typ )
+                <option value="{{$typ->id}}">{{$typ->service_type}}</option>
                 @endforeach
             </select>
         </div>
-        @error('factory_id')
+        @error('service_type_id')
         <div class="alert alert-danger">{{ $message }}</div>
         @enderror
-        <div class="form-group">
-            <label>الشريك</label>
-            <select class="form-control" name="partner_id">
-                <option value="">اختر الشريك</option>
-
-                @foreach ( $pro_par as $par )
-                <option value="{{$par->id}}"  {{ $row->partner_id == $par->id ? 'selected' : ' ' }} >{{$par->name_ar}}</option>
-                @endforeach
-            </select>
+        <div class="form-group" style="width: 135px">
+            <label for="">الترتيب</label>
+            <input type="number"
+                value="{{$row->order}}"
+                name="order" class="form-control"
+                id="">
         </div>
-        @error('partner_id')
-        <div class="alert alert-danger">{{ $message }}</div>
-        @enderror
-        <div class="form-group">
-            <label>نوع المنتج</label>
-            <select class="form-control" name="type_id">
-                <option value="">اختر نوع المنتج</option>
-
-                @foreach ( $pro_typ as $typ )
-                <option value="{{$typ->id}}"  {{ $row->type_id == $typ->id ? 'selected' : ' ' }} >{{$typ->type_ar}}</option>
-                @endforeach
-            </select>
-        </div>
-        @error('type_id')
+        @error('order')
         <div class="alert alert-danger">{{ $message }}</div>
         @enderror
 
@@ -116,7 +120,7 @@
                 <div class="checkbox">
                   <label>
                     نشط
-                    <input type="checkbox"  {{$row->active == 1 ? 'checked' : '' }}   id="newTitle" name="active"  value="1"/>
+                    <input type="checkbox"  {{$row->active == 1 ? 'checked' : '' }}  id="newTitle" name="active"  value="1"/>
 
                   </label>
                 </div>
@@ -126,7 +130,7 @@
 
       <div class="box-footer">
         <button type="submit" class="btn btn-success"><i class="fa fa-edit"></i> تعديل </button>
-        <a href="{{ route('product.index') }}" class="btn btn-danger">رجوع</a>
+        <a href="{{ route('service.index') }}" class="btn btn-danger">رجوع</a>
       </div>
 
     </form>
