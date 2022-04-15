@@ -242,6 +242,11 @@
                   <i class="fa fa-user-secret"></i> <span>الشركاء</span>
                 </a>
             </li>
+            <li class="treeview {{  request()->routeIs('contract.*') ? 'active' : ''  }}">
+                <a href="{{ route('contract.index') }}">
+                  <i class="fa fa-pencil"></i> <span>التعاقدات</span>
+                </a>
+            </li>
 
             <li class="header">خاص بالموقع</li>
             <li class="treeview">

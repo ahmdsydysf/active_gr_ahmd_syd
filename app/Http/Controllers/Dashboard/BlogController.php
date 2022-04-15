@@ -134,7 +134,7 @@ class BlogController extends Controller
             'image.image'          => 'اختر صوره',
             'order.required'       => 'هذا الحقل مطلوب ',
         ]);
-        $request_data = $request->except('image', 'active');
+        $request_data = $request->except('image', 'active', '_token');
 
 
         if ($request->image) {

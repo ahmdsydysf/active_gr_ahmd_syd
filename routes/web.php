@@ -98,6 +98,10 @@ Route::group(['middleware' => 'auth', 'prefix' => 'dashboard'], function () {
     Route::resource('gallary_category', 'Dashboard\GallaryCategoryController');
 
     Route::resource('gallary', 'Dashboard\GallaryController');
+
+    Route::resource('contract', 'Dashboard\ContractController');
+
+    Route::resource('feedback', 'Dashboard\FeedbackController');
 });
 
 require __DIR__ . '/auth.php';
