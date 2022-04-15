@@ -59,7 +59,7 @@ class BlogController extends Controller
         ]);
 
 
-        $request_data = $request->except('image', 'active');
+        $request_data = $request->except('image', 'active', '_token');
 
 
 

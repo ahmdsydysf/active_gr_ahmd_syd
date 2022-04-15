@@ -71,7 +71,7 @@ class UserController extends Controller
         );
 
 
-        $request_data = $request->except('password', 'password_confirmation');
+        $request_data = $request->except('password', 'password_confirmation', '_token');
 
         $request_data['password'] = bcrypt($request->password);
 
@@ -130,7 +130,7 @@ class UserController extends Controller
             ]
         );
 
-        $request_data = $request->except('password');
+        $request_data = $request->except('password', '_token', 'password_confirmation');
 
         if (isset($request->password)) {
             $request_data['password'] = bcrypt($request->password);

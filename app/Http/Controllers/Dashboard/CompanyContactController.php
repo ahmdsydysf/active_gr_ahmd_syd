@@ -102,7 +102,7 @@ class CompanyContactController extends Controller
             'youtube.required'      => 'هذا الحقل مطلوب ',
         ]);
 
-        $request_data = $request->except('email');
+        $request_data = $request->except('email', '_token');
 
 
         $request_data['email'] = $request->email;

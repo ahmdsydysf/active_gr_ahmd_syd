@@ -51,7 +51,7 @@ class WhyUsController extends Controller
         ]);
 
 
-        $request_data = $request->except('logo');
+        $request_data = $request->except('logo', '_token');
 
 
 
@@ -121,7 +121,7 @@ class WhyUsController extends Controller
         ]);
 
 
-        $request_data = $request->except('logo');
+        $request_data = $request->except('logo', '_token');
 
 
 

@@ -55,7 +55,7 @@ class ImagesSliderController extends Controller
             'order.required'    => 'هذا الحقل مطلوب '
         ]);
 
-        $request_data = $request->except('image', 'active');
+        $request_data = $request->except('image', 'active', '_token');
 
         if ($request->hasFile('image')) {
             $imageName = $request->image->hashName();
@@ -127,7 +127,7 @@ class ImagesSliderController extends Controller
             'order.required'    => 'هذا الحقل مطلوب '
         ]);
 
-        $request_data = $request->except('image', 'active');
+        $request_data = $request->except('image', 'active', '_token');
 
 
         if ($request->image) {

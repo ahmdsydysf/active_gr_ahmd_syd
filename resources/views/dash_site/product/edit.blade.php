@@ -45,14 +45,14 @@
         @enderror
         <div class="form-group">
             <label>الوصف انجليزي</label>
-            <textarea  name="description_en" id="editor" class="form-control ckeditor" rows="3" placeholder="النص">{{$row->description_en}}</textarea>
+            <textarea  name="description_en" id="editor" class="form-control " rows="3" placeholder="النص">{{$row->description_en}}</textarea>
         </div>
         @error('description_en')
         <div class="alert alert-danger">{{ $message }}</div>
         @enderror
         <div class="form-group">
             <label>الوصف عربي</label>
-            <textarea  name="description_ar" class="form-control ckeditor " rows="3" placeholder="النص">{{$row->description_ar}}</textarea>
+            <textarea  name="description_ar" class="form-control  " rows="3" placeholder="النص">{{$row->description_ar}}</textarea>
         </div>
         @error('description_ar')
         <div class="alert alert-danger">{{ $message }}</div>

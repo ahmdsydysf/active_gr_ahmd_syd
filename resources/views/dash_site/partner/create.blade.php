@@ -48,42 +48,42 @@
         @enderror
         <div class="form-group">
             <label>الوصف انجليزي</label>
-            <textarea  name="description_en" class="form-control ckeditor" rows="3" placeholder="النص">{{old('description_en')}}</textarea>
+            <textarea  name="description_en" class="form-control " rows="3" placeholder="النص">{{old('description_en')}}</textarea>
         </div>
         @error('description_en')
         <div class="alert alert-danger">{{ $message }}</div>
         @enderror
         <div class="form-group">
             <label>الوصف عربي</label>
-            <textarea  name="description_ar" class="form-control ckeditor " rows="3" placeholder="النص">{{old('description_ar')}}</textarea>
+            <textarea  name="description_ar" class="form-control  " rows="3" placeholder="النص">{{old('description_ar')}}</textarea>
         </div>
         @error('description_ar')
         <div class="alert alert-danger">{{ $message }}</div>
         @enderror
         <div class="form-group">
             <label>الموقع</label>
-            <textarea  name="website" class="form-control ckeditor" rows="3" placeholder="النص">{{old('website')}}</textarea>
+            <textarea  name="website" class="form-control " rows="3" placeholder="النص">{{old('website')}}</textarea>
         </div>
         @error('website')
         <div class="alert alert-danger">{{ $message }}</div>
         @enderror
         <div class="form-group">
             <label>فيسبوك</label>
-            <textarea  name="facebook" class="form-control ckeditor" rows="3" placeholder="النص">{{old('facebook')}}</textarea>
+            <textarea  name="facebook" class="form-control " rows="3" placeholder="النص">{{old('facebook')}}</textarea>
         </div>
         @error('facebook')
         <div class="alert alert-danger">{{ $message }}</div>
         @enderror
         <div class="form-group">
             <label>تويتر</label>
-            <textarea  name="twitter" class="form-control ckeditor" rows="3" placeholder="النص">{{old('twitter')}}</textarea>
+            <textarea  name="twitter" class="form-control " rows="3" placeholder="النص">{{old('twitter')}}</textarea>
         </div>
         @error('twitter')
         <div class="alert alert-danger">{{ $message }}</div>
         @enderror
         <div class="form-group">
             <label>انستجرام</label>
-            <textarea  name="instgram" class="form-control ckeditor" rows="3" placeholder="النص">{{old('instgram')}}</textarea>
+            <textarea  name="instgram" class="form-control " rows="3" placeholder="النص">{{old('instgram')}}</textarea>
         </div>
         @error('instgram')
         <div class="alert alert-danger">{{ $message }}</div>

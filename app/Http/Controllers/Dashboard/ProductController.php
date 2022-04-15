@@ -76,7 +76,7 @@ class ProductController extends Controller
         );
 
 
-        $request_data = $request->except('image', 'active');
+        $request_data = $request->except('image', 'active', '_token');
 
         if ($request->hasFile('image')) {
             $imageName = $request->image->hashName();

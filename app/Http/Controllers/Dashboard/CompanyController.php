@@ -95,7 +95,7 @@ class CompanyController extends Controller
 
         ]);
 
-        $request_data = $request->except('company_video');
+        $request_data = $request->except('company_video', '_token');
         $request_data['company_video'] = $request->company_video;
 
         $company->update($request_data);
