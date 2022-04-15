@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Models\Newsletter;
 use Illuminate\Http\Request;
 
 class NewsletterController extends Controller
@@ -14,7 +15,9 @@ class NewsletterController extends Controller
      */
     public function index()
     {
-        //
+        $news = Newsletter::orderBy('id', 'DESC')->paginate(5);
+
+        return view('dash_site.newsletter.index')->with('row', $news);
     }
 
     /**
@@ -24,7 +27,7 @@ class NewsletterController extends Controller
      */
     public function create()
     {
-        //
+        return view('dash_site.newsletter.create');
     }
 
     /**
@@ -35,7 +38,26 @@ class NewsletterController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+
+        $this->validate($request, [
+            'newsletter_date' => 'required',
+            'email'  => 'required',
+
+        ], [
+            'newsletter_date.required'   => 'هذا الحقل مطلوب ',
+            'email.required'    => 'هذا الحقل مطلوب ',
+
+        ]);
+
+        $request_data = $request->except('_token');
+
+
+
+
+        Newsletter::create($request_data);
+
+        return redirect()->route('newsletter.index')->with('flash_success', 'تم الاضافة بنجاح');
     }
 
     /**
@@ -57,7 +79,8 @@ class NewsletterController extends Controller
      */
     public function edit($id)
     {
-        //
+        $news = Newsletter::find($id);
+        return view('dash_site.newsletter.edit')->with('row', $news);
     }
 
     /**
@@ -69,7 +92,22 @@ class NewsletterController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'newsletter_date' => 'required',
+            'email'  => 'required',
+
+        ], [
+            'newsletter_date.required'   => 'هذا الحقل مطلوب ',
+            'email.required'    => 'هذا الحقل مطلوب ',
+
+        ]);
+        $news = Newsletter::find($id);
+
+        $request_data = $request->except('_token');
+
+        $news->update($request_data);
+
+        return redirect()->route('newsletter.index')->with('flash_success', 'تم التعديل بنجاح');
     }
 
     /**
@@ -80,6 +118,9 @@ class NewsletterController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $news = Newsletter::find($id);
+
+        $news->delete();
+        return redirect()->route('newsletter.index')->with('flash_success', 'تم الحذف بنجاح');
     }
 }
