@@ -204,6 +204,26 @@
                 </ul>
 
             </li>
+            <li class="treeview">
+                <a href="#">
+                  <i class="fa  fa-image"></i> <span>المعرض</span>
+                  <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu menu-open" style="display: block;">
+                    <li class="{{  request()->routeIs('gallary_category.*') ? 'active' : ''  }}">
+                       <a href="{{ route('gallary_category.index') }}">
+                         <i class="fa fa-tags"></i> <span>تصنيف المعرض</span>
+                        </a>
+                    </li>
+                    <li class="{{  request()->routeIs('gallary.*') ? 'active' : ''  }}">
+                       <a href="{{ route('gallary.index') }}">
+                         <i class="fa fa-tags"></i> <span>المعرض</span>
+                        </a>
+                    </li>
+
+                </ul>
+
+            </li>
             <li class="header">ادارة الخدمات</li>
             <li class="treeview {{  request()->routeIs('service.*') ? 'active' : ''  }}">
               <a href="{{ route('service.index') }}">

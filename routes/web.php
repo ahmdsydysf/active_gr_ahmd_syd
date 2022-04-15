@@ -94,6 +94,10 @@ Route::group(['middleware' => 'auth', 'prefix' => 'dashboard'], function () {
     Route::resource('service', 'Dashboard\ServiceController');
 
     Route::resource('team_member', 'Dashboard\TeamMemberController');
+
+    Route::resource('gallary_category', 'Dashboard\GallaryCategoryController');
+
+    Route::resource('gallary', 'Dashboard\GallaryController');
 });
 
 require __DIR__ . '/auth.php';

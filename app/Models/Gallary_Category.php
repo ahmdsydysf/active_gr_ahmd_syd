@@ -12,8 +12,8 @@ class Gallary_category extends Model
 
         'category_en',
         'category_ar',
-        'decription_en',
-        'decription_ar',
+        'description_en',
+        'description_ar',
         'order'
 
     ];
