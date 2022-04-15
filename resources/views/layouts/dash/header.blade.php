@@ -308,6 +308,11 @@
                          <i class="fa fa-envelope-square"></i> <span>انواع الرسائل</span>
                         </a>
                     </li>
+                    <li class="{{  request()->routeIs('newsletter.*') ? 'active' : ''  }}">
+                       <a href="{{ route('newsletter.index') }}">
+                         <i class="fa  fa-newspaper-o"></i> <span>الاخبار</span>
+                        </a>
+                    </li>
                 </ul>
             </li>
           </ul>

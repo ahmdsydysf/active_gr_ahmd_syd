@@ -102,6 +102,8 @@ Route::group(['middleware' => 'auth', 'prefix' => 'dashboard'], function () {
     Route::resource('contract', 'Dashboard\ContractController');
 
     Route::resource('feedback', 'Dashboard\FeedbackController');
+
+    Route::resource('newsletter', 'Dashboard\NewsletterController');
 });
 
 require __DIR__ . '/auth.php';
