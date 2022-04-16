@@ -14,7 +14,8 @@
 
 
 
-                        <div class="row" dir="rtl">
+                        <div class="row" @if (LaravelLocalization::getCurrentLocale() === 'ar')
+                        dir="rtl"  @endif>
                             <div class="col-xl-8 col-lg-7 col-md-8">
                                 <div class="hero__caption">
                                     <h1 data-animation="fadeInLeft" data-delay=".5s">
@@ -47,7 +48,8 @@
                     <div class="single-slider slider-height d-flex align-items-center">
                         <div id="overlay"></div>
                         <div class="container">
-                            <div class="row" dir="rtl">
+                            <div class="row" @if (LaravelLocalization::getCurrentLocale() === 'ar')
+                            dir="rtl"  @endif>
                                 <div class="col-xl-8 col-lg-7 col-md-8">
                                     <div class="hero__caption">
                                         <h1 data-animation="fadeInLeft" data-delay=".5s">
@@ -83,7 +85,8 @@
 
         <section class="sec-gap">
             <div class="container">
-                <div class="row" dir="rtl">
+                <div class="row" @if (LaravelLocalization::getCurrentLocale() === 'ar')
+                dir="rtl"  @endif>
                     <div class="col-lg-6">
                         <div class="about_img">
                             <img src="images/1.png" alt="">
@@ -306,7 +309,8 @@
                     @endif</div>
                 </div>
             </div>
-            <div class="row" dir="rtl">
+            <div class="row" @if (LaravelLocalization::getCurrentLocale() === 'ar')
+            dir="rtl"  @endif>
                 @foreach ($products_pesticides as $product)
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="">
