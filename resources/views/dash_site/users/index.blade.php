@@ -5,26 +5,22 @@
 @section('content')
 <div class="box-body">
 <div class="col-md-12">
+    <div class="box-body">
 
+        <a class="btn bg-olive pull-right" href="{{ route('users.create') }}"><i class="fa fa-plus"></i>
+            اضافة
+        </a>
+
+</div>
     <div class="box"  style="overflow: auto">
-        <div class="box-header bg-green">
-            <h3 class="box-title">كل البيانات</h3>
 
-        </div><!-- /.box-header -->
-    <form action="{{route('users.index')}}" method="get">
-        <div class="input-group" style="width: 350px;padding:7px 25px">
-            <input type="text" name="table_search" class="form-control input-sm pull-right" placeholder="Search" data-maxzpsw="0">
-            <div class="input-group-btn">
-              <button class="btn btn-sm btn-default" type="submit"><i class="fa fa-search"></i></button>
-            </div>
-        </div>
-    </form>
         <div class="box-body">
             <div id="example1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
                 <div class="row">
                     <div class="col-sm-12">
-                        <table id="example1" class="table table-bordered table-striped dataTable no-footer" role="grid"
-                            aria-describedby="example1_info">
+                        <table id="table" data-toggle="table" data-pagination="true" data-search="true"
+                        data-resizable="true" data-cookie="true" data-show-export="true" data-locale="ar-SA"
+                        style="direction: rtl">
                             <thead>
                                 <tr role="row">
                                     <th class="sorting_desc" tabindex="0" aria-controls="example1" rowspan="1"
@@ -43,7 +39,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @if ($row->count() > 0)
+
                                 @foreach ( $row as $r )
                                 <tr role="row" class="odd">
                                     <td class="sorting_1">- {{$r->id}} -</td>
@@ -87,14 +83,7 @@
                                 </tr>
                                 @endforeach
 
-                                @else
-                                <tr>
-                                    <td colspan="4">
-                                    <h1>لا يوجد بيانات</h1>
 
-                                    </td>
-                                </tr>
-                                @endif
 
                             </tbody>
                         </table>
@@ -103,11 +92,8 @@
 
             </div>
 
-            <a class="btn bg-olive btn-lg" href="{{ route('users.create') }}"><i class="fa fa-plus"></i>
-                اضافة
-            </a>
 
-            {{ $row->appends(request()->query())->links("pagination::bootstrap-4") }}
+
 
         </div><!-- /.box-body -->
     </div>

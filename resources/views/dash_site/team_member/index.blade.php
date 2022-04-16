@@ -3,8 +3,14 @@
 @section('page_title', 'اعضاء الفريق')
 
 @section('content')
-    <div class="box-body">
 
+<div class="box-body">
+
+            <a class="btn bg-olive pull-right" href="{{ route('team_member.create') }}"><i class="fa fa-plus"></i>
+                اضافة
+            </a>
+
+</div>
         <div class="col-md-12">
 
             <div class="box">
@@ -19,13 +25,10 @@
                                     <thead>
                                         <th data-field="state" data-checkbox="false"></th>
                                         <th data-field="id">#</th>
-                                        <th> تليفون</th>
+
                                         <th> الاسم </th>
-                                        <th> البريد الالكتروني</th>
-                                        <th> الرسالة</th>
-                                        <th> الاسم </th>
-                                        <th> البريد الالكتروني</th>
-                                        <th> الرسالة</th>
+                                        <th>الوظيفه</th>
+                                        <th> الاعدادات</th>
                                     </thead>
                                     <tbody>
                                         @foreach ($row as $index => $r)
@@ -33,11 +36,8 @@
                                                 <td></td>
                                                 <td>{{ $index + 1 }}</td>
                                                 <td>{{ $r->name_ar }}</td>
-                                                <td>{{ $r->name_en }}</td>
                                                 <td>{{ $r->position_ar }}</td>
-                                                <td>{{ $r->position_en }}</td>
-                                                <td>{{ $r->active }}</td>
-                                                <td>{{ $r->order }}</td>
+
                                                 <td>
                                                     <a href="{{ route('team_member.edit', $r->id) }}"
                                                         class="btn btn-primary">تعديل</a>
@@ -90,9 +90,6 @@
 
                     </div>
 
-                    <a class="btn bg-olive" href="{{ route('team_member.create') }}"><i class="fa fa-plus"></i>
-                        اضافة
-                    </a>
 
                 </div><!-- /.box-body -->
             </div>
