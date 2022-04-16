@@ -15,7 +15,7 @@ class GallaryCategoryController extends Controller
      */
     public function index()
     {
-        $gallary_cat = Gallary_category::orderBy('id', 'DESC')->paginate(5);
+        $gallary_cat = Gallary_category::all();
         return view('dash_site.gallary_category.index')->with('row', $gallary_cat);
     }
 

@@ -16,7 +16,7 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $service = Service::orderBy('id', 'DESC')->paginate(5);
+        $service = Service::all();
 
         return view('dash_site.service.index')->with('row', $service);
     }

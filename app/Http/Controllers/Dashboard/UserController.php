@@ -16,13 +16,9 @@ class UserController extends Controller
     public function index(Request $request)
     {
 
-        if ($request->table_search) {
-            $users = User::where('name', 'like', '%' . $request->table_search . '%')
-                ->orWhere('email', 'like', '%' . $request->table_search . '%')
-                ->paginate(5);
-        } else {
-            $users = User::orderBy('id', 'DESC')->paginate(5);
-        }
+
+        $users = User::all();
+
 
         return view('dash_site.users.index')->with("row", $users);
     }

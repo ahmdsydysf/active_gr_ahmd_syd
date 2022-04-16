@@ -15,7 +15,7 @@ class FactoryController extends Controller
      */
     public function index()
     {
-        $factories = Factory::orderBy('id', 'DESC')->paginate(5);
+        $factories = Factory::all();
         return view('dash_site.factory.index')->with('row', $factories);
     }
 

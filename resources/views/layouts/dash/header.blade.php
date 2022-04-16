@@ -15,7 +15,7 @@
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link href="{{asset('adminAsset/dist/css/skins/_all-skins.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('adminAsset/plugins/datatables/dataTables.bootstrap.css')}}" rel="stylesheet" type="text/css" />
+    {{-- <link href="{{ asset('adminAsset/plugins/datatables/dataTables.bootstrap.css')}}" rel="stylesheet" type="text/css" /> --}}
 
     <!-- iCheck -->
     <link href="{{asset('adminAsset/plugins/iCheck/flat/blue.css')}}" rel="stylesheet" type="text/css" />
@@ -32,7 +32,10 @@
     <link href="{{asset('adminAsset/plugins/daterangepicker/daterangepicker-bs3.css')}}" rel="stylesheet" type="text/css" />
     <!-- bootstrap wysihtml5 - text editor -->
     <link href="{{asset('adminAsset/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('adminAsset/plugins/noty/noty.css')}}" rel="stylesheet" type="text/css" />
+
+    <link href="{{asset('adminAsset/plugins/dttable/dt1.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('adminAsset/plugins/dttable/dt2.css')}}" rel="stylesheet" type="text/css" />
+
         <style>
             .alert.alert-msg{
               transition: display 1s ease;
@@ -55,6 +58,14 @@
             }
             span.thumbnail {
                 width: 150px !important ;
+            }
+
+            #example_length{
+                float: inline-end;
+            }
+
+            .bg-olive {
+                background-color: #00A65A !important ;
             }
         </style>
     @yield('style')

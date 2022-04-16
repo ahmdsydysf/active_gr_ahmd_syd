@@ -3,6 +3,46 @@
 @section('page_title' , 'كل المستخدميين')
 
 @section('content')
+
+{{--
+    <div class="box-body">
+<div class="col-md-12">
+
+    <div class="box"  style="overflow: auto">
+        <div class="box-header bg-green">
+            <h3 class="box-title">كل البيانات</h3>
+
+        </div>
+
+        <div class="box-body">
+            <div id="example1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <table id="example" class="table table-striped table-bordered" style="width:100%">
+                            <thead>
+
+
+
+                              </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <a class="btn bg-olive btn-lg" href="{{ route('users.create') }}"><i class="fa fa-plus"></i>
+        اضافة
+    </a>
+
+</div>
+</div>
+
+    --}}
 <div class="box-body">
 <div class="col-md-12">
 
@@ -10,21 +50,13 @@
         <div class="box-header bg-green">
             <h3 class="box-title">كل البيانات</h3>
 
-        </div><!-- /.box-header -->
-    <form action="{{route('users.index')}}" method="get">
-        <div class="input-group" style="width: 350px;padding:7px 25px">
-            <input type="text" name="table_search" class="form-control input-sm pull-right" placeholder="Search" data-maxzpsw="0">
-            <div class="input-group-btn">
-              <button class="btn btn-sm btn-default" type="submit"><i class="fa fa-search"></i></button>
-            </div>
         </div>
-    </form>
+
         <div class="box-body">
             <div id="example1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
                 <div class="row">
                     <div class="col-sm-12">
-                        <table id="example1" class="table table-bordered table-striped dataTable no-footer" role="grid"
-                            aria-describedby="example1_info">
+                        <table id="example" class="table table-striped table-bordered" style="width:100%">
                             <thead>
                                 <tr role="row">
                                     <th class="sorting_desc" tabindex="0" aria-controls="example1" rowspan="1"
@@ -103,14 +135,20 @@
 
             </div>
 
-            <a class="btn bg-olive btn-lg" href="{{ route('users.create') }}"><i class="fa fa-plus"></i>
-                اضافة
-            </a>
 
-            {{ $row->appends(request()->query())->links("pagination::bootstrap-4") }}
 
-        </div><!-- /.box-body -->
+        </div>
     </div>
+
+    <a class="btn bg-olive btn-lg" href="{{ route('users.create') }}"><i class="fa fa-plus"></i>
+        اضافة
+    </a>
+
 </div>
 </div>
+@endsection
+
+
+@section('script')
+
 @endsection

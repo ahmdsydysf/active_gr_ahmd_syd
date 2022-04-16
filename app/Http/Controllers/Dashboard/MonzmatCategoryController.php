@@ -16,7 +16,7 @@ class MonzmatCategoryController extends Controller
      */
     public function index()
     {
-        $monzmat = Product_type::where('category_id', 3)->orderBy('id', 'DESC')->paginate(5);
+        $monzmat = Product_type::where('category_id', 3);
         return view('dash_site.product_type.monzmat.index')->with('row', $monzmat);
     }
 

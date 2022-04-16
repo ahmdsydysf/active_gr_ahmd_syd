@@ -19,10 +19,12 @@
 <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.min.js" type="text/javascript"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
-  $.widget.bridge('uibutton', $.ui.button);
+    $.widget.bridge('uibutton', $.ui.button);
 </script>
 <!-- Bootstrap 3.3.2 JS -->
 <script src="{{asset('adminAsset/dist/js/bootstrap.min.js')}}" type="text/javascript"></script>
+<script src="{{ asset('adminAsset/plugins/datatables/jquery.dataTables.js') }}" type="text/javascript"></script>
+<script src="{{ asset('adminAsset/plugins/datatables/dataTables.bootstrap.js') }}" type="text/javascript"></script>
 <!-- Morris.js charts -->
 <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
 <script src="{{asset('adminAsset/plugins/morris/morris.min.js')}}" type="text/javascript"></script>
@@ -44,13 +46,6 @@
 <script src="{{asset('adminAsset/plugins/slimScroll/jquery.slimscroll.min.js')}}" type="text/javascript"></script>
 <!-- FastClick -->
 <script src='{{asset('adminAsset/plugins/fastclick/fastclick.min.js')}}'></script>
-<!-- AdminLTE App -->
-<script src="{{asset('adminAsset/dist/js/app.min.js')}}" type="text/javascript"></script>
-<script src="{{ asset('adminAsset/plugins/datatables/jquery.dataTables.js') }}" type="text/javascript"></script>
-     <script src="{{ asset('adminAsset/plugins/datatables/dataTables.bootstrap.js') }}" type="text/javascript"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="{{asset('adminAsset/dist/js/pages/dashboard.js')}}" type="text/javascript"></script>
-<script src="{{asset('adminAsset/plugins/noty/noty.min.js')}}" type="text/javascript"></script>
 
 <script src="{{asset('adminAsset/plugins/data-table/bootstrap-table.js')}}"></script>
  <script src="{{asset('adminAsset/plugins/data-table/tableExport.js')}}"></script>
@@ -60,11 +55,23 @@
  <script src="{{asset('adminAsset/plugins/data-table/bootstrap-table-resizable.js')}}"></script>
  <script src="{{asset('adminAsset/plugins/data-table/colResizable-1.5.source.js')}}"></script>
  <script src="{{asset('adminAsset/plugins/data-table/bootstrap-table-export.js')}}"></script>
-
  <script src="{{asset('adminAsset/plugins/data-table/bootstrap-table-ar-SA.js')}}"></script>
-<!-- AdminLTE for demo purposes -->
+<!-- AdminLTE App -->
+
+<script src="{{asset('adminAsset/plugins/dttable/dt1.js')}}"></script>
+<script src="{{asset('adminAsset/plugins/dttable/dt2.js')}}"></script>
+<script src="{{asset('adminAsset/plugins/dttable/dt3.js')}}"></script>
+
+<script src="{{asset('adminAsset/dist/js/app.min.js')}}" type="text/javascript"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{asset('adminAsset/dist/js/demo.js')}}" type="text/javascript"></script>
-<script src="{{asset('adminAsset/plugins/ckeditor/ckeditor.js')}}" type="text/javascript"></script>
+
+
+
+ <script src="{{asset('adminAsset/dist/js/pages/dashboard.js')}}" type="text/javascript"></script>
+
+<!-- AdminLTE for demo purposes -->
+ <script src="{{asset('adminAsset/plugins/ckeditor/ckeditor.js')}}" type="text/javascript"></script>
 {{-- <script src="https://cdn.ckeditor.com/ckeditor5/33.0.0/classic/ckeditor.js"></script> --}}
 
 <script>
@@ -81,6 +88,12 @@
     return local.toJSON().slice(0,10);
 });
 
+
+
+$(document).ready(function() {
+    $('#example').DataTable();
+} );
+</script>
 </script>
 
 @yield('script')

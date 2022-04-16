@@ -15,7 +15,7 @@ class FeedbackController extends Controller
      */
     public function index()
     {
-        $feed = Feedback::orderBy('id', 'DESC')->paginate(5);
+        $feed = Feedback::all();
 
         return view('dash_site.feedback.index')->with('row', $feed);
     }

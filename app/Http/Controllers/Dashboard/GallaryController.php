@@ -16,7 +16,7 @@ class GallaryController extends Controller
      */
     public function index()
     {
-        $gallary = Gallary::orderBy('id', 'DESC')->paginate(5);
+        $gallary = Gallary::all();
         return view('dash_site.gallary.index')->with('row', $gallary);
     }
 
