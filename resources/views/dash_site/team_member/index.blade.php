@@ -4,7 +4,10 @@
 
 @section('content')
 <div class="box-body">
-    <div class="col-md-12">
+
+    <a href="{{ route('team_member.create') }}" class="btn bg-olive btn-lg pull-right">اضافة <i class="fa fa-plus"></i>  </a>
+
+  </div>
 
         <div class="box"  style="overflow: auto">
             <div class="box-header bg-green">
@@ -126,11 +129,8 @@
             </div>
         </div>
 
-        <a class="btn bg-olive btn-lg" href="{{ route('team_member.create') }}"><i class="fa fa-plus"></i>
-            اضافة
-        </a>
 
-    </div>
-    </div>
+
+
 
 @endsection

@@ -116,9 +116,7 @@
 </div>
 </div>
 
-<a class="btn bg-olive btn-lg" href="{{ route('newsletter.create') }}"><i class="fa fa-plus"></i>
-اضافة
-</a>
+
 
 </div>
 </div>

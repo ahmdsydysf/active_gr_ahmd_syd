@@ -1,67 +1,28 @@
 @extends('layouts.dash.app')
 
-@section('page_title' , 'كل المستخدميين')
+@section('page_title' , 'كل المستخدمين')
 
 @section('content')
 
-{{--
-    <div class="box-body">
-<div class="col-md-12">
+<div class="box-body">
 
-    <div class="box"  style="overflow: auto">
-        <div class="box-header bg-green">
-            <h3 class="box-title">كل البيانات</h3>
+      <a href="{{ route('users.create') }}" class="btn bg-olive btn-lg pull-right">اضافة <i class="fa fa-plus"></i>  </a>
 
-        </div>
+    </div>
 
-        <div class="box-body">
-            <div id="example1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <table id="example" class="table table-striped table-bordered" style="width:100%">
-                            <thead>
-
-
-
-                              </tbody>
-                        </table>
-                    </div>
-                </div>
+        <div class="box"  style="overflow: auto">
+            <div class="box-header bg-green">
+                <h3 class="box-title">كل البيانات</h3>
 
             </div>
 
+            <div class="box-body">
+                <div id="example1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <table id="example" class="table table-striped table-bordered" style="width:100%">
+                                <thead>
 
-
-        </div>
-    </div>
-
-    <a class="btn bg-olive btn-lg" href="{{ route('users.create') }}"><i class="fa fa-plus"></i>
-        اضافة
-    </a>
-
-</div>
-</div>
-
-    --}}
-<div class="box-body">
-<div class="col-md-12">
-    <div class="box-body">
-
-        <a class="btn bg-olive pull-right" href="{{ route('users.create') }}"><i class="fa fa-plus"></i>
-            اضافة
-        </a>
-
-</div>
-    <div class="box"  style="overflow: auto">
-
-        </div>
-
-        <div class="box-body">
-            <div id="example1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <table id="example" class="table table-striped table-bordered" style="width:100%">
-                            <thead>
                                 <tr role="row">
                                     <th class="sorting_desc" tabindex="0" aria-controls="example1" rowspan="1"
                                         colspan="1" style="width: 10%;"
@@ -137,12 +98,10 @@
         </div>
     </div>
 
-    <a class="btn bg-olive btn-lg" href="{{ route('users.create') }}"><i class="fa fa-plus"></i>
-        اضافة
-    </a>
 
-</div>
-</div>
+
+
+
 @endsection
 
 

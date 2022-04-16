@@ -157,16 +157,7 @@
               <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
           </div>
-          <!-- search form -->
-          <form action="#" method="get" class="sidebar-form">
-            <div class="input-group">
-              <input type="text" name="q" class="form-control" placeholder="البحث..."/>
-              <span class="input-group-btn">
-                <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
-              </span>
-            </div>
-          </form>
-          <!-- /.search form -->
+
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
             <li class="header">اختيارات التحكم</li>
@@ -196,7 +187,7 @@
                   <i class="fa  fa-sitemap"></i> <span>انواع المنتجات</span>
                   <i class="fa fa-angle-left pull-right"></i>
                 </a>
-                <ul class="treeview-menu menu-open" style="display: block;">
+                <ul class="treeview-menu ">
                     <li class="{{  request()->routeIs('mobedat_category.*') ? 'active' : ''  }}">
                        <a href="{{ route('mobedat_category.index') }}">
                          <i class="fa fa-tags"></i> <span>مبيدات</span>
@@ -220,7 +211,7 @@
                   <i class="fa  fa-image"></i> <span>المعرض</span>
                   <i class="fa fa-angle-left pull-right"></i>
                 </a>
-                <ul class="treeview-menu menu-open" style="display: block;">
+                <ul class="treeview-menu ">
                     <li class="{{  request()->routeIs('gallary_category.*') ? 'active' : ''  }}">
                        <a href="{{ route('gallary_category.index') }}">
                          <i class="fa fa-tags"></i> <span>تصنيف المعرض</span>
@@ -265,7 +256,7 @@
                   <i class="fa fa-home"></i> <span>الموقع</span>
                   <i class="fa fa-angle-left pull-right"></i>
                 </a>
-                <ul class="treeview-menu menu-open" style="display: block;">
+                <ul class="treeview-menu" >
                     <li class="{{  request()->routeIs('slider_images.*') ? 'active' : ''  }}">
                        <a href="{{ route('slider_images.index') }}">
                          <i class="fa fa-image"></i> <span>الصور الرئيسية</span>
@@ -295,7 +286,7 @@
                   <i class="fa  fa-leanpub"></i> <span>المقالات</span>
                   <i class="fa fa-angle-left pull-right"></i>
                 </a>
-                <ul class="treeview-menu menu-open" style="display: block;">
+                <ul class="treeview-menu " >
                     <li class="{{  request()->routeIs('blog.*') ? 'active' : ''  }}">
                        <a href="{{ route('blog.index') }}">
                          <i class="fa fa-pencil-square"></i> <span>المقالات الرئيسية</span>
@@ -308,7 +299,7 @@
                   <i class="fa   fa-envelope"></i> <span>الرسائل</span>
                   <i class="fa fa-angle-left pull-right"></i>
                 </a>
-                <ul class="treeview-menu menu-open" style="display: block;">
+                <ul class="treeview-menu " >
                     <li class="{{  request()->routeIs('message.*') ? 'active' : ''  }}">
                        <a href="{{ route('message.index') }}">
                          <i class="fa fa-envelope-o"></i> <span>كل الرسائل</span>
@@ -336,7 +327,6 @@
         <!-- Content Header (Page header) -->
         <section class="content-header" style="padding: 35px 20px">
           <h1>
-            لوحة التحكم
             <small>@yield('page_title')</small>
           </h1>
 
