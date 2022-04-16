@@ -28,8 +28,8 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(191);
 
-        $company = Company::where('id', 1)->first();
-        $companyContact = Company_contact::where('id', 1)->first();
+        $company = Company::findOrFail(1);
+        $companyContact = Company_contact::findOrFail(1);
         view()->share(['company'=>$company,'companyContact'=>$companyContact]);
     }
 }
