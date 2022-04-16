@@ -15,7 +15,7 @@ class NewsletterController extends Controller
      */
     public function index()
     {
-        $news = Newsletter::orderBy('id', 'DESC')->paginate(5);
+        $news = Newsletter::all();
 
         return view('dash_site.newsletter.index')->with('row', $news);
     }

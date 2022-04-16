@@ -16,7 +16,7 @@ class AsmedaCategoryController extends Controller
      */
     public function index()
     {
-        $asmeda = Product_type::where('category_id', 2)->orderBy('id', 'DESC')->paginate(5);
+        $asmeda = Product_type::where('category_id', 2);
         return view('dash_site.product_type.asmeda.index')->with('row', $asmeda);
     }
 

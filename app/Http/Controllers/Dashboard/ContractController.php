@@ -15,7 +15,7 @@ class ContractController extends Controller
      */
     public function index()
     {
-        $contract = Contract::orderBy('id', 'DESC')->paginate(5);
+        $contract = Contract::all();
         return view('dash_site.contract.index')->with('row', $contract);
     }
 

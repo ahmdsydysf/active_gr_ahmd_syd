@@ -14,8 +14,7 @@
             <div id="example1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
                 <div class="row">
                     <div class="col-sm-12">
-                        <table id="example1" class="table table-bordered table-striped dataTable no-footer" role="grid"
-                            aria-describedby="example1_info">
+                        <table id="example" class="table table-striped table-bordered" style="width:100%">
                             <thead>
                                 <tr role="row">
                                     <th class="sorting_desc" tabindex="0" aria-controls="example1" rowspan="1"
@@ -84,16 +83,21 @@
                                 </tr>
                                 @endif
 
-                            </tbody>
 
-                        </table>
-                    </div>
-                </div>
+</tbody>
+</table>
+</div>
+</div>
 
-            </div>
+</div>
 
-        </div><!-- /.box-body -->
-    </div>
+
+
+</div>
+</div>
+
+
+
 </div>
 </div>
 @endsection

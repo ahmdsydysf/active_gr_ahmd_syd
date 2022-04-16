@@ -15,7 +15,8 @@ class TeamMemberController extends Controller
      */
     public function index()
     {
-        $team = Team_member::orderBy('id', 'DESC')->get();
+        $team = Team_member::all();
+
         return view('dash_site.team_member.index')->with('row', $team);
     }
 

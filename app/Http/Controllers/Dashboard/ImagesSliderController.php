@@ -16,7 +16,7 @@ class ImagesSliderController extends Controller
      */
     public function index()
     {
-        $SliderImgs = Slider_image::orderBy('id', 'DESC')->paginate(5);
+        $SliderImgs = Slider_image::all();
         return view('dash_site.image_slider.index')->with('row', $SliderImgs);
     }
 

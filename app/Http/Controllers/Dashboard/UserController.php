@@ -17,7 +17,7 @@ class UserController extends Controller
     {
 
 
-            $users = User::orderBy('id', 'DESC')->get();
+        $users = User::all();
 
 
         return view('dash_site.users.index')->with("row", $users);

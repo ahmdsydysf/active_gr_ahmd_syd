@@ -18,7 +18,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $product = Product::orderBy('id', 'DESC')->paginate(5);
+        $product = Product::all();
         return view('dash_site.product.index')->with('row', $product);
     }
 

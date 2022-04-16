@@ -15,7 +15,7 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $blog = Blog::orderBy('id', 'DESC')->paginate(5);
+        $blog = Blog::all();
 
         return view('dash_site.blog.index')->with('row', $blog);
     }

@@ -15,7 +15,7 @@ class WhyUsController extends Controller
      */
     public function index()
     {
-        $why_us = Why_us::orderBy('id', 'DESC')->paginate(5);
+        $why_us = Why_us::all();
 
         return view('dash_site.why_us.index')->with('row', $why_us);
     }

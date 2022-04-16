@@ -17,7 +17,7 @@ class MobedatCategoryController extends Controller
     public function index()
     {
 
-        $mobedat = Product_type::where('category_id', 1)->orderBy('id', 'DESC')->paginate(5);
+        $mobedat = Product_type::where('category_id', 1);
         return view('dash_site.product_type.mobedat.index')->with('row', $mobedat);
     }
 

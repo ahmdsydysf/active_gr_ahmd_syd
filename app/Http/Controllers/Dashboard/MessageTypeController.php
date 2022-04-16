@@ -15,7 +15,7 @@ class MessageTypeController extends Controller
      */
     public function index()
     {
-        $msg_typs = Message_type::orderBy('id', 'DESC')->paginate(5);
+        $msg_typs = Message_type::all();
 
         return view('dash_site.message_type.index')->with('row', $msg_typs);
     }

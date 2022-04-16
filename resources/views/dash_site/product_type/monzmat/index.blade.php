@@ -4,21 +4,23 @@
 
 @section('content')
 <div class="box-body">
+    <div class="col-md-12">
 
-<div class="col-md-12">
+        <div class="box"  style="overflow: auto">
+            <div class="box-header bg-green">
+                <h3 class="box-title">منظمات</h3>
 
-    <div class="box"  style="overflow: auto">
-        <div class="box-header bg-green">
-            <h3 class="box-title">منظمات</h3>
+            </div>
 
-        </div><!-- /.box-header -->
-        <div class="box-body">
-            <div id="example1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <table id="example1" class="table table-bordered table-striped dataTable no-footer" role="grid"
-                            aria-describedby="example1_info">
-                            <thead>
+            <div class="box-body">
+                <div id="example1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <table id="example" class="table table-striped table-bordered" style="width:100%">
+                                <thead>
+
+
+
                                 <tr role="row">
                                     <th class="sorting_desc" tabindex="0" aria-controls="example1" rowspan="1"
                                         colspan="1"
@@ -121,21 +123,23 @@
                                 </tr>
                                 @endif
 
-                            </tbody>
 
-                        </table>
-                    </div>
-                </div>
+</tbody>
+</table>
+</div>
+</div>
 
-            </div>
+</div>
 
-            <a class="btn bg-olive" href="{{ route('monzmat_category.create')  }}"><i class="fa fa-plus"></i>
-                اضافة
-            </a>
-            {{ $row->links("pagination::bootstrap-4") }}
 
-        </div><!-- /.box-body -->
-    </div>
+
+</div>
+</div>
+
+<a class="btn bg-olive btn-lg" href="{{ route('monzmat_category.create')  }}"><i class="fa fa-plus"></i>
+اضافة
+</a>
+
 </div>
 </div>
 @endsection
