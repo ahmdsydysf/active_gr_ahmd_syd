@@ -20,7 +20,7 @@
 
                                         <!--{{ $properties['native'] }}-->
 
-                                        {{-- {{ __('links.ar') }} --}}
+                                        {{ __('links.ar') }}
                                     </a>
 
                                         @endif
@@ -28,7 +28,7 @@
                                         <a  rel="alternate" hreflang="{{ $localeCode }}"
                                         href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
 
-                                        {{-- {{ __('links.en') }}  --}}
+                                        {{ __('links.en') }}
                                     </a>
 
                                         @endif
@@ -64,17 +64,21 @@
                                             <li><a href="{{ LaravelLocalization::localizeUrl('/') }}">{{ __('links.home') }}</a></li>
                                             <li><a href="{{ LaravelLocalization::localizeUrl('/about') }}">{{ __('links.about_us') }} </a></li>
                                             <li><a href="{{ LaravelLocalization::localizeUrl('/service') }}">{{ __('links.services') }}</a></li>
-                                             <li><a href="{{ LaravelLocalization::localizeUrl('/vertProduct') }}"> منتجاتنا فى الاسمدة</a>
-                                                <li><a href="{{ LaravelLocalization::localizeUrl('/pesticideProduct') }}"> منتجاتنا فى المبيدات</a>
 
+                                            <li>
+                                                <a href="#"> {{ __('links.products') }}</a>
+                                                <ul class="submenu">
+                                                    <li><a href="{{ LaravelLocalization::localizeUrl('/vertProduct') }}">   الاسمدة</a>
+                                                        <li><a href="{{ LaravelLocalization::localizeUrl('/pesticideProduct') }}">  المبيدات </a>
+                                                </ul>
                                             </li>
-
                                               <li><a href="{{ LaravelLocalization::localizeUrl('/partners') }}"> {{ __('links.partenters') }}</a></li>
                                             <li><a href="{{ LaravelLocalization::localizeUrl('/blog') }}">{{ __('links.blogs') }}</a></li>
                                             <li><a href="{{ LaravelLocalization::localizeUrl('/gallery') }}">{{ __('links.gallery') }}</a></li>
                                             <li><a href="{{ LaravelLocalization::localizeUrl('/contact') }}">{{ __('links.contact_us') }}</a></li>
                                         </ul>
                                     </nav>
+
                                 </div>
                             </div>
                         </div>

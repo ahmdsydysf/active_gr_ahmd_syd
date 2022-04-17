@@ -6,7 +6,8 @@
         </span>
         <div class="container">
             <div class="footer-top footer-padding">
-                <div class="row d-flex justify-content-between" dir="rtl">
+                <div class="row d-flex justify-content-between" @if (LaravelLocalization::getCurrentLocale() === 'ar')
+                dir="rtl"  @endif>
                     <div class="col-xl-5 col-lg-5 col-md-6 col-sm-6">
                         <div class="single-footer-caption mb-50">
                             <!-- logo -->
