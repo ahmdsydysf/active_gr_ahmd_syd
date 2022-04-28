@@ -27,9 +27,10 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
-
+        // $company = null;
+        // $companyContact = null;
         $company = Company::findOrFail(1);
         $companyContact = Company_contact::findOrFail(1);
-        view()->share(['company'=>$company,'companyContact'=>$companyContact]);
+        view()->share(['company' => $company, 'companyContact' => $companyContact]);
     }
 }
