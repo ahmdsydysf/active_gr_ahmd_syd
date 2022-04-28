@@ -72,7 +72,11 @@
                                     {{ $row->title_en }}
                                 @else
                                     {{ $row->title_ar }}
-                                @endif<a href="images/01.png" download="download"
+                                @endif<a @if (LaravelLocalization::getCurrentLocale() === 'en')
+                                href=" {{ $row->pdf_en }}"
+                            @else
+                            href=" {{ $row->pdf_ar }}"
+                                download="download"
                                         target="_blank"><i class="far fa-file-pdf dwn-icon"></i></a></h3>
                                 <p class="col-12 text-dir"> @if (LaravelLocalization::getCurrentLocale() === 'en')
                                     {{ $row->text_en }}
