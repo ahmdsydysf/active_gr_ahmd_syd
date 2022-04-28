@@ -143,7 +143,7 @@
 
                 @foreach ($services as $row)
                 <div class="col-lg-4 col-md-6 col-sm-12 p-3 mb-3">
-                    <a class="play-btn video-view" href="{{$row->vedio}}"></a>
+                    <a class="play-btn video-view" href="{{$row->video}}"></a>
 
 
 
