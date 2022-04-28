@@ -331,6 +331,11 @@
                 </a>
             </li>
 
+            <li class="treeview {{  request()->routeIs('feedback.*') ? 'active' : ''  }}">
+                <a href="{{ route('feedback.index') }}">
+                  <i class="fa fa-pencil"></i> <span>اراء العملاء</span>
+                </a>
+            </li>
             {{-- <li class="header">خاص بالموقع</li> --}}
             <li class="treeview">
                 <a href="#">
