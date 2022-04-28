@@ -57,20 +57,29 @@
         @error('description_ar')
         <div class="alert alert-danger">{{ $message }}</div>
         @enderror
-        <div class="form-group">
-            <label>PDF انجليزي</label>
-            <textarea  name="pdf_en" class="form-control" rows="3" placeholder="النص">{{$row->pdf_en}}</textarea>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="">اضافة  ملف عربي</label>
+
+                <input type="file" name="pdf_ar" class="custom-file-input"
+                id="inputGroupFile03" />
+                <label class="custom-file-label"
+                for="inputGroupFile03">{{ $row->pdf_ar ?? '' }}</label>
+
+            </div>
         </div>
-        @error('pdf_en')
-        <div class="alert alert-danger">{{ $message }}</div>
-        @enderror
-        <div class="form-group">
-            <label>PDF عربي</label>
-            <textarea  name="pdf_ar" class="form-control" rows="3" placeholder="النص">{{$row->pdf_ar}}</textarea>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="">اضافة  ملف أنجليزى</label>
+
+                <input type="file" name="pdf_en" class="custom-file-input"
+                id="inputGroupFile04" />
+                <label class="custom-file-label"
+                for="inputGroupFile04">{{ $row->pdf_en ?? '' }}</label>
+
+            </div>
         </div>
-        @error('pdf_ar')
-        <div class="alert alert-danger">{{ $message }}</div>
-        @enderror
+
 
         <div class="form-group">
             <label>المصنع</label>
@@ -101,10 +110,9 @@
         <div class="form-group">
             <label>نوع المنتج</label>
             <select class="form-control" name="type_id">
-                <option value="">اختر نوع المنتج</option>
 
                 @foreach ( $pro_typ as $typ )
-                <option value="{{$typ->id}}"  {{ $row->type_id == $typ->id ? 'selected' : ' ' }} >{{$typ->type_ar}}</option>
+                <option value="{{$typ->id}}"  {{ $row->type_id == $typ->id  ? 'selected' : '' }} >{{$typ->type_ar}}</option>
                 @endforeach
             </select>
         </div>
