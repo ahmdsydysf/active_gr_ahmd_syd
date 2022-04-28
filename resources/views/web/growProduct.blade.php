@@ -13,7 +13,7 @@
                                 <h2>{{ __('links.products') }}</h2>
                                 <ul>
                                     <li class="breadcrumb-item"> <a  href="{{ LaravelLocalization::localizeUrl('/') }}">{{ __('links.home') }}</a> <i class="fa fa-chevron-left"></i>
-                                        <a href="#">{{ __('links.fertilizers') }}</a> </li>
+                                        <a href="#">منتجاتنا في منظمات النمو </a> </li>
                                 </ul>
                             </div>
                         </div>
@@ -28,7 +28,7 @@
         <!-- Gallary -->
 
         <section class="contact-section main-pro">
-            <div class="container main-vid-sec my-5 " dir="rtl">
+            <div class="container main-vid-sec my-5 " >
                 <div class="row dir">
 
 
@@ -44,9 +44,9 @@
                         </h3>
                         <p class="text-dir">
                             @if (LaravelLocalization::getCurrentLocale() === 'en')
-                                {{ $fertilizer->description_en }}
+                                {{ $grow->description_en }}
                             @else
-                                {{ $fertilizer->description_ar }}
+                                {{ $grow->description_ar }}
                             @endif
                         </p>
 
@@ -61,12 +61,12 @@
             <div class="container second-pro-sec">
                 <div class="row mb-5">
                     <div class="col-12 col-lg-6 offset-0 offset-lg-3">
-                        <h3 class="text-center p-3 text-dir">{{ __('links.products') }}</h3>
+                        <h3 class="text-center p-3">{{ __('links.products') }}</h3>
                         <p class="title-p text-center">
                             @if (LaravelLocalization::getCurrentLocale() === 'en')
-                                {{ $fertilizer->description_en }}
+                                {{ $grow->description_en }}
                             @else
-                                {{ $fertilizer->description_ar }}
+                                {{ $grow->description_ar }}
                             @endif
                         </p>
                     </div>
@@ -76,13 +76,13 @@
             <div class="container">
                 <section>
                     <h3 class="filter-links mb-5">
-                        <ul class="row dir" >
+                        <ul class="row dir"  >
 
                             {{-- <!-- <li class="list col active" data-filter="all">الكل</li> -->
                             <li class="list col" data-filter="sec1">عناصر كبري</li>
                             <li class="list col" data-filter="sec2">عناصر صغري</li>
                             <li class="list col" data-filter="sec3">اسمدة</li> --}}
-                            @foreach ($products_Fertilizers as $row)
+                            @foreach ($products_grow as $row)
                                 <li class="list col" data-filter="sec.{{ $row->id }}">
                                     @if (LaravelLocalization::getCurrentLocale() === 'en')
                                         {{ $row->type_en }}
@@ -95,7 +95,7 @@
                     </h3>
 
                     <div class="row filter-3 dir">
-                        @foreach ($products_Fertilizers as $row)
+                        @foreach ($products_grow as $row)
                             @foreach ($row->products as $product)
                                 <div class="itemBox col-lg-4 col-md-6 col-12 p-3 " data-item="sec.{{ $row->id }}">
                                     <div>

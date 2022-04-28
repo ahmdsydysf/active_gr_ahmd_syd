@@ -43,6 +43,8 @@ Route::get('/partners', [PartnerController::class,'index']);
 Route::get('/gallery', [GalleryController::class,'index']);
 Route::get('/vertProduct', [ProductController::class,'index']);
 Route::get('/pesticideProduct', [ProductController::class,'acide']);
+
+Route::get('/growProduct', [ProductController::class,'grow']);
 Route::get('/service', [ServiceController::class,'index']);
 Route::post('load-data', [ServiceController::class,'loadMoreData'])->name('load-data');
 Route::post('load-advices', [ServiceController::class,'loadMoreAdvices'])->name('load-advices');

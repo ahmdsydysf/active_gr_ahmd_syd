@@ -68,7 +68,29 @@
 
   <!-- AdminLTE for demo purposes -->
   <script src="{{ asset('adminassets/dist/js/demo.js') }}" type="text/javascript"></script>
+  <script >
+    $(function () {
 
+        $('.summernote').summernote();
+
+      $("#example1").dataTable();
+      $('#example2').dataTable({
+        "bPaginate": false,
+        "bLengthChange": false,
+        "bFilter": false,
+        "bSort": false,
+        "bInfo": false,
+        "bAutoWidth": false
+      });
+
+      $('#inputGroupFile02').on('change',function(){
+            //get the file name
+            var fileName = $(this).val();
+            //replace the "Choose a file" label
+            $(this).next('.custom-file-label').html(fileName);
+        })
+    });
+  </script>
 <script>
 
 
@@ -89,7 +111,7 @@ $(document).ready(function() {
     $('#example').DataTable();
 } );
 </script>
-</script>
+
 
 @yield('script')
 </body>

@@ -70,7 +70,9 @@
                                                 <ul class="submenu">
                                                     <li><a href="{{ LaravelLocalization::localizeUrl('/vertProduct') }}">  {{ __('links.fertilizers') }} </a>
                                                         <li><a href="{{ LaravelLocalization::localizeUrl('/pesticideProduct') }}"> {{ __('links.pesticides') }}    </a>
-                                                </ul>
+
+                                                            <li><a href="{{ LaravelLocalization::localizeUrl('/growProduct') }}"> منتجاتنا في منظمات النمو   </a>
+                                                        </ul>
                                             </li>
                                               <li><a href="{{ LaravelLocalization::localizeUrl('/partners') }}"> {{ __('links.partenters') }}</a></li>
                                             <li><a href="{{ LaravelLocalization::localizeUrl('/blog') }}">{{ __('links.blogs') }}</a></li>

@@ -13,7 +13,7 @@
                                 <h2>{{ __('links.products') }}</h2>
                                 <ul>
                                     <li class="breadcrumb-item"> <a  href="{{ LaravelLocalization::localizeUrl('/') }}">{{ __('links.home') }}</a> <i class="fa fa-chevron-left"></i>
-                                        <a href="#">{{ __('links.products') }}</a> </li>
+                                        <a href="#"> {{ __('links.pesticides') }}</a> </li>
                                 </ul>
                             </div>
                         </div>

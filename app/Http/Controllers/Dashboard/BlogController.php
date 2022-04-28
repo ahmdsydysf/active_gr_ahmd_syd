@@ -5,7 +5,8 @@ namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 use App\Models\Blog;
 use Illuminate\Http\Request;
-
+use Illuminate\Database\QueryException;
+use File;
 class BlogController extends Controller
 {
     /**
@@ -47,7 +48,7 @@ class BlogController extends Controller
             'text_en'   => 'required',
             'text_ar'   => 'required',
             'image'     => 'image',
-            'order'     => 'required',
+
         ], [
             // 'blog_date.required'   => 'هذا الحقل مطلوب ',
             'title_en.required'    => 'هذا الحقل مطلوب ',
@@ -55,7 +56,7 @@ class BlogController extends Controller
             'text_en.required'     => 'هذا الحقل مطلوب ',
             'text_ar.required'     => 'هذا الحقل مطلوب ',
             'image.image'          => 'اختر صوره',
-            'order.required'       => 'هذا الحقل مطلوب ',
+
         ]);
 
 
@@ -124,7 +125,7 @@ class BlogController extends Controller
             'text_en'   => 'required',
             'text_ar'   => 'required',
             'image'     => 'image',
-            'order'     => 'required',
+
         ], [
             // 'blog_date.required'   => 'هذا الحقل مطلوب ',
             'title_en.required'    => 'هذا الحقل مطلوب ',
@@ -132,7 +133,7 @@ class BlogController extends Controller
             'text_en.required'     => 'هذا الحقل مطلوب ',
             'text_ar.required'     => 'هذا الحقل مطلوب ',
             'image.image'          => 'اختر صوره',
-            'order.required'       => 'هذا الحقل مطلوب ',
+
         ]);
         $request_data = $request->except('image', 'active', '_token');
 
@@ -179,12 +180,24 @@ class BlogController extends Controller
     public function destroy($id)
     {
 
-        $blog = Blog::find($id);
-        if ($blog->image != 'default_blog.png') {
-            $image_path = public_path() . '/uploads/blogs/' . $blog->image;
-            unlink($image_path);
+        $row=Blog::where('id',$id)->first();
+        // Delete File ..
+        $file = $row->image;
+        $file_name = public_path('uploads/blogs/' . $file);
+
+        try {
+            File::delete($file_name);
+
+
+            $row->delete();
+            return redirect()->back()->with('flash_success', 'تم الحذف بنجاح !');
+
+        } catch (QueryException $q) {
+            return redirect()->back()->withInput()->with('flash_danger', $q->getMessage());
+
+            // return redirect()->back()->with('flash_danger', 'هذه القضية مربوطه بجدول اخر ..لا يمكن المسح');
         }
-        $blog->delete();
-        return redirect()->route('blog.index')->with('flash_success', 'تم الحذف بنجاح');
     }
+
+
 }

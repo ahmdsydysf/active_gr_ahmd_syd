@@ -25,4 +25,9 @@ class ProductController extends Controller
         return view('web.pesticideProduct',compact('pesticide','products_pesticides'));
 
     }
+    public function grow(){
+        $grow = Product_category::where('id', 3)->first();
+        $products_grow = Product_type::where('category_id', 3)->get();
+        return view('web.growProduct',compact('grow','products_grow'));
+    }
 }

@@ -46,8 +46,8 @@
                                                     <td></td>
                                                     <td class="sorting_1">- {{ $r->id }} -</td>
                                                     <td>{{ $r->blog_date }}</td>
-                                                    <td>{{ $r->title_ar }}</td>
-                                                    <td>{{ $r->title_en }}</td>
+                                                    <td>{!! $r->title_ar !!}</td>
+                                                    <td>{!! $r->title_en !!}</td>
                                                     <td>{!! $r->text_ar !!}</td>
                                                     <td>{!! $r->text_en !!}</td>
                                                     <td> <span class="thumbnail"

@@ -38,7 +38,7 @@
 
             <div class="form-group">
                 <label>العنوان عربي</label>
-                <textarea  name="title_ar" class="form-control " rows="3" placeholder="النص">{{old('title_ar')}}</textarea>
+                <textarea  name="title_ar" class="form-control summernote " rows="3" placeholder="النص">{{old('title_ar')}}</textarea>
             </div>
             @error('title_ar')
             <div class="alert alert-danger">{{ $message }}</div>
@@ -47,36 +47,26 @@
 
         <div class="form-group">
             <label>العنوان انجليزي</label>
-            <textarea  name="title_en" class="form-control" rows="3" placeholder="النص">{{old('title_en')}}</textarea>
+            <textarea  name="title_en" class="form-control summernote" rows="3" placeholder="النص">{{old('title_en')}}</textarea>
         </div>
         @error('title_en')
         <div class="alert alert-danger">{{ $message }}</div>
         @enderror
         <div class="form-group">
             <label>النص عربي</label>
-            <textarea  name="text_ar" class="form-control ckeditor" rows="3" placeholder="النص">{{old('text_ar')}}</textarea>
+            <textarea  name="text_ar" class="form-control summernote" rows="3" placeholder="النص">{{old('text_ar')}}</textarea>
         </div>
         @error('text_ar')
         <div class="alert alert-danger">{{ $message }}</div>
         @enderror
         <div class="form-group">
             <label>النص انجليزي</label>
-            <textarea  name="text_en" class="form-control ckeditor" rows="3" placeholder="النص">{{old('text_en')}}</textarea>
+            <textarea  name="text_en" class="form-control summernote" rows="3" placeholder="النص">{{old('text_en')}}</textarea>
         </div>
         @error('text_en')
         <div class="alert alert-danger">{{ $message }}</div>
         @enderror
 
-            <div class="form-group" style="width: 135px">
-                <label for="">الترتيب</label>
-                <input type="number"
-                    value="{{old('order')}}"
-                    name="order" class="form-control"
-                    id="">
-            </div>
-            @error('order')
-            <div class="alert alert-danger">{{ $message }}</div>
-            @enderror
 
             <div class="form-group">
                 <div class="checkbox">
