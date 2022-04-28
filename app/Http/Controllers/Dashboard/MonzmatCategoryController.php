@@ -3,9 +3,14 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Models\Factory;
+use App\Models\Partner;
+use App\Models\Product;
 use App\Models\Product_category;
 use App\Models\Product_type;
 use Illuminate\Http\Request;
+use Illuminate\Database\QueryException;
+use File;
 
 class MonzmatCategoryController extends Controller
 {
@@ -16,8 +21,10 @@ class MonzmatCategoryController extends Controller
      */
     public function index()
     {
-        $monzmat = Product_type::where('category_id', 3);
-        return view('dash_site.product_type.monzmat.index')->with('row', $monzmat);
+        $asmeda = Product_type::where('category_id', 3)->pluck('id');
+        $products=Product::whereIn('type_id',$asmeda)->get();
+        return view('dash_site.product_type.monzmat.index')->with('row', $products);
+
     }
 
     /**
@@ -27,9 +34,13 @@ class MonzmatCategoryController extends Controller
      */
     public function create()
     {
-
         $all_pro_cat = Product_category::all();
-        return view('dash_site.product_type.monzmat.create')->with('all_pro_cat', $all_pro_cat);
+        $pro_fac = Factory::all();
+        $pro_par = Partner::all();
+        $pro_typ = Product_type::where('category_id',2)->get();
+        return view('dash_site.product_type.monzmat.create')->with( ['pro_fac' => $pro_fac, 'pro_par' => $pro_par, 'pro_typ' => $pro_typ, 'all_pro_cat'=> $all_pro_cat]);
+
+
     }
 
     /**
@@ -40,44 +51,34 @@ class MonzmatCategoryController extends Controller
      */
     public function store(Request $request)
     {
+        $input = $request->except(['_token', 'img', 'active', 'pdf_en', 'pdf_ar']);
+        if ($request->hasFile('img')) {
+            $attach_image = $request->file('img');
 
-        $this->validate(
-            $request,
-            [
-                'type_en'           => ['required'],
-                'type_ar'           => ['required'],
-                'description_en'    => ['required'],
-                'description_ar'    => ['required'],
-                'category_id'       => ['required'],
-                'order'             => ['required'],
-                'image'             => ['image'],
-            ],
-            [
-                'type_en.required' => 'هذا الحقل مطلوب',
-                'type_ar.required' => 'هذا الحقل مطلوب',
-                'category_id.required' => 'هذا الحقل مطلوب',
-                'description_en.required' => 'هذا الحقل مطلوب',
-                'description_ar.required' => 'هذا الحقل مطلوب',
-                'order.required' => 'هذا الحقل مطلوب',
-                'image.image' => ' مطلوب صورة'
-            ]
-        );
+            $input['image'] = $this->UplaodImage($attach_image);
 
-        $request_data = $request->except('image', '_token');
+        }
+        if ($request->hasFile('pdf_en')) {
+            $attach_pdf_en = $request->file('pdf_en');
 
-        if ($request->hasFile('image')) {
-            $imageName = $request->image->hashName();
+            $input['pdf_en'] = $this->UplaodImage($attach_pdf_en);
 
-            $request_data['image'] =  $imageName;
+        }
+        if ($request->hasFile('pdf_ar')) {
+            $attach_pdf_ar = $request->file('pdf_ar');
 
-            $request->image->move(public_path('uploads/product_types/'), $imageName);
-        } else {
-            $request_data['image'] = 'default_1.png';
+            $input['pdf_ar'] = $this->UplaodImage($attach_pdf_ar);
+
         }
 
+        if ($request->has('active')) {
+            $input['active'] = 1;
+        } else {
+            $input['active'] = 0;
 
+        }
 
-        Product_type::create($request_data);
+        Product::create($input);
 
         return redirect()->route('monzmat_category.index')->with('flash_success', 'تم الاضافة بنجاح');
     }
@@ -101,9 +102,14 @@ class MonzmatCategoryController extends Controller
      */
     public function edit($id)
     {
-        $monzmat = Product_type::find($id);
+       $prod = Product::find($id);
         $all_pro_cat = Product_category::all();
-        return view('dash_site.product_type.monzmat.edit', ['row' => $monzmat, 'all_pro_cat' => $all_pro_cat]);
+        $pro_fac = Factory::all();
+        $pro_par = Partner::all();
+        $pro_typ = Product_type::where('category_id',1)->get();
+        return view('dash_site.product_type.monzmat.edit',  ['row' => $prod,'pro_fac' => $pro_fac, 'pro_par' => $pro_par, 'pro_typ' => $pro_typ, 'all_pro_cat'=> $all_pro_cat]);
+
+
     }
 
     /**
@@ -115,55 +121,34 @@ class MonzmatCategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $product_type = Product_type::find($id);
+        $input = $request->except(['_token', 'img', 'active', 'pdf_en', 'pdf_ar']);
+        if ($request->hasFile('img')) {
+            $attach_image = $request->file('img');
 
-        $this->validate(
-            $request,
-            [
-                'type_en'           => ['required'],
-                'type_ar'           => ['required'],
-                'description_en'    => ['required'],
-                'description_ar'    => ['required'],
-                'category_id'       => ['required'],
-                'order'             => ['required'],
-                'image'             => ['image'],
-            ],
-            [
-                'type_en.required' => 'هذا الحقل مطلوب',
-                'type_ar.required' => 'هذا الحقل مطلوب',
-                'category_id.required' => 'هذا الحقل مطلوب',
-                'description_en.required' => 'هذا الحقل مطلوب',
-                'description_ar.required' => 'هذا الحقل مطلوب',
-                'order.required' => 'هذا الحقل مطلوب',
-                'image.image' => ' مطلوب صورة'
-            ]
-        );
+            $input['image'] = $this->UplaodImage($attach_image);
 
-        $request_data = $request->except('image', '_token');
+        }
+        if ($request->hasFile('pdf_en')) {
+            $attach_pdf_en = $request->file('pdf_en');
 
+            $input['pdf_en'] = $this->UplaodImage($attach_pdf_en);
 
-        if ($request->image) {
+        }
+        if ($request->hasFile('pdf_ar')) {
+            $attach_pdf_ar = $request->file('pdf_ar');
 
-            if ($product_type->image != 'default_1.png') {
-                $imageName = $request->image->hashName();
+            $input['pdf_ar'] = $this->UplaodImage($attach_pdf_ar);
 
-                $request_data['image'] =  $imageName;
-
-                $request->image->move(public_path('uploads/product_types/'), $imageName);
-
-                $image_path = public_path() . '/uploads/product_types/' . $product_type->image;
-
-                unlink($image_path);
-            } else {
-                $imageName = $request->image->hashName();
-
-                $request_data['image'] =  $imageName;
-
-                $request->image->move(public_path('uploads/product_types/'), $imageName);
-            }
         }
 
-        $product_type->update($request_data);
+        if ($request->has('active')) {
+            $input['active'] = 1;
+        } else {
+            $input['active'] = 0;
+
+        }
+
+        Product::findOrFail($id)->update($input);
 
         return redirect()->route('monzmat_category.index')->with('flash_success', 'تم التعديل بنجاح');
     }
@@ -176,12 +161,49 @@ class MonzmatCategoryController extends Controller
      */
     public function destroy($id)
     {
-        $product_type = Product_type::find($id);
-        if ($product_type->image != 'default_1.png') {
-            $image_path = public_path() . '/uploads/product_types/' . $product_type->image;
-            unlink($image_path);
+
+        $row=Product::where('id',$id)->first();
+        // Delete File ..
+        $file = $row->image;
+        $file_name = public_path('uploads/products/' . $file);
+        $file1 = $row->pdf_en;
+        $file_name1 = public_path('uploads/products/' . $file);
+        $file2 = $row->pdf_ar;
+        $file_name2 = public_path('uploads/products/' . $file);
+        try {
+            File::delete($file_name);
+            File::delete($file_name1);
+            File::delete($file_name2);
+
+            $row->delete();
+            return redirect()->back()->with('flash_success', 'تم الحذف بنجاح !');
+
+        } catch (QueryException $q) {
+            return redirect()->back()->withInput()->with('flash_danger', $q->getMessage());
+
+            // return redirect()->back()->with('flash_danger', 'هذه القضية مربوطه بجدول اخر ..لا يمكن المسح');
         }
-        $product_type->delete();
-        return redirect()->route('monzmat_category.index')->with('flash_success', 'تم الحذف بنجاح');
+    }
+
+     /* uplaud image
+     */
+    public function UplaodImage($file_request)
+    {
+        //  This is Image Info..
+        $file = $file_request;
+        $name = $file->getClientOriginalName();
+        $ext = $file->getClientOriginalExtension();
+        $size = $file->getSize();
+        $path = $file->getRealPath();
+        $mime = $file->getMimeType();
+
+        // Rename The Image ..
+        $imageName = $name;
+        $uploadPath = public_path('uploads/products');
+
+        // Move The image..
+        $file->move($uploadPath, $imageName);
+
+        return $imageName;
     }
 }
