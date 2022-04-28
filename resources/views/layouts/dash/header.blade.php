@@ -286,7 +286,7 @@
                 <ul class="treeview-menu ">
                     <li class="{{  request()->routeIs(' company-service.*') ? 'active' : ''  }}">
                        <a href="{{ route('company-service.index') }}">
-                         <i class="fa fa-tags"></i> <span>خدمات الشركة</span>
+                         <i class="fa fa-tags"></i> <span> استشارات فنية </span>
                         </a>
                     </li>
                     <li class="{{  request()->routeIs('general-advices.*') ? 'active' : ''  }}">
