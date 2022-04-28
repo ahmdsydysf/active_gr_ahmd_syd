@@ -89,7 +89,7 @@
                             </div>
 
                 <div class="col-xs-6 col-sm-6 col-md-6 text-center">
-                    <button type="submit" class="btn btn-primary">حفظ</button>
+                    <button type="submit" class="btn bg-olive">حفظ</button>
                     <a href="{{route('farmer-advices.index')}}" class="btn btn-danger">إلغاء</a>
                 </div>
                 </div>

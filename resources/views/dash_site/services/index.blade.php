@@ -8,7 +8,7 @@
     <div class="box">
         <div class="box-header">
           <h3 class="box-title"> خدمات الشركة</h3>
-          <a href="{{ route('company-service.create') }}" class="btn btn-info btn-lg pull-right"> اضافة </a>
+          <a href="{{ route('company-service.create') }}" class="btn bg-olive btn-lg pull-right"> اضافة </a>
 
         </div><!-- /.box-header -->
         <div class="box-body">
@@ -47,14 +47,14 @@
                                             <div class="btn-group">
 
 
-                                                <a href="{{ route('company-service.edit', $row->id) }}">
-                                                    <p class=" fa fa-cogs"></p>
+                                                <a  href="{{ route('company-service.edit', $row->id) }}">
+                                                    <p class=" bg-olive fa fa-cogs"></p>
                                                 </a>
 
 
-                                                <a href="#del{{ $row->id }}" data-toggle="modal"
+                                                <a  href="#del{{ $row->id }}" data-toggle="modal"
                                                     data-target="#del{{ $row->id }}">
-                                                    <p class="fa  fa-times"></p>
+                                                    <p class="bg-olive fa  fa-times"></p>
                                                 </a>
 
 
