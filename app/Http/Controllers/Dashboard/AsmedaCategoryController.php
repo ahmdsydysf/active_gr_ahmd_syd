@@ -103,7 +103,7 @@ class AsmedaCategoryController extends Controller
         $all_pro_cat = Product_category::all();
         $pro_fac = Factory::all();
         $pro_par = Partner::all();
-        $pro_typ = Product_type::where('category_id',1)->get();
+        $pro_typ = Product_type::where('category_id',2)->get();
         return view('dash_site.product_type.asmeda.edit',  ['row' => $prod,'pro_fac' => $pro_fac, 'pro_par' => $pro_par, 'pro_typ' => $pro_typ, 'all_pro_cat'=> $all_pro_cat]);
     }
 
