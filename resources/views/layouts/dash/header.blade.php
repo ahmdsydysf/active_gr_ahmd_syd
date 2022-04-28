@@ -278,12 +278,41 @@
                 </ul>
 
             </li>
+            <li class="treeview">
+                <a href="#">
+                  <i class="fa  fa-image"></i> <span>الخدمات</span>
+                  <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu ">
+                    <li class="{{  request()->routeIs(' company-service.*') ? 'active' : ''  }}">
+                       <a href="{{ route('company-service.index') }}">
+                         <i class="fa fa-tags"></i> <span>خدمات الشركة</span>
+                        </a>
+                    </li>
+                    <li class="{{  request()->routeIs('general-advices.*') ? 'active' : ''  }}">
+                       <a href="{{ route('general-advices.index') }}">
+                         <i class="fa fa-tags"></i> <span>نصائح عامة</span>
+                        </a>
+                    </li>
+                    <li class="{{  request()->routeIs('farmer-advices.*') ? 'active' : ''  }}">
+                        <a href="{{ route('farmer-advices.index') }}">
+                          <i class="fa fa-tags"></i> <span>نصائح زراعية</span>
+                         </a>
+                     </li>
+                     <li class="{{  request()->routeIs('technical-advices.*') ? 'active' : ''  }}">
+                        <a href="{{ route('technical-advices.index') }}">
+                          <i class="fa fa-tags"></i> <span>نصائح فنية</span>
+                         </a>
+                     </li>
+                </ul>
+
+            </li>
             {{-- <li class="header">ادارة الخدمات</li> --}}
-            <li class="treeview {{  request()->routeIs('service.*') ? 'active' : ''  }}">
+            {{-- <li class="treeview {{  request()->routeIs('service.*') ? 'active' : ''  }}">
               <a href="{{ route('service.index') }}">
                 <i class="fa  fa-bullhorn"></i> <span>الخدمات</span>
               </a>
-            </li>
+            </li> --}}
 
             {{-- <li class="header">ادارة المصانع</li> --}}
             <li class="treeview {{  request()->routeIs('factory.*') ? 'active' : ''  }}">

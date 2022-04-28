@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\Dashboard\CompanyServiceController;
+use App\Http\Controllers\Dashboard\FarmerAdvicesController;
+use App\Http\Controllers\Dashboard\GeneralAdvicesController;
+use App\Http\Controllers\Dashboard\TechnicalAdvicesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -104,6 +108,11 @@ Route::group(['middleware' => 'auth', 'prefix' => 'dashboard'], function () {
     Route::resource('feedback', 'Dashboard\FeedbackController');
 
     Route::resource('newsletter', 'Dashboard\NewsletterController');
+    //sabreen
+    Route::resource('company-service', 'Dashboard\CompanyServiceController');
+    Route::resource('general-advices', 'Dashboard\GeneralAdvicesController');
+    Route::resource('farmer-advices', 'Dashboard\FarmerAdvicesController');
+    Route::resource('technical-advices', 'Dashboard\TechnicalAdvicesController');
 });
 
 require __DIR__ . '/auth.php';

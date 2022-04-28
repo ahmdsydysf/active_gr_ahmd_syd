@@ -1,6 +1,5 @@
 @extends('layouts.dash.app')
 
-@section('page_title' , 'كل الرسائل')
 
 @section('content')
 <div class="box">
@@ -17,6 +16,7 @@
    <thead>
 
                                 <tr role="row">
+                                    <th data-field="state" data-checkbox="false"></th>
                                     <th class="sorting_desc" tabindex="0" aria-controls="example1" rowspan="1"
                                         colspan="1"
                                         aria-label="كود: activate to sort column ascending" aria-sort="descending">كود
@@ -53,9 +53,10 @@
                                 @if ($row->count() > 0)
                                 @foreach ( $row as $r )
                                 <tr role="row" class="odd">
+                                    <td></td>
                                     <td class="sorting_1">- {{$r->id}} -</td>
 
-                                    <td>{{$r->message_type->message_type_ar}}</td>
+                                    <td>{{$r->message_type->message_type_ar ?? ''}}</td>
 
                                     <td>{{$r->message_date}}</td>
                                     <td>{{$r->name}}</td>

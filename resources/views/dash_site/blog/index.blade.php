@@ -17,6 +17,7 @@
        <thead>
 
                                         <tr role="row">
+                                            <th data-field="state" data-checkbox="false"></th>
                                             <th >كود
                                             </th>
                                             <th >وقت
@@ -32,10 +33,8 @@
                                                 النص انجليزي</th>
                                             <th >
                                                 صورة المقال</th>
-                                            <th >
-                                                نشط</th>
-                                            <th >
-                                                الترتيب</th>
+
+
                                             <th>
                                                 الاعدادات</th>
                                         </tr>
@@ -44,6 +43,7 @@
                                         @if ($row->count() > 0)
                                             @foreach ($row as $r)
                                                 <tr role="row" class="odd">
+                                                    <td></td>
                                                     <td class="sorting_1">- {{ $r->id }} -</td>
                                                     <td>{{ $r->blog_date }}</td>
                                                     <td>{{ $r->title_ar }}</td>
@@ -54,8 +54,7 @@
                                                             style="background-color: #00A65A;width='150px'"><img
                                                                 src="{{ asset('uploads/blogs/' . $r->image) }}" alt=""
                                                                 srcset=""></span> </td>
-                                                    <td>{{ $r->active }}</td>
-                                                    <td>{{ $r->order }}</td>
+
                                                     <td>
                                                         <a href="{{ route('blog.edit', $r->id) }}"
                                                             class="btn btn-primary">تعديل</a>

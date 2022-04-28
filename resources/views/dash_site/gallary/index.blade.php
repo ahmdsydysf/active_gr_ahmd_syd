@@ -18,6 +18,7 @@
 
 
                                         <tr role="row">
+                                            <th data-field="state" data-checkbox="false"></th>
                                             <th class="sorting_desc" tabindex="0" aria-controls="example1" rowspan="1"
                                                 colspan="1" aria-label="كود: activate to sort column ascending"
                                                 aria-sort="descending">كود
@@ -38,9 +39,7 @@
                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
                                                 colspan="1" aria-label="الوصف عربي: activate to sort column ascending">
                                                 الوصف عربي</th>
-                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
-                                                colspan="1" aria-label="الترتيب: activate to sort column ascending">
-                                                الترتيب</th>
+
                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
                                                 colspan="1" aria-label="نشط: activate to sort column ascending">
                                                 نشط</th>
@@ -54,6 +53,7 @@
                                         @if ($row->count() > 0)
                                             @foreach ($row as $r)
                                                 <tr role="row" class="odd">
+                                                    <td></td>
                                                     <td class="sorting_1">- {{ $r->id }} -</td>
 
                                                     <td>{{ $r->path }}</td>
@@ -61,7 +61,6 @@
                                                     <td>{{ $r->gallary_category->category_ar ?? ' ' }}</td>
                                                     <td>{{ $r->description_en }}</td>
                                                     <td>{{ $r->description_ar }}</td>
-                                                    <td>{{ $r->order }}</td>
                                                     <td>{{ $r->active }}</td>
                                                     <td>
                                                         <a href="{{ route('gallary.edit', $r->id) }}"

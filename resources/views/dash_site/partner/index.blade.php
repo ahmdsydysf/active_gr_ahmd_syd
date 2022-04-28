@@ -20,6 +20,7 @@
 
 
                                         <tr role="row">
+                                            <th data-field="state" data-checkbox="false"></th>
                                             <th class="sorting_desc" tabindex="0" aria-controls="example1" rowspan="1"
                                                 colspan="1" aria-label="كود: activate to sort column ascending"
                                                 aria-sort="descending">كود
@@ -40,21 +41,8 @@
                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
                                                 colspan="1" aria-label="لوجو: activate to sort column ascending">
                                                 لوجو</th>
-                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
-                                                colspan="1" aria-label="الموقع: activate to sort column ascending">
-                                                الموقع</th>
-                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
-                                                colspan="1" aria-label="الفيسبوك: activate to sort column ascending">
-                                                الفيسبوك</th>
-                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
-                                                colspan="1" aria-label="تويتر: activate to sort column ascending">
-                                                تويتر</th>
-                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
-                                                colspan="1" aria-label="انستجرام: activate to sort column ascending">
-                                                انستجرام</th>
-                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
-                                                colspan="1" aria-label="الترتيب: activate to sort column ascending">
-                                                الترتيب</th>
+
+
 
                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
                                                 colspan="1" aria-label="الاعدادات: activate to sort column ascending">
@@ -65,6 +53,7 @@
                                         @if ($row->count() > 0)
                                             @foreach ($row as $r)
                                                 <tr role="row" class="odd">
+                                                    <td></td>
                                                     <td class="sorting_1">- {{ $r->id }} -</td>
                                                     <td>{{ $r->name_en }}</td>
                                                     <td>{{ $r->name_ar }}</td>
@@ -73,11 +62,7 @@
                                                     <td> <span class="thumbnail" style="background-color: #00A65A"><img
                                                                 src="{{ asset('uploads/partners/' . $r->logo) }}" alt=""
                                                                 srcset="" width="200"></span> </td>
-                                                    <td>{{ $r->website }}</td>
-                                                    <td>{{ $r->facebook }}</td>
-                                                    <td>{{ $r->twitter }}</td>
-                                                    <td>{{ $r->instgram }}</td>
-                                                    <td>{{ $r->order }}</td>
+
                                                     <td>
                                                         <a href="{{ route('partner.edit', $r->id) }}"
                                                             class="btn btn-primary">تعديل</a>

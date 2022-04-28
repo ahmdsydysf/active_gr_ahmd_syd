@@ -21,6 +21,7 @@
 
 
                                         <tr role="row">
+                                            <th data-field="state" data-checkbox="false"></th>
                                             <th class="sorting_desc" tabindex="0" aria-controls="example1" rowspan="1"
                                                 colspan="1" aria-label="كود: activate to sort column ascending"
                                                 aria-sort="descending">كود
@@ -39,9 +40,7 @@
                                                 colspan="1" aria-label="الوصف انجليزي: activate to sort column ascending">
                                                 الوصف انجليزي</th>
 
-                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
-                                                colspan="1" aria-label="الترتيب: activate to sort column ascending">
-                                                الترتيب</th>
+
                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
                                                 colspan="1" aria-label="الاعدادات: activate to sort column ascending">
                                                 الاعدادات</th>
@@ -51,12 +50,13 @@
                                         @if ($row->count() > 0)
                                             @foreach ($row as $r)
                                                 <tr role="row" class="odd">
+                                                    <td></td>
                                                     <td class="sorting_1">- {{ $r->id }} -</td>
                                                     <td>{{ $r->category_ar }}</td>
                                                     <td>{{ $r->category_en }}</td>
                                                     <td>{{ $r->description_ar }}</td>
                                                     <td>{{ $r->description_en }}</td>
-                                                    <td>{{ $r->order }}</td>
+
                                                     <td>
                                                         <a href="{{ route('gallary_category.edit', $r->id) }}"
                                                             class="btn btn-primary">تعديل</a>
