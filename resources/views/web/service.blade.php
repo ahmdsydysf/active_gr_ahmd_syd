@@ -154,11 +154,14 @@
                                         {{ $row->title_ar }}
                                     @endif<a href="images/01.png" download="download"
                                             target="_blank"><i class="far fa-file-pdf dwn-icon"></i></a></h3>
-                                    <p class="col-12 text-dir"> @if (LaravelLocalization::getCurrentLocale() === 'en')
-                                        {!! $row->text_en !!}
-                                    @else
-                                        {!! $row->text_ar !!}
-                                    @endif</p>
+                                    <p class="col-12 text-dir">
+                                    @if (LaravelLocalization::getCurrentLocale() === 'en')
+                                    {{ strip_tags($row->text_en) }}
+
+                                @else
+                                {{ strip_tags($row->text_ar) }}
+
+                                @endif</p>
                                 </div>
                             </div>
                         </div>
