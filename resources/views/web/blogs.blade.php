@@ -56,11 +56,14 @@
                                             {!! $latest->title_ar ?? '' !!}
                                         @endif</h3>
                                     </a>
-                                    <p>@if (LaravelLocalization::getCurrentLocale() === 'en')
-                                        {!! str_limit($latest->text_en ?? '', $limit = 50, $end = '...') !!}
+                                    <p> @if (LaravelLocalization::getCurrentLocale() === 'en')
+                                        {{ strip_tags(str_limit($latest->text_en ?? '', $limit = 100, $end = '...')) }}
+
                                     @else
-                                        {!! str_limit($latest->text_ar ?? '', $limit = 50, $end = '...') !!}
-                                    @endif</p>
+                                    {{ strip_tags(str_limit($latest->text_ar ?? '', $limit = 100, $end = '...')) }}
+
+                                    @endif
+                            </p>
                                 </div>
                             </div>
                             @endforeach

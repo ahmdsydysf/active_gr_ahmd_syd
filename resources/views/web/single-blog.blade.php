@@ -88,10 +88,13 @@
                                             </a>
                                             <p>
                                                 @if (LaravelLocalization::getCurrentLocale() === 'en')
-                                                    {!! str_limit($latest->text_en ?? '', $limit = 50, $end = '...') !!}
-                                                @else
-                                                    {!! str_limit($latest->text_ar ?? '', $limit = 50, $end = '...') !!}
-                                                @endif
+                                                {{ strip_tags(str_limit($latest->text_en ?? '', $limit = 100, $end = '...')) }}
+
+                                            @else
+                                            {{ strip_tags(str_limit($latest->text_ar ?? '', $limit = 100, $end = '...')) }}
+
+                                            @endif
+
                                             </p>
                                         </div>
                                     </div>
@@ -159,10 +162,13 @@
                                                             </a>
                                                             <p class="text-dir">
                                                                 @if (LaravelLocalization::getCurrentLocale() === 'en')
-                                                                    {!! str_limit($blog->text_en ?? '', $limit = 100, $end = '...') !!}
-                                                                @else
-                                                                    {!! str_limit($blog->text_ar ?? '', $limit = 100, $end = '...') !!}
-                                                                @endif
+                                                                {{ strip_tags(str_limit($blog->text_en ?? '', $limit = 100, $end = '...')) }}
+
+                                                            @else
+                                                            {{ strip_tags(str_limit($blog->text_ar ?? '', $limit = 100, $end = '...')) }}
+
+                                                            @endif
+
                                                             </p>
                                                         </div>
                                                     </div>

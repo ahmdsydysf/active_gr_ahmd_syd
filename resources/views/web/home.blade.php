@@ -476,10 +476,13 @@
                                                     {!! $blog->title_ar ?? '' !!}
                                                 @endif
                                              </a>
-                                                <p class="text-dir" >@if (LaravelLocalization::getCurrentLocale() === 'en')
-                                                    {!! str_limit($blog->text_en ?? '', $limit = 100, $end = '...') !!}
+                                                <p class="text-dir" >
+                                                    @if (LaravelLocalization::getCurrentLocale() === 'en')
+                                                    {{ strip_tags(str_limit($blog->text_en ?? '', $limit = 200, $end = '...')) }}
+
                                                 @else
-                                                    {!! str_limit($blog->text_ar ?? '', $limit = 100, $end = '...') !!}
+                                                {{ strip_tags(str_limit($blog->text_ar ?? '', $limit = 200, $end = '...')) }}
+
                                                 @endif
                                             </p>
                                             </div>
