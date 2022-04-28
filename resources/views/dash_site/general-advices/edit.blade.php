@@ -64,7 +64,7 @@
                                     <div class="col-sm-12">
                                         <div class="form-group">
                                             <label  >{{ __('   الفديو ') }}</label>
-                                            <textarea class="form-control " name="vedio">{{$row->vedio}}</textarea>
+                                            <textarea class="form-control " name="video" >{{$row->vedio}}</textarea>
 
 
                                         </div>

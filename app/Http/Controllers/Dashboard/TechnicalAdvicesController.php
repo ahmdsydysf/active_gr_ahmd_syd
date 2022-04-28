@@ -58,17 +58,35 @@ class TechnicalAdvicesController extends Controller
    */
   public function store(Request $request)
   {
-      $input = $request->except(['_token',  'active','post_date']);
+    $input = $request->except(['_token', 'img', 'active', 'pdf_en', 'pdf_ar','post_date']);
+    if ($request->hasFile('img')) {
+        $attach_image = $request->file('img');
 
-      if ($request->has('active')) {
-          $input['active'] = 1;
-      } else {
-          $input['active'] = 0;
+        $input['image'] = $this->UplaodImage($attach_image);
 
-      }
-      $input['service_type_id'] = 2;
-      $input['post_date'] = Carbon::parse($request->get('post_date'));
-      Service::create($input);
+    }
+    if ($request->hasFile('pdf_en')) {
+        $attach_pdf_en = $request->file('pdf_en');
+
+        $input['pdf_en'] = $this->UplaodImage($attach_pdf_en);
+
+    }
+    if ($request->hasFile('pdf_ar')) {
+        $attach_pdf_ar = $request->file('pdf_ar');
+
+        $input['pdf_ar'] = $this->UplaodImage($attach_pdf_ar);
+
+    }
+
+    if ($request->has('active')) {
+        $input['active'] = 1;
+    } else {
+        $input['active'] = 0;
+
+    }
+    $input['service_type_id'] = 2;
+    $input['post_date'] = Carbon::parse($request->get('post_date'));
+    Service::create($input);
       return redirect()->route($this->routeName . 'index')->with('flash_success', 'تم الحفظ بنجاح');
   }
 
@@ -105,18 +123,35 @@ class TechnicalAdvicesController extends Controller
    */
   public function update(Request $request, $id)
   {
-      $input = $request->except(['_token','active','post_date']);
+    $input = $request->except(['_token', 'img', 'active', 'pdf_en', 'pdf_ar','post_date']);
+    if ($request->hasFile('img')) {
+        $attach_image = $request->file('img');
 
+        $input['image'] = $this->UplaodImage($attach_image);
 
-      if ($request->has('active')) {
-          $input['active'] = 1;
-      } else {
-          $input['active'] = 0;
+    }
+    if ($request->hasFile('pdf_en')) {
+        $attach_pdf_en = $request->file('pdf_en');
 
-      }
-      $input['service_type_id'] = 2;
-      $input['post_date'] = Carbon::parse($request->get('post_date'));
-      Service::findOrFail($id)->update($input);
+        $input['pdf_en'] = $this->UplaodImage($attach_pdf_en);
+
+    }
+    if ($request->hasFile('pdf_ar')) {
+        $attach_pdf_ar = $request->file('pdf_ar');
+
+        $input['pdf_ar'] = $this->UplaodImage($attach_pdf_ar);
+
+    }
+
+    if ($request->has('active')) {
+        $input['active'] = 1;
+    } else {
+        $input['active'] = 0;
+
+    }
+    $input['service_type_id'] = 4;
+    $input['post_date'] = Carbon::parse($request->get('post_date'));
+    Service::findOrFail($id)->update($input);
       return redirect()->route($this->routeName . 'index')->with('flash_success', 'تم الحفظ بنجاح');
   }
 
@@ -130,8 +165,16 @@ class TechnicalAdvicesController extends Controller
   {
       $row=Service::where('id',$id)->first();
       // Delete File ..
-
+      $file = $row->image;
+      $file_name = public_path('uploads/services/' . $file);
+      $file1 = $row->pdf_en;
+      $file_name1 = public_path('uploads/services/' . $file);
+      $file2 = $row->pdf_ar;
+      $file_name2 = public_path('uploads/services/' . $file);
       try {
+          File::delete($file_name);
+          File::delete($file_name1);
+          File::delete($file_name2);
 
           $row->delete();
           return redirect()->back()->with('flash_success', 'تم الحذف بنجاح !');
@@ -141,5 +184,28 @@ class TechnicalAdvicesController extends Controller
 
           // return redirect()->back()->with('flash_danger', 'هذه القضية مربوطه بجدول اخر ..لا يمكن المسح');
       }
+  }
+
+
+    /* uplaud image
+   */
+  public function UplaodImage($file_request)
+  {
+      //  This is Image Info..
+      $file = $file_request;
+      $name = $file->getClientOriginalName();
+      $ext = $file->getClientOriginalExtension();
+      $size = $file->getSize();
+      $path = $file->getRealPath();
+      $mime = $file->getMimeType();
+
+      // Rename The Image ..
+      $imageName = $name;
+      $uploadPath = public_path('uploads/services');
+
+      // Move The image..
+      $file->move($uploadPath, $imageName);
+
+      return $imageName;
   }
 }
