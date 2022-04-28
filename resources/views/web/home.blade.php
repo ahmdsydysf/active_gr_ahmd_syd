@@ -34,8 +34,8 @@
                                         @endif
                                     </p> <!-- Hero-btn -->
                                     <div class="hero__btn" data-animation="fadeInLeft" data-delay="1.1s">
-                                        <a href="industries.html" class="btn hero-btn">{{ __('links.show_more') }}</a>
-                                        <a class="btn hero-btn2">{{ __('links.contact_us') }} </a>
+                                        <a href="{{ LaravelLocalization::localizeUrl('/about') }}" class="btn hero-btn">{{ __('links.show_more') }}</a>
+                                        <a href="{{ LaravelLocalization::localizeUrl('/contact') }}" class="btn hero-btn2">{{ __('links.contact_us') }} </a>
                                     </div>
                                 </div>
                             </div>
@@ -146,7 +146,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="clients_btn"><a href="" class="btn hero-btn" tabindex="0">{{ __('links.show_more') }}</a></div>
+                            <div class="clients_btn"><a href="{{ LaravelLocalization::localizeUrl('/about') }}" class="btn hero-btn" tabindex="0">{{ __('links.show_more') }}</a></div>
                         </div>
 
                     </div>
@@ -356,7 +356,7 @@
    </div>
    @endisset
 
-                    <div class="clients_btn"><a href="" class="btn hero-btn" tabindex="0">{{ __('links.show_more') }}</a></div>
+                    <div class="clients_btn"><a href="{{ LaravelLocalization::localizeUrl('/growProduct') }}" class="btn hero-btn" tabindex="0">{{ __('links.show_more') }}</a></div>
                 </div>
             </div>
             <div class="col-lg-6 pr-no">
@@ -529,7 +529,7 @@
                                     @else
                                         {!! $partner->description_ar ?? '' !!}
                                     @endif</div>
-                                    <div class="clients_btn"><a href="" class="btn hero-btn"
+                                    <div class="clients_btn"><a href="{{ LaravelLocalization::localizeUrl('/partners') }}" class="btn hero-btn"
                                             tabindex="0">{{ __('links.show_more') }}</a>
                                     </div>
                                 </div>
