@@ -8,7 +8,7 @@
 <div class="box">
     <div class="box-header">
       <h3 class="box-title"> نصائح زراعية</h3>
-      <a href="{{ route('farmer-advices.create') }}" class="btn bg-olive btn-lg pull-right"> اضافة </a>
+      <a href="{{ route('technical-advices.create') }}" class="btn bg-olive btn-lg pull-right"> اضافة </a>
 
     </div><!-- /.box-header -->
     <div class="box-body">
@@ -47,7 +47,7 @@
                                         <div class="btn-group">
 
 
-                                            <a href="{{ route('farmer-advices.edit', $row->id) }}">
+                                            <a href="{{ route('technical-advices.edit', $row->id) }}">
                                                 <p class="bg-olive fa fa-cogs"></p>
                                             </a>
 
@@ -65,7 +65,7 @@
                              <div class="modal modal-danger" id="del{{ $row->id }}" tabindex="-1" role="dialog"
                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
-                                <form action="{{ route('farmer-advices.destroy', $row->id) }}"  method="POST" >
+                                <form action="{{ route('technical-advices.destroy', $row->id) }}"  method="POST" >
                                     @csrf
                                     @method('DELETE')
                                     <div class="modal-content">

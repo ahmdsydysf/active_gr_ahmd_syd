@@ -17,7 +17,7 @@
 
 
 
-        <form action="{{route('farmer-advices.update',$row->id)}}"  method="post" enctype="multipart/form-data">
+        <form action="{{route('technical-advices.update',$row->id)}}"  method="post" enctype="multipart/form-data">
 
             @method('PUT')
               @csrf
@@ -113,7 +113,7 @@
 
                 <div class="col-xs-6 col-sm-6 col-md-6 text-center">
                     <button type="submit" class="btn bg-olive">حفظ</button>
-                    <a href="{{route('farmer-advices.index')}}" class="btn btn-danger">إلغاء</a>
+                    <a href="{{route('technical-advices.index')}}" class="btn btn-danger">إلغاء</a>
                 </div>
                 </div>
 

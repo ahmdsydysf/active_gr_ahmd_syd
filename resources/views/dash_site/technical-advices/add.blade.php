@@ -17,7 +17,7 @@
 
 
 
-                  <form action="{{route('farmer-advices.store')}}"  method="post" enctype="multipart/form-data">
+                  <form action="{{route('technical-advices.store')}}"  method="post" enctype="multipart/form-data">
                     @csrf
                   <div class="box-body">
                     <div class="col-sm-12">
@@ -90,7 +90,7 @@
 
                 <div class="col-xs-6 col-sm-6 col-md-6 text-center">
                     <button type="submit" class="btn bg-olive">حفظ</button>
-                    <a href="{{route('farmer-advices.index')}}" class="btn btn-danger">إلغاء</a>
+                    <a href="{{route('technical-advices.index')}}" class="btn btn-danger">إلغاء</a>
                 </div>
                 </div>
 
