@@ -23,9 +23,7 @@
 
                                         <th> الاسم انجليزي </th>
 
-                                        <th>النص عربي  </th>
 
-                                        <th> النص انجليزي </th>
                                         <th> الصورة </th>
 
 							<th>{{ __('الإجراء') }}</th>
@@ -38,9 +36,7 @@
                                 <td>{{$row->title_ar}}</td>
                                 <td>{{$row->title_en}}</td>
 
-                                <td>{!! $row->text_ar !!} </td>
 
-                                <td>{!! $row->text_en !!} </td>
 
                                 <td><img src="{{ asset('uploads/services') }}/{{ $row->image }}" width="100" height="100"> </td>
                                       <td>
