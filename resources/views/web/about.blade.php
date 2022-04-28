@@ -382,7 +382,7 @@
                         <div class="item">
                             <div class="box-b staff">
                                 <div class="box-img">
-                                    <img src="{{asset('uploads/team_members')}}/{{$team->image ?? ''}}">
+                                    <img src="{{asset('uploads/teams')}}/{{$team->image ?? ''}}">
                                 </div>
                                 <h3>@if( LaravelLocalization::getCurrentLocale() === "en")
                                     {{$team->name_en}}
