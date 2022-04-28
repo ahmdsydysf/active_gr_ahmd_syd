@@ -113,7 +113,7 @@
             <select class="form-control" name="type_id">
 
                 @foreach ( $pro_typ as $typ )
-                <option value="{{$typ->id}}"  {{$row->type_id == $typ->id  ? 'selected' : '' }} >{{$typ->type_ar}}</option>
+                <option value="{{$typ->id}}"  {{ $row->type_id == $typ->id  ? 'selected' : '' }} >{{$typ->type_ar}}</option>
                 @endforeach
             </select>
         </div>
