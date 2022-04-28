@@ -53,14 +53,14 @@
         <div class="alert alert-danger">{{ $message }}</div>
         @enderror
         <div class="form-group">
-            <label>المكان عربي</label>
+            <label>الوظيفة عربي</label>
             <textarea  name="position_ar" class="form-control " rows="3" placeholder="النص">{{old('position_ar')}}</textarea>
         </div>
         @error('position_ar')
         <div class="alert alert-danger">{{ $message }}</div>
         @enderror
         <div class="form-group">
-            <label>المكان انجليزي</label>
+            <label>الوظيفة انجليزي</label>
             <textarea  name="position_en" class="form-control " rows="3" placeholder="النص">{{old('position_en')}}</textarea>
         </div>
         @error('position_en')

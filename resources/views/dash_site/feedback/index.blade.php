@@ -35,25 +35,7 @@
                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
                                                 colspan="1" aria-label="الاسم انجليزي: activate to sort column ascending">
                                                 الاسم انجليزي</th>
-                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
-                                                colspan="1" aria-label="المكان عربي: activate to sort column ascending">
-                                                المكان عربي</th>
-                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
-                                                colspan="1" aria-label="المكان انجليزي: activate to sort column ascending">
-                                                المكان انجليزي</th>
-                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
-                                                colspan="1" aria-label="التقييم انجليزي: activate to sort column ascending">
-                                                التقييم انجليزي</th>
-                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
-                                                colspan="1" aria-label="التقييم عربي: activate to sort column ascending">
-                                                التقييم عربي</th>
 
-                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
-                                                colspan="1" aria-label="نشط: activate to sort column ascending">
-                                                نشط</th>
-                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
-                                                colspan="1" aria-label="الترتيب: activate to sort column ascending">
-                                                الترتيب</th>
                                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
                                                 colspan="1" aria-label="الاعدادات: activate to sort column ascending">
                                                 الاعدادات</th>
@@ -72,12 +54,7 @@
                                                                 srcset=""></span> </td>
                                                     <td>{{ $r->name_ar }}</td>
                                                     <td>{{ $r->name_en }}</td>
-                                                    <td>{{ $r->position_ar }}</td>
-                                                    <td>{{ $r->position_en }}</td>
-                                                    <td>{!! $r->feedback_en !!}</td>
-                                                    <td>{!! $r->feedback_ar !!}</td>
-                                                    <td>{{ $r->active }}</td>
-                                                    <td>{{ $r->order }}</td>
+
                                                     <td>
                                                         <a href="{{ route('feedback.edit', $r->id) }}"
                                                             class="btn btn-primary">تعديل</a>

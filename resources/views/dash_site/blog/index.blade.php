@@ -27,10 +27,7 @@
                                                 العنوان عربي</th>
                                             <th >
                                                 العنوان انجليزي</th>
-                                            <th>
-                                                النص عربي</th>
-                                            <th >
-                                                النص انجليزي</th>
+
                                             <th >
                                                 صورة المقال</th>
 
@@ -48,8 +45,7 @@
                                                     <td>{{ $r->blog_date }}</td>
                                                     <td>{!! $r->title_ar !!}</td>
                                                     <td>{!! $r->title_en !!}</td>
-                                                    <td>{!! $r->text_ar !!}</td>
-                                                    <td>{!! $r->text_en !!}</td>
+
                                                     <td> <span class="thumbnail"
                                                             style="background-color: #00A65A;width='150px'"><img
                                                                 src="{{ asset('uploads/blogs/' . $r->image) }}" alt=""
