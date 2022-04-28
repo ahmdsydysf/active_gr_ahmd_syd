@@ -65,12 +65,9 @@
                                 </div>
                                 <div class="col-6 selectOption">
                                     <div class="form-group ">
-                                        <select name="" id="producer" name="producer"
-                                            class="form-select nice-select">
-                                            <option value="" class="selected">نوع الخدمة</option>
-                                            <option value="" class="option">2</option>
-                                            <option value="" class="option">3</option>
-                                        </select>
+                                        <input class="form-control" name="subject"  type="text"
+
+                                            placeholder="{{ __('links.subject') }}">
                                     </div>
                                 </div>
                                 <div class="col-6">

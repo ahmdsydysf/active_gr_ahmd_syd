@@ -16,11 +16,12 @@
                             <div class="footer-tittle">
                                 <div class="footer-pera">
                                     <p class="info1">
+
                                         @if (LaravelLocalization::getCurrentLocale() === 'en')
-                                            {{ $company->overview_en }}
-                                        @else
-                                            {{ $company->overview_ar }}
-                                        @endif
+                                        {!! str_limit( $company->overview_en ?? '', $limit = 222, $end = '..') !!}
+                                    @else
+                                        {!! str_limit($company->overview_ar ?? '', $limit = 222, $end = '..') !!}
+                                    @endif
                                     </p>
                                 </div>
                             </div>
