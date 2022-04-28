@@ -230,7 +230,11 @@
                   <li><a href="{{ route('feedback.index') }}"><i class="fa fa-circle-o"></i> اراء العملاء </a></li>
                   <li><a href="{{ route('message.index') }}"><i class="fa fa-circle-o"></i> رسائل العملاء </a></li>
 
-
+                  <li >
+                    <a href="{{ route('factory.index') }}">
+                      <i class="fa fa-circle-o"></i> <span>المصانع</span>
+                    </a>
+                </li>
 
 
                 </ul>
@@ -250,23 +254,6 @@
 
               </ul>
               </li>
-
-
-              <li class="treeview">
-                <a href="#">
-                  <i class="fa fa-laptop"></i>
-                  <span>المقالات</span>
-                  <i class="fa fa-angle-left pull-right"></i>
-                </a>
-                <ul class="treeview-menu">
-                   <li><a href="{{ route('blog.index') }}"><i class="fa fa-circle-o"></i> عرض المقالات </a></li>
-                  <li><a href="{{ route('blog.create') }}"><i class="fa fa-circle-o"></i> انشاء مقالة </a></li>
-
-
-                </ul>
-              </li>
-
-
 
               <li class="treeview">
                 <a href="#">
@@ -297,16 +284,6 @@
                 </ul>
 
             </li>
-
-
-
-
-
-
-
-
-
-
 
 
             {{-- <li class="treeview {{  request()->routeIs('product.*') ? 'active' : ''  }}">
@@ -340,6 +317,23 @@
                 </ul>
 
             </li>
+              <li class="treeview">
+                <a href="#">
+                  <i class="fa fa-laptop"></i>
+                  <span>المقالات</span>
+                  <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                   <li><a href="{{ route('blog.index') }}"><i class="fa fa-circle-o"></i> عرض المقالات </a></li>
+                  <li><a href="{{ route('blog.create') }}"><i class="fa fa-circle-o"></i> انشاء مقالة </a></li>
+
+
+                </ul>
+              </li>
+
+
+
+
             <li class="treeview">
                 <a href="#">
                   <i class="fa  fa-image"></i> <span>المعرض</span>
@@ -362,11 +356,7 @@
             </li>
 
 
-            <li class="treeview {{  request()->routeIs('factory.*') ? 'active' : ''  }}">
-                <a href="{{ route('factory.index') }}">
-                  <i class="fa  fa-shopping-cart"></i> <span>المصانع</span>
-                </a>
-            </li>
+
 
 
 
