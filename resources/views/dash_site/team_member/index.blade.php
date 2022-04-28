@@ -21,7 +21,7 @@
                                             colspan="1" aria-label="كود: activate to sort column ascending"
                                             aria-sort="descending">كود
                                         </th>
-
+                                        <th> الصورة </th>
                                         <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
                                             colspan="1" aria-label="الاسم عربي: activate to sort column ascending">
                                             الاسم عربي</th>
@@ -52,6 +52,8 @@
                                     <tr role="row" class="odd">
                                         <td></td>
                                         <td class="sorting_1">- {{$r->id}} -</td>
+                                        <td><img src="{{ asset('uploads/teams') }}/{{ $r->image }}" width="100" height="100"> </td>
+
                                         <td>{{$r->name_ar}}</td>
                                         <td>{{$r->name_en}}</td>
                                         <td>{{$r->position_ar}}</td>

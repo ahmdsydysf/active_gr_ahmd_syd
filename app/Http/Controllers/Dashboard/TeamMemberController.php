@@ -5,7 +5,8 @@ namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 use App\Models\Team_member;
 use Illuminate\Http\Request;
-
+use Illuminate\Database\QueryException;
+use File;
 class TeamMemberController extends Controller
 {
     /**
@@ -58,8 +59,13 @@ class TeamMemberController extends Controller
         ]);
 
 
-        $request_data = $request->except('active', '_token');
+        $request_data = $request->except('active', '_token','img');
+        if ($request->hasFile('img')) {
+            $attach_image = $request->file('img');
 
+            $request_data['image'] = $this->UplaodImage($attach_image);
+
+        }
         if ($request->has('active')) {
             $request_data['active'] = 1;
         } else {
@@ -123,9 +129,14 @@ class TeamMemberController extends Controller
 
         $team = Team_member::find($id);
 
-        $request_data = $request->except('active', '_token');
+        $request_data = $request->except('active', '_token','img');
 
+        if ($request->hasFile('img')) {
+            $attach_image = $request->file('img');
 
+            $request_data['image'] = $this->UplaodImage($attach_image);
+
+        }
         if ($request->has('active')) {
             $request_data['active'] = 1;
         } else {
@@ -145,8 +156,41 @@ class TeamMemberController extends Controller
      */
     public function destroy($id)
     {
-        $team = Team_member::find($id);
-        $team->delete();
-        return redirect()->route('team_member.index')->with('flash_success', 'تم الحذف بنجاح');
+        $row = Team_member::find($id);
+        $file = $row->image;
+        $file_name = public_path('uploads/teams/' . $file);
+        try {
+            File::delete($file_name);
+            $row->delete();
+            return redirect()->back()->with('flash_success', 'تم الحذف بنجاح !');
+
+        } catch (QueryException $q) {
+            return redirect()->back()->withInput()->with('flash_danger', $q->getMessage());
+
+            // return redirect()->back()->with('flash_danger', 'هذه القضية مربوطه بجدول اخر ..لا يمكن المسح');
+        }
+    }
+
+
+           /* uplaud image
+     */
+    public function UplaodImage($file_request)
+    {
+        //  This is Image Info..
+        $file = $file_request;
+        $name = $file->getClientOriginalName();
+        $ext = $file->getClientOriginalExtension();
+        $size = $file->getSize();
+        $path = $file->getRealPath();
+        $mime = $file->getMimeType();
+
+        // Rename The Image ..
+        $imageName = $name;
+        $uploadPath = public_path('uploads/teams');
+
+        // Move The image..
+        $file->move($uploadPath, $imageName);
+
+        return $imageName;
     }
 }

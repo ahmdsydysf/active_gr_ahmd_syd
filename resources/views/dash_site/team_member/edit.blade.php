@@ -55,7 +55,19 @@
         <div class="alert alert-danger">{{ $message }}</div>
         @enderror
 
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="">اضافة صورة</label>
 
+                <div class="custom-file">
+                    <input type="file" name="img"
+                        class="custom-file-input"
+                        id="inputGroupFile02" />
+                    <label class="custom-file-label"
+                        for="inputGroupFile02">{{ $row->image ?? '' }}</label>
+                </div>
+            </div>
+        </div>
 
 
 
