@@ -6,8 +6,7 @@
         </span>
         <div class="container">
             <div class="footer-top footer-padding">
-                <div class="row d-flex justify-content-between" @if (LaravelLocalization::getCurrentLocale() === 'ar')
-                dir="rtl"  @endif>
+                <div class="row d-flex justify-content-between dir text-dir" >
                     <div class="col-xl-5 col-lg-5 col-md-6 col-sm-6">
                         <div class="single-footer-caption mb-50">
                             <!-- logo -->
@@ -38,7 +37,7 @@
                     <div class="col-xl-2 col-lg-2 col-md-3 col-sm-3">
                         <div class="single-footer-caption mb-50">
                             <div class="footer-tittle">
-                                <h3>لينكات تهمك</h3>
+                                <h3>{{ __('links.useful_links') }} </h3>
                                 <ul>
                                     <li><a
                                             href="{{ LaravelLocalization::localizeUrl('/') }}">{{ __('links.home') }}</a>
@@ -62,7 +61,7 @@
                     <div class="col-xl-2 col-lg-2 col-md-3 col-sm-3">
                         <div class="single-footer-caption mb-50">
                             <div class="footer-tittle">
-                                <h3>لينكات تهمك</h3>
+                                <h3> {{ __('links.useful_links') }}</h3>
                                 <ul>
                                     <li><a
                                             href="{{ LaravelLocalization::localizeUrl('/partners') }}">{{ __('links.partenters') }}</a>

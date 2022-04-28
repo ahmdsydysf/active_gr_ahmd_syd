@@ -6,14 +6,14 @@
         <div class="slider-height2  d-flex align-items-center">
 
             <div class="container">
-                <div class="row">
+                <div class="row dir">
 
                     <div class="col-12 col-lg-6 offset-0 offset-lg-3">
                         <div class="hero-cap hero-cap2 text-center">
-                            <h2>خدماتنا</h2>
+                            <h2>{{ __('links.services') }}</h2>
                             <ul>
-                                <li class="breadcrumb-item"> <a href="#">الرئيسية</a> <i
-                                        class="fa fa-chevron-left"></i> <a href="#">خدماتنا</a> </li>
+                                <li class="breadcrumb-item"> <a href="{{ LaravelLocalization::localizeUrl('/') }}">{{ __('links.home') }}</a> <i
+                                        class="fa fa-chevron-left"></i> <a href="#">{{ __('links.services') }}</a> </li>
                             </ul>
                         </div>
                     </div>
@@ -30,9 +30,9 @@
     <section class="contact-section main-pro">
         <section class="contact-section exp-contact">
             <div class="container">
-                <div class="row contact-data" dir="rtl">
+                <div class="row contact-data" >
                     <div class="col-12">
-                        <div class="row">
+                        <div class="row dir">
                             <h2 class="contact-title col-12 col-md-4">استشارات فنية</h2>
                             <p class="title-p col-12 col-md-8">خلافا للإعتقاد السائد فإن لوريم إيبسوم ليس نصاَ
                                 عشوائياً،
@@ -74,7 +74,7 @@
                                     {{ $row->title_ar }}
                                 @endif<a href="images/01.png" download="download"
                                         target="_blank"><i class="far fa-file-pdf dwn-icon"></i></a></h3>
-                                <p class="col-12 text-right"> @if (LaravelLocalization::getCurrentLocale() === 'en')
+                                <p class="col-12 text-dir"> @if (LaravelLocalization::getCurrentLocale() === 'en')
                                     {{ $row->text_en }}
                                 @else
                                     {{ $row->text_ar }}
@@ -106,11 +106,11 @@
         </span>
         <section class="contact-section exp-contact">
             <div class="container">
-                <div class="row contact-data" dir="rtl">
+                <div class="row contact-data" >
                     <div class="col-12">
-                        <div class="row">
+                        <div class="row dir">
                             <h2 class="contact-title col-12 col-md-4">نصائح فنية</h2>
-                            <p class="title-p col-12 col-md-8">خلافا للإعتقاد السائد فإن لوريم إيبسوم ليس نصاَ
+                            <p class="title-p col-12 col-md-8 text-dir">خلافا للإعتقاد السائد فإن لوريم إيبسوم ليس نصاَ
                                 عشوائياً،
                                 بل إن له
                                 جذور
@@ -149,7 +149,7 @@
                                         {{ $row->title_ar }}
                                     @endif<a href="images/01.png" download="download"
                                             target="_blank"><i class="far fa-file-pdf dwn-icon"></i></a></h3>
-                                    <p class="col-12 text-right"> @if (LaravelLocalization::getCurrentLocale() === 'en')
+                                    <p class="col-12 text-dir"> @if (LaravelLocalization::getCurrentLocale() === 'en')
                                         {{ $row->text_en }}
                                     @else
                                         {{ $row->text_ar }}

@@ -5,7 +5,7 @@
     <div class="slider-area2">
         <div class="slider-height2 hero-overly2 d-flex align-items-center">
             <div class="container">
-                <div class="row">
+                <div class="row dir">
                     <div class="col-xl-12">
                         <div class="hero-cap hero-cap2 text-center">
                             <h2>{{ __('links.contact_us') }}</h2>
@@ -40,31 +40,31 @@
     <!-- ================ contact section start ================= -->
     <section class="contact-section">
         <div class="container">
-            <div class="row contact-data" dir="rtl">
+            <div class="row contact-data dir" >
                 <div class="col-8">
-                    <h2 class="contact-title">يسعدنا تواصلك معنا</h2>
-                    <p class="title-p">خلافاَ للاعتقاد السائد فإن لوريم إيبسوم ليس نصاَ عشوائياً، بل إن له جذور في
+                    <h2 class="contact-title text-dir">يسعدنا تواصلك معنا</h2>
+                    <p class="title-p text-dir">خلافاَ للاعتقاد السائد فإن لوريم إيبسوم ليس نصاَ عشوائياً، بل إن له جذور في
                         الأدب اللاتيني الكلاسيكي منذ العام قبل الميلاد، مما يجعله أكثر من عام في القدم. قام
                         البروفيسور ريتشارد ماك لينتوك وهو بروفيسور</p>
                 </div>
                 <div class="col-lg-6 contact-data1">
                     <div class="media contact-info">
                         <span class="contact-info__icon"><i class="fas fa-phone"></i></span>
-                        <div class="media-body">
+                        <div class="media-body text-dir">
                             <h3>{{ __('links.phone') }}</h3>
                             <p>{{ $companyContact->phones }}</p>
                         </div>
                     </div>
                     <div class="media contact-info">
                         <span class="contact-info__icon"><i class="fas fa-envelope"></i></span>
-                        <div class="media-body">
+                        <div class="media-body text-dir">
                             <h3>{{ __('links.email') }}</h3>
                             <p>{{ $companyContact->email }}</p>
                         </div>
                     </div>
                     <div class="media contact-info">
                         <span class="contact-info__icon"><i class="fas fa-map-marker-alt"></i></span>
-                        <div class="media-body">
+                        <div class="media-body text-dir">
                             <h3>{{ __('links.address') }}</h3>
                             <p>@if (LaravelLocalization::getCurrentLocale() === 'en')
                                 {{ $companyContact->address_en }}

@@ -14,11 +14,10 @@
 
 
 
-                        <div class="row" @if (LaravelLocalization::getCurrentLocale() === 'ar')
-                        dir="rtl"  @endif>
+                        <div class="row dir" >
                             <div class="col-xl-8 col-lg-7 col-md-8">
                                 <div class="hero__caption">
-                                    <h1 data-animation="fadeInLeft" data-delay=".5s">
+                                    <h1 data-animation="fadeInLeft" data-delay=".5s" class="text-dir">
                                         @if (LaravelLocalization::getCurrentLocale() === 'en')
                                             {!! $singleSlide->title_en !!}
                                         @else
@@ -35,8 +34,8 @@
                                         @endif
                                     </p> <!-- Hero-btn -->
                                     <div class="hero__btn" data-animation="fadeInLeft" data-delay="1.1s">
-                                        <a href="industries.html" class="btn hero-btn">المزيد</a>
-                                        <a class="btn hero-btn2">اتصل بنا</a>
+                                        <a href="industries.html" class="btn hero-btn">{{ __('links.show_more') }}</a>
+                                        <a class="btn hero-btn2">{{ __('links.contact_us') }} </a>
                                     </div>
                                 </div>
                             </div>
@@ -48,11 +47,10 @@
                     <div class="single-slider slider-height d-flex align-items-center">
                         <div id="overlay"></div>
                         <div class="container">
-                            <div class="row" @if (LaravelLocalization::getCurrentLocale() === 'ar')
-                            dir="rtl"  @endif>
+                            <div class="row dir">
                                 <div class="col-xl-8 col-lg-7 col-md-8">
                                     <div class="hero__caption">
-                                        <h1 data-animation="fadeInLeft" data-delay=".5s">
+                                        <h1 data-animation="fadeInLeft" data-delay=".5s" class="text-dir">
                                             @if (LaravelLocalization::getCurrentLocale() === 'en')
                                                 {!! $slider->title_en !!}
                                             @else
@@ -70,8 +68,8 @@
                                         </p>
                                         <!-- Hero-btn -->
                                         <div class="hero__btn" data-animation="fadeInLeft" data-delay="1.1s">
-                                            <a href="industries.html" class="btn hero-btn">المزيد</a>
-                                            <a class="btn hero-btn2">اتصل بنا</a>
+                                            <a href="industries.html" class="btn hero-btn">{{ __('links.show_more') }}</a>
+                                            <a class="btn hero-btn2"> {{ __('links.contact_us') }}</a>
                                         </div>
                                     </div>
                                 </div>
@@ -85,8 +83,7 @@
 
         <section class="sec-gap">
             <div class="container">
-                <div class="row" @if (LaravelLocalization::getCurrentLocale() === 'ar')
-                dir="rtl"  @endif>
+                <div class="row dir" >
                     <div class="col-lg-6">
                         <div class="about_img">
                             <img src="images/1.png" alt="">
@@ -102,7 +99,7 @@
                                 @else
                                     {!! $company->slog_ar ?? '' !!}
                                 @endif    </div>
-                                <div class="about_text">
+                                <div class="about_text text-dir">
                                     @if (LaravelLocalization::getCurrentLocale() === 'en')
                                         <p class="text-justify">
                                             {!! $company->overview_en !!}
@@ -113,9 +110,9 @@
                                         </p>
                                     @endif
                                 </div>
-                                <div class="row mt-10">
+                                <div class="row mt-10 dir">
                                     <div class="col-lg-6">
-                                        <ul class="text-right">
+                                        <ul class="text-dir">
                                             @foreach ($whyRows as $index => $whyRow)
                                                 @if ($index <= 2)
                                                     <li><i class="fas fa-arrow-circle-left"></i>
@@ -132,7 +129,7 @@
                                     </ul>
                                 </div>
                                 <div class="col-lg-6">
-                                    <ul class="text-right">
+                                    <ul class="text-dir">
                                         @foreach ($whyRows as $index => $whyRow)
                                             @if ($index > 2)
                                                 <li><i class="fas fa-arrow-circle-left"></i>
@@ -149,7 +146,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="clients_btn"><a href="" class="btn hero-btn" tabindex="0">المزيد</a></div>
+                            <div class="clients_btn"><a href="" class="btn hero-btn" tabindex="0">{{ __('links.show_more') }}</a></div>
                         </div>
 
                     </div>
@@ -167,9 +164,9 @@
                 <!-- Trends Content -->
                 <div class="col-lg-3">
                     <div class="trends_container">
-                        <h2 class="trends_title clr-green">منتجاتنا فى الاسمده</h2>
+                        <h2 class="trends_title clr-green">{{ __('links.fertilizers') }}</h2>
                         <div class="trends_text">
-                            <p>
+                            <p class="text-dir">
                                 @if (LaravelLocalization::getCurrentLocale() === 'en')
                                                             {{ $fertilizer->description_en }}
                                                         @else
@@ -203,7 +200,7 @@
                                         </div>
                                         <div class="trends_content clr-green">
                                             <div class="trends_info clearfix">
-                                                <div class="trends_name">
+                                                <div class="trends_name text-dir">
                                                     <a>
                                                         @if (LaravelLocalization::getCurrentLocale() === 'en')
                                                             {{ $product->type_en }}
@@ -211,7 +208,7 @@
                                                             {{ $product->type_ar }}
                                                         @endif
                                                     </a>
-                                                    <p>
+                                                    <p class="text-dir">
                                                         @if (LaravelLocalization::getCurrentLocale() === 'en')
                                                             {{ $product->description_en }}
                                                         @else
@@ -301,7 +298,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
-                    <div class="head_title">منتجاتنا فى المبيدات</div>
+                    <div class="head_title">{{ __('links.pesticides') }}</div>
                     <div class="head_text"> @if (LaravelLocalization::getCurrentLocale() === 'en')
                         {{ $pesticide->description_en }}
                     @else
@@ -309,14 +306,13 @@
                     @endif</div>
                 </div>
             </div>
-            <div class="row" @if (LaravelLocalization::getCurrentLocale() === 'ar')
-            dir="rtl"  @endif>
+            <div class="row dir" >
                 @foreach ($products_pesticides as $product)
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="">
                         <div class="pro_image d-flex flex-column align-items-center justify-content-center"><img
                                 src="{{ asset('uploads/product_types') }}/{{ $product->image ?? '' }}" alt=""></div>
-                        <div class="pro_title">
+                        <div class="pro_title text-dir">
                             <a href="#"> @if (LaravelLocalization::getCurrentLocale() === 'en')
                                 {{ $product->type_en }}
                             @else
@@ -324,7 +320,7 @@
                             @endif</a>
                         </div>
                         <div class="pro_content">
-                            <p> @if (LaravelLocalization::getCurrentLocale() === 'en')
+                            <p class="text-dir"> @if (LaravelLocalization::getCurrentLocale() === 'en')
                                 {{ $product->description_en }}
                             @else
                                 {{ $product->description_ar }}
@@ -344,14 +340,14 @@
                 <div class="pro-text">
                     @isset ($products_growth[0])
 
-                    <div class="clients_title">
+                    <div class="clients_title text-dir">
                                 @if (LaravelLocalization::getCurrentLocale() === 'en')
                                 {{ $products_growth[0]->type_en }}
                             @else
                                 {{ $products_growth[0]->type_ar }}
                             @endif
                             </div>
-                            <div class="clients_text">
+                            <div class="clients_text text-dir">
                                 @if (LaravelLocalization::getCurrentLocale() === 'en')
                                 {{ $products_growth[0]->description_en }}
                             @else
@@ -360,7 +356,7 @@
    </div>
    @endisset
 
-                    <div class="clients_btn"><a href="" class="btn hero-btn" tabindex="0">المزيد</a></div>
+                    <div class="clients_btn"><a href="" class="btn hero-btn" tabindex="0">{{ __('links.show_more') }}</a></div>
                 </div>
             </div>
             <div class="col-lg-6 pr-no">
@@ -415,7 +411,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-8  col-md-12 rev-text">@if( LaravelLocalization::getCurrentLocale() === "en")
+                                <div class="col-lg-8  col-md-12 rev-text text-dir">@if( LaravelLocalization::getCurrentLocale() === "en")
                                     {{$feedback->feedback_en}}
                                     @else
                                     {{$feedback->feedback_ar}}
@@ -439,9 +435,9 @@
                 <!-- Trends Content -->
                 <div class="col-lg-3">
                     <div class="trends_container">
-                        <h2 class="trends_title">{{ __('links.blogs') }}</h2>
+                        <h2 class="trends_title text-dir">{{ __('links.blogs') }}</h2>
                         <div class="trends_text">
-                            <p>خلافاَ للاعتقاد السائد فإن لوريم إيبسوم ليس نصاَ عشوائياً، بل إن له جذور في الأدب
+                            <p class="text-dir">خلافاَ للاعتقاد السائد فإن لوريم إيبسوم ليس نصاَ عشوائياً، بل إن له جذور في الأدب
                                 اللاتيني الكلاسيكي منذ العام قبل الميلاد مما أكثر من عام في القدم</p>
                         </div>
                         <div class="trends_slider_nav">
@@ -473,14 +469,14 @@
                                     <div class="trends_content">
 
                                         <div class="trends_info clearfix">
-                                            <div class="trends_name">
+                                            <div class="trends_name text-dir">
                                                 <a href="{{ LaravelLocalization::localizeUrl('/single-blog/'.$blog->id.'/'.$blog->slug) }}">  @if (LaravelLocalization::getCurrentLocale() === 'en')
                                                     {!! $blog->title_en ?? '' !!}
                                                 @else
                                                     {!! $blog->title_ar ?? '' !!}
                                                 @endif
                                              </a>
-                                                <p>@if (LaravelLocalization::getCurrentLocale() === 'en')
+                                                <p class="text-dir" >@if (LaravelLocalization::getCurrentLocale() === 'en')
                                                     {!! str_limit($blog->text_en ?? '', $limit = 100, $end = '...') !!}
                                                 @else
                                                     {!! str_limit($blog->text_ar ?? '', $limit = 100, $end = '...') !!}
@@ -520,18 +516,18 @@
                         <div class="item">
                             <div class="row">
                                 <div class="col-lg-6 col-md-12 bg-1 partner-p">
-                                    <div class="clients_title">@if (LaravelLocalization::getCurrentLocale() === 'en')
+                                    <div class="clients_title text-dir">@if (LaravelLocalization::getCurrentLocale() === 'en')
                                         {!! $partner->name_en ?? '' !!}
                                     @else
                                         {!! $partner->name_ar ?? '' !!}
                                     @endif</div>
-                                    <div class="clients_text">@if (LaravelLocalization::getCurrentLocale() === 'en')
+                                    <div class="clients_text text-dir">@if (LaravelLocalization::getCurrentLocale() === 'en')
                                         {!! $partner->description_en ?? '' !!}
                                     @else
                                         {!! $partner->description_ar ?? '' !!}
                                     @endif</div>
                                     <div class="clients_btn"><a href="" class="btn hero-btn"
-                                            tabindex="0">المزيد</a>
+                                            tabindex="0">{{ __('links.show_more') }}</a>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-12">

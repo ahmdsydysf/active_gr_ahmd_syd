@@ -3,21 +3,17 @@
 @section('page_title' , 'التواصل')
 
 @section('content')
-<div class="box-body">
-    <div class="col-md-12">
+<div class="box">
+    <div class="box-header">
+      <h3 class="box-title" >التواصل  </h3>
 
-        <div class="box"  style="overflow: auto">
-            <div class="box-header bg-green">
-                <h3 class="box-title">كل البيانات</h3>
+  </div>
 
-            </div>
-
+        <div class="box-body">
             <div class="box-body">
-                <div id="example1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <table id="example" class="table table-striped table-bordered" style="width:100%">
-                                <thead>
+                <table id="table" data-toggle="table" data-pagination="true" data-search="true"  data-resizable="true" data-cookie="true"
+                data-show-export="true" data-locale="ar-SA"  style="direction: rtl" >
+   <thead>
 
                                 <tr role="row">
                                     <th class="sorting_desc" tabindex="0" aria-controls="example1" rowspan="1"
@@ -49,21 +45,7 @@
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
                                         aria-label="الموقع: activate to sort column ascending">
                                         الموقع</th>
-                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
-                                        aria-label="الفيسبوك: activate to sort column ascending">
-                                        الفيسبوك</th>
-                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
-                                        aria-label="تويتر: activate to sort column ascending">
-                                        تويتر</th>
-                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
-                                        aria-label="لينكيدان: activate to sort column ascending">
-                                        لينكيدان</th>
-                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
-                                        aria-label="انستجرام: activate to sort column ascending">
-                                        انستجرام</th>
-                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
-                                        aria-label="يوتيوب: activate to sort column ascending">
-                                        يوتيوب</th>
+
 
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
                                         aria-label="الاعدادات: activate to sort column ascending">
@@ -83,11 +65,7 @@
                                     <td>{{$r->whatsapp}}</td>
                                     <td>{{$r->google_map}}</td>
                                     <td>{{$r->website}}</td>
-                                    <td>{{$r->facebook}}</td>
-                                    <td>{{$r->twitter}}</td>
-                                    <td>{{$r->linkedin}}</td>
-                                    <td>{{$r->instagram}}</td>
-                                    <td>{{$r->youtube}}</td>
+
                                     <td>
                                         <a href="{{ route('company_contact.edit' , $r->id) }}" class="btn btn-primary">تعديل</a>
                                     </td>

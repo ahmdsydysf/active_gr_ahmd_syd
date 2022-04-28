@@ -6,7 +6,7 @@
             <div class="slider-height2  d-flex align-items-center" background>
 
                 <div class="container">
-                    <div class="row">
+                    <div class="row dir">
 
                         <div class="col-12 col-lg-6 offset-0 offset-lg-3">
                             <div class="hero-cap hero-cap2 text-center">
@@ -33,7 +33,7 @@
             <div class="container">
                 <div class="sec-gap testimonial-area">
                     <div class="container teste-sec1">
-                        <div class="row">
+                        <div class="row dir">
                             <div class="col-lg-6 offset-lg-3 pb-30">
                                 <div class="head_title">{{ __('links.customer_feedback') }} </div>
                                 <div class="head_text">
@@ -42,7 +42,7 @@
                             </div>
                         </div>
 
-                        <div class="row d-flex justify-content-center">
+                        <div class="row d-flex justify-content-center text-dir">
                             <div class="col-xl-12 col-lg-12 col-md-12">
                                 <div class="h1-testimonial-active  quotes">
                                     @foreach ($feedBacks as $feedback)
@@ -112,7 +112,7 @@
 
 
                 <div class="all-part ">
-                    <div class="scene row justify-content-center">
+                    <div class="scene row justify-content-center dir">
                         @foreach ($parnters as $parnter)
                         <div class="sngl-part  col-xl-3 col-lg-4 col-md-6 col-12 p-4">
                             <div class="cardpart">

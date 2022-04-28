@@ -5,7 +5,7 @@
         <div class="slider-area2">
             <div class="slider-height2 hero-overly2 d-flex align-items-center">
                 <div class="container">
-                    <div class="row">
+                    <div class="row dir">
                         <div class="col-xl-12">
                             <div class="hero-cap hero-cap2 text-center">
                                 <h2>{{ __('links.blog') }}</h2>
@@ -25,7 +25,7 @@
         <!--================Blog Area =================-->
         <section class="blog_area section-padding">
             <div class="container">
-                <div class="row" dir="rtl">
+                <div class="row dir" >
                     <div class="col-lg-8 mb-5 mb-lg-0">
                         <div class="blog_left_sidebar">
                             <div class="row">
@@ -43,7 +43,7 @@
                                             <div class="trends_content">
 
                                                 <div class="trends_info clearfix">
-                                                    <div class="trends_name">
+                                                    <div class="trends_name text-dir">
                                                         <a>
                                                             @if (LaravelLocalization::getCurrentLocale() === 'en')
                                                                 {!! $blog->title_en ?? '' !!}
@@ -55,7 +55,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="blog_details text-right">
+                                        <div class="blog_details text-dir">
                                             @if (LaravelLocalization::getCurrentLocale() === 'en')
                                                 {!! $blog->text_en ?? '' !!}
                                             @else
@@ -71,11 +71,11 @@
                     <div class="col-lg-4">
                         <div class="blog_right_sidebar">
                             <aside class="single_sidebar_widget popular_post_widget">
-                                <h3 class="widget_title"><span>{{ __('links.latest_News') }} </span></h3>
+                                <h3 class="widget_title text-dir"><span>{{ __('links.latest_News') }} </span></h3>
                                 @foreach ($latestPlogs as $latest)
                                     <div class="media post_item">
                                         <img src="{{ asset('uploads/blogs') }}/{{ $latest->image ?? '' }}" alt="post">
-                                        <div class="media-body">
+                                        <div class="media-body text-dir px-2">
                                             <a
                                                 href="{{ LaravelLocalization::localizeUrl('/single-blog/' . $latest->id . '/' . $latest->slug) }}">
                                                 <h3>
@@ -112,7 +112,7 @@
                         <!-- Trends Content -->
                         <div class="col-lg-3">
                             <div class="trends_container">
-                                <h2 class="trends_title">{{ __('links.popular_blog') }}</h2>
+                                <h2 class="trends_title text-dir">{{ __('links.popular_blog') }}</h2>
                                 <div class="trends_text">
                                     <p>خلافاَ للاعتقاد السائد فإن لوريم إيبسوم ليس نصاَ عشوائياً، بل إن له جذور في الأدب
                                         اللاتيني الكلاسيكي منذ العام قبل الميلاد مما أكثر من عام في القدم</p>
@@ -148,7 +148,7 @@
                                                 <div class="trends_content">
 
                                                     <div class="trends_info clearfix">
-                                                        <div class="trends_name">
+                                                        <div class="trends_name text-dir ">
                                                             <a
                                                                 href="{{ LaravelLocalization::localizeUrl('/single-blog/' . $blog->id . '/' . $blog->slug) }}">
                                                                 @if (LaravelLocalization::getCurrentLocale() === 'en')
@@ -157,7 +157,7 @@
                                                                     {!! $blog->title_ar ?? '' !!}
                                                                 @endif
                                                             </a>
-                                                            <p>
+                                                            <p class="text-dir">
                                                                 @if (LaravelLocalization::getCurrentLocale() === 'en')
                                                                     {!! str_limit($blog->text_en ?? '', $limit = 100, $end = '...') !!}
                                                                 @else

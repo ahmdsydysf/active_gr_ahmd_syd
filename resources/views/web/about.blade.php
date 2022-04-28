@@ -5,7 +5,7 @@
     <div class="slider-area2">
         <div class="slider-height2 hero-overly2 d-flex align-items-center">
             <div class="container">
-                <div class="row">
+                <div class="row dir">
                     <div class="col-xl-12">
                         <div class="hero-cap hero-cap2 text-center">
                             <h2>{{ __('links.about_us') }} </h2>
@@ -38,14 +38,14 @@
 @endif
     <section class="sec-gap">
         <div class="container">
-            <div class="row" dir="rtl">
+            <div class="row dir" >
                 <div class="col-lg-6">
                     <div class="about_img">
                         <img src="images/1.png" alt="">
                         <div class="exp">{{ __('links.ten_years') }} </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-6 text-dir">
                     <div>
                         <div class="sec-about">
                             <h3 class="about-head"> {{ __('links.about_us') }}</h3>
@@ -84,7 +84,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row dir">
                 <!-- Reviews Slider Item -->
 
 
@@ -127,7 +127,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <div id="owl-demo" class="owl-carousel owl-theme">
+                    <div id="owl-demo" class="owl-carousel owl-theme text-dir">
                         @foreach ($partners as $partner)
                         <div class="item">
                             <div class="row">
@@ -143,7 +143,7 @@
                                         {!! $partner->description_ar ?? '' !!}
                                     @endif</div>
                                     <div class="clients_btn"><a href="" class="btn hero-btn"
-                                            tabindex="0">المزيد</a>
+                                            tabindex="0">{{ __('links.show_more') }}</a>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-12">
@@ -175,7 +175,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row d-flex justify-content-center">
+            <div class="row d-flex justify-content-center text-dir">
                 <div class="col-xl-12 col-lg-12 col-md-12">
                     <div class="h1-testimonial-active">
                         <!-- Single Testimonial -->
@@ -228,7 +228,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 offset-lg-3 pb-30">
-                        <div class="head_title">الشهادات والعقود</div>
+                        <div class="head_title">{{ __('links.certificate') }}</div>
                         <div class="head_text">
                             خلافاَ للاعتقاد السائد فإن لوريم إيبسوم ليس نصاَ عشوائياً بل إن له جذور
                         </div>
@@ -237,7 +237,7 @@
                 <div class="owl-carousel owl-theme banner_2_slider">
 @foreach ($contracts as $contract)
      <!-- Banner 2 Slider Item -->
-     <div class="owl-item">
+     <div class="owl-item text-dir">
         <div class="banner_2_item">
             <div class="container fill_height">
                 <div class="row fill_height">
@@ -285,7 +285,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row contact-data" dir="rtl">
+            <div class="row contact-data dir">
                 <div class="col-lg-6 col-md-12">
                     <form class="form-contact contact_form"  action="{{ LaravelLocalization::localizeUrl('/contact-message') }}"
                      method="post"  >

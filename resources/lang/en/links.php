@@ -157,6 +157,13 @@ PREMIER UPVC comes in a different color based on the market and customer needs f
 'experance'=>'Experience and advice',
 'active_group'=>'Active Group',
 'ten_years'=>'10 years of experiance',
-
-
+'useful_links'=>'Useful links',
+'fertilizers'=>'Our products in fertilizers',
+'pesticides'=>'Our products are pesticides',
+'certificate'=>'Certificates and contracts',
+'consult'=>'Consult a specialist',
+'general_tips'=>'General Tips',
+'general_farm'=>'farming tips',
+'factory'=>'Factory',
+'partner'=>'Partner',
 ];

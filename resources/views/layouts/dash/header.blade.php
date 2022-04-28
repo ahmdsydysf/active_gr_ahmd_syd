@@ -1,50 +1,57 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Active Group < | > @yield('page_title')</title>
-    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-    <!-- Bootstrap 3.3.4 -->
-    <link href="{{asset('adminAsset/dist/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
+<html lang="ar">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>RKS</title>
+  <!-- Bootstrap 3.3.4 -->
+    <link href="{{ asset('adminassets/dist/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <!-- FontAwesome 4.3.0 -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+    {{-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css" /> --}}
     <!-- Ionicons 2.0.0 -->
     <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css" />
     <!-- Theme style -->
-    <link href="{{asset('adminAsset/dist/css/AdminLTE.min.css')}}" rel="stylesheet" type="text/css" />
+    <!-- DATA TABLES -->
+<!-- DATA TABLES -->
+<link href="{{ asset('adminassets/plugins/datatables/dataTables.bootstrap.css')}}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('adminassets/dist/css/AdminLTE.min.css') }}" rel="stylesheet" type="text/css" />
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
-    <link href="{{asset('adminAsset/dist/css/skins/_all-skins.css')}}" rel="stylesheet" type="text/css" />
-    {{-- <link href="{{ asset('adminAsset/plugins/datatables/dataTables.bootstrap.css')}}" rel="stylesheet" type="text/css" /> --}}
-
+    <link href="{{ asset('adminassets/dist/css/skins/_all-skins.min.css') }}" rel="stylesheet" type="text/css" />
     <!-- iCheck -->
-    <link href="{{asset('adminAsset/plugins/iCheck/flat/blue.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('adminassets/plugins/iCheck/flat/blue.css') }}" rel="stylesheet" type="text/css" />
     <!-- Morris chart -->
-    <link href="{{asset('adminAsset/plugins/morris/morris.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('adminassets/plugins/morris/morris.css') }}" rel="stylesheet" type="text/css" />
     <!-- jvectormap -->
-    <link href="{{asset('adminAsset/plugins/jvectormap/jquery-jvectormap-1.2.2.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('adminassets/plugins/jvectormap/jquery-jvectormap-1.2.2.css') }}" rel="stylesheet" type="text/css" />
     <!-- Date Picker -->
-    <link href="{{asset('adminAsset/plugins/datepicker/datepicker3.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('adminassets/plugins/datepicker/datepicker3.css') }}" rel="stylesheet" type="text/css" />
     <!-- Daterange picker -->
-    <link rel="stylesheet" href="{{ asset('adminAsset/plugins/data-table/bootstrap-table.css')}}">
-    <link rel="stylesheet" href="{{ asset('adminAsset/plugins/data-table/bootstrap-editable.css')}}">
-
-    <link href="{{asset('adminAsset/plugins/daterangepicker/daterangepicker-bs3.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('adminassets/plugins/daterangepicker/daterangepicker-bs3.css') }}" rel="stylesheet" type="text/css" />
     <!-- bootstrap wysihtml5 - text editor -->
-    <link href="{{asset('adminAsset/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('adminassets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}" rel="stylesheet" type="text/css" />
+    <!--============================================ -->
+    <link rel="stylesheet" href="{{ asset('adminassets/plugins/css/data-table/bootstrap-table.css')}}">
+    <link rel="stylesheet" href="{{ asset('adminassets/plugins/css/data-table/bootstrap-editable.css')}}">
+    @if(isset($canonical))
+    <link rel="canonical" href="{{ $canonical }}" />
+    @endif
 
-    <link href="{{asset('adminAsset/plugins/dttable/dt1.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('adminAsset/plugins/dttable/dt2.css')}}" rel="stylesheet" type="text/css" />
-
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
         <style>
             .alert.alert-msg{
               transition: display 1s ease;
             }
-            .box-header{
+            /* .box-header{
                 display: flex !important;
                 justify-content: space-between !important;
                 align-items: center !important;
-            }
+            } */
             .modal-footer{
                 display: flex;
                 justify-content: space-around;
@@ -68,6 +75,64 @@
                 background-color: #00A65A !important ;
             }
         </style>
+         <style>
+            .bootstrap-table .table:not(.table-condensed)>tbody>tr>td {
+                /* text-indent: 10px; */
+                padding-right: 10px !important;
+
+            }
+
+            .modal-danger .modal-body {
+                background-color: #fff !important;
+                color: #000 !important;
+                text-align: center
+            }
+
+            .modal-secondary .modal-header {
+                background: #444;
+                color: #fff;
+                border-bottom-color: #f4f4f4;
+            }
+
+            .modal-danger .modal-footer {
+                background-color: #fff !important;
+                color: #000 !important;
+            }
+
+            .modal-secondary .modal-body {
+                background-color: #fff !important;
+                color: #000 !important;
+                text-align: center
+            }
+
+            .modal-secondary .modal-footer {
+                background-color: #fff !important;
+                color: #000 !important;
+            }
+
+            .btn-outline {
+                border: 1px solid #000;
+                background: transparent;
+                color: #000;
+            }
+
+            .btn-outline:hover,
+            .btn-outline:focus,
+            .btn-outline:active {
+                border: 1px solid rgb(88, 2, 2);
+                background: rgb(88, 2, 2);
+                color: #fff;
+            }
+
+            .modal-danger .modal-footer {
+                border-color: #000;
+            }
+
+            table .fa {
+                font-size: 25px;
+            }
+
+        </style>
     @yield('style')
   </head>
   <body class="skin-green sidebar-mini">
@@ -79,7 +144,7 @@
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>A</b>G</span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg"><b>Active</b>Group</span>
+          <span class="logo-lg"><b>لوحة التحكم</b></span>
         </a>
 
         <!-- Header Navbar: style can be found in header.less -->
@@ -94,13 +159,13 @@
               <!-- User Account: style can be found in dropdown.less -->
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <img src="{{asset('adminAsset/dist/img/user2-160x160.jpg')}}" class="user-image" alt="User Image"/>
+                  <img src="{{asset('adminassets/dist/img/user2-160x160.jpg')}}" class="user-image" alt="User Image"/>
                   <span class="hidden-xs">{{ Auth::user()->name }}</span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
                   <li class="user-header">
-                    <img src="{{asset('adminAsset/dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image" />
+                    <img src="{{asset('adminassets/dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image" />
                     <p>
                         {{ Auth::user()->name }}
                       <small>Active Group Dashboard</small>
@@ -137,33 +202,30 @@
         <!-- sidebar: style can be found in sidebar.less -->
         <section class="sidebar">
           <!-- Sidebar user panel -->
-          <div class="user-panel">
-            <div class="pull-left image">
-              <img src="{{asset('adminAsset/dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image" />
-            </div>
-            <div class="pull-left info">
-              <p>{{ Auth::user()->name }}</p>
+          <div class="user-panel" style="background: #fff">
+            <img src="{{ asset('webassests/images/logo-1.png')}}" style="width:80%" alt="User Image" />
 
-              <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-            </div>
-          </div>
-
+        </div>
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
-            <li class="header">اختيارات التحكم</li>
+            <li class="active treeview">
+                <a href="#">
+                  <i class="fa fa-dashboard"></i> <span>الرئيسية</span>
+                </a>
 
-            <li class="treeview {{  request()->routeIs('users.*') ? 'active' : ''  }}">
+              </li>
+            {{-- <li class="treeview {{  request()->routeIs('users.*') ? 'active' : ''  }}">
               <a href="{{ route('users.index') }}">
                 <i class="ion ion-ios-people-outline"></i> <span>المستخدميين</span>
               </a>
-            </li>
+            </li> --}}
             <li class="treeview {{  request()->routeIs('team_member.*') ? 'active' : ''  }}">
               <a href="{{ route('team_member.index') }}">
                 <i class="fa  fa-male"></i> <span>اعضاء الفريق</span>
               </a>
             </li>
 
-            <li class="header">ادارة المنتجات</li>
+            {{-- <li class="header">ادارة المنتجات</li> --}}
 
             <li class="treeview {{  request()->routeIs('product.*') ? 'active' : ''  }}">
               <a href="{{ route('product.index') }}">
@@ -216,14 +278,14 @@
                 </ul>
 
             </li>
-            <li class="header">ادارة الخدمات</li>
+            {{-- <li class="header">ادارة الخدمات</li> --}}
             <li class="treeview {{  request()->routeIs('service.*') ? 'active' : ''  }}">
               <a href="{{ route('service.index') }}">
                 <i class="fa  fa-bullhorn"></i> <span>الخدمات</span>
               </a>
             </li>
 
-            <li class="header">ادارة المصانع</li>
+            {{-- <li class="header">ادارة المصانع</li> --}}
             <li class="treeview {{  request()->routeIs('factory.*') ? 'active' : ''  }}">
                 <a href="{{ route('factory.index') }}">
                   <i class="fa  fa-shopping-cart"></i> <span>المصانع</span>
@@ -240,7 +302,7 @@
                 </a>
             </li>
 
-            <li class="header">خاص بالموقع</li>
+            {{-- <li class="header">خاص بالموقع</li> --}}
             <li class="treeview">
                 <a href="#">
                   <i class="fa fa-home"></i> <span>الموقع</span>
@@ -315,9 +377,11 @@
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
         <!-- Content Header (Page header) -->
-        <section class="content-header" style="padding: 35px 20px">
+        <section class="content-header">
           <h1>
-            <small>@yield('page_title')</small>
+            @yield('title')
+
+            {{-- <small>Control panel</small> --}}
           </h1>
 
         </section>
@@ -325,6 +389,6 @@
         <!-- Main content -->
         <section class="content">
           <!-- Small boxes (Stat box) -->
-          <div class="row">
+          {{-- <div class="row"> --}}
 
 

@@ -6,21 +6,18 @@
         <div class="slider-height2  d-flex align-items-center" background>
 
             <div class="container">
-                <div class="row">
+                <div class="row dir">
 
                     <div class="col-12 col-lg-6 offset-0 offset-lg-3">
                         <div class="hero-cap hero-cap2 text-center">
-                            <h2>خبرات وارشادات</h2>
+                            <h2>{{ __('links.experance') }}</h2>
                             <ul>
-                                <li class="breadcrumb-item"> <a href="#">الرئيسية</a> <i
-                                        class="fa fa-chevron-left"></i> <a href="#">خبرات وارشادات</a> </li>
+                                <li class="breadcrumb-item"> <a href="{{ LaravelLocalization::localizeUrl('/') }}">{{ __('links.home') }}</a> <i
+                                        class="fa fa-chevron-left"></i> <a href="#">{{ __('links.experance') }}</a> </li>
                             </ul>
                         </div>
                     </div>
-                    <div
-                        class="pt-0 pt-sm-2 col-lg-3 col-12 hero-cap hero-cap2 text-center align-self-center sub-title">
-                        <h3>تواصل معنا</h3>
-                    </div>
+
                 </div>
             </div>
 
@@ -31,11 +28,11 @@
     <!-- استشر متخصص -->
     <section class="contact-section exp-contact">
         <div class="container">
-            <div class="row contact-data" dir="rtl">
+            <div class="row contact-data dir" >
                 <div class="col-12">
                     <div class="row">
-                        <h2 class="contact-title col-12 col-md-4">استشر متخصص</h2>
-                        <p class="title-p col-12 col-md-8">خلافا للإعتقاد السائد فإن لوريم إيبسوم ليس نصاَ عشوائياً،
+                        <h2 class="contact-title col-12 col-md-4 text-dir">{{ __('links.consult') }}</h2>
+                        <p class="title-p col-12 col-md-8 text-dir">خلافا للإعتقاد السائد فإن لوريم إيبسوم ليس نصاَ عشوائياً،
                             بل إن له
                             جذور
                             في
@@ -48,7 +45,7 @@
                 <div class="col-12">
                     <form class="form-contact contact_form " action="contact_process.php" method="post"
                         id="contactForm " novalidate="novalidate">
-                        <div class="row">
+                        <div class="row dir">
                             <div class="row col-lg">
 
                                 <div class="col-sm-6">
@@ -122,11 +119,11 @@
             <img src="{{ asset('webassests/images/shape.png') }}" alt="" srcset="">
         </span>
         <div class="container">
-            <div class="row contact-data" dir="rtl">
+            <div class="row contact-data " >
                 <div class="col-12 ">
-                    <div class="row mb-5">
-                        <h3 class="contact-title col-12 col-md-4">نصائح عامة</h3>
-                        <p class="title-p col-12 col-md-8">خلافا للإعتقاد السائد فإن لوريم إيبسوم ليس نصاَ عشوائياً،
+                    <div class="row mb-5 dir">
+                        <h3 class="contact-title col-12 col-md-4 text-dir"> {{ __('links.general_tips') }}</h3>
+                        <p class="title-p col-12 col-md-8 text-dir mb-5">خلافا للإعتقاد السائد فإن لوريم إيبسوم ليس نصاَ عشوائياً،
                             بل إن له
                             جذور
                             في
@@ -142,14 +139,14 @@
         </div>
 
         <div class="container">
-            <div class="row" id="loadData" dir="rtl">
+            <div class="row dir" id="loadData">
                 <?php
                 $last_id =0 ;
                ?>
 
                 @foreach ($services as $row)
                 <div class="col-lg-4 col-md-6 col-sm-12 p-3 mb-3">
-                    <a class="play-btn video-view " href="{{$row->vedio}}"></a>
+                    <a class="play-btn video-view" href="{{$row->vedio}}"></a>
 
 
 
@@ -175,7 +172,7 @@
             <div class="mt-3 row justify-content-center">
                 <input type="text" style="opacity: 0;" id="last" value="{{$last_id}}">
                 @if(count($services) >= 1 && count($allRows) > count($services))
-                <div class="btn-submit"><button id="loadBtn" onclick="loadMoreData(document.getElementById('last').value);" class="btn hero-btn">  المـزيد</button></div>
+                <div class="btn-submit"><button id="loadBtn" onclick="loadMoreData(document.getElementById('last').value);" class="btn hero-btn">  {{ __('links.show_more') }}</button></div>
          @endif
 
             </div>
@@ -187,11 +184,11 @@
     <div class="reviews advice-zra py-5">
 
         <div class="container">
-            <div class="row contact-data" dir="rtl">
+            <div class="row contact-data dir" >
                 <div class="col-12 ">
                     <div class="row mb-5">
-                        <h3 class="contact-title col-12 col-md-4">نصائح زراعية</h3>
-                        <p class="title-p col-12 col-md-8">خلافا للإعتقاد السائد فإن لوريم إيبسوم ليس نصاَ عشوائياً،
+                        <h3 class="contact-title col-12 col-md-4 text-dir">{{ __('links.general_farm') }}</h3>
+                        <p class="title-p col-12 col-md-8 text-dir">خلافا للإعتقاد السائد فإن لوريم إيبسوم ليس نصاَ عشوائياً،
                             بل إن له
                             جذور
                             في
@@ -205,7 +202,7 @@
                     <div class="blog_right_sidebar">
                         <aside class="single_sidebar_widget popular_post_widget">
 
-                            <div class="row py-5 mb-3 all-advice-posts">
+                            <div class="row py-5 mb-3 all-advice-posts dir">
                                 <div id="loadDataAdvices" class="row">
                                     <?php
                                     $lastdevice_id =0 ;
@@ -217,7 +214,7 @@
                                         class="col-12 col-md-6 col-lg-3 pr-0 pl-lg-5 pl-0">
                                     <div
                                         class="media-body col-12 col-md-6 col-lg-9  align-self-start mt-3 mt-lg-0 p-0 p-lg-3">
-                                        <div class="col-12">
+                                        <div class="col-12 text-dir">
                                             <h3><a href="#"> @if (LaravelLocalization::getCurrentLocale() === 'en')
                                                 {{ $row->title_en }}
                                             @else
@@ -226,7 +223,7 @@
 
                                         </div>
                                         <div class="col-12">
-                                            <p> @if (LaravelLocalization::getCurrentLocale() === 'en')
+                                            <p class="text-dir"> @if (LaravelLocalization::getCurrentLocale() === 'en')
                                                 {{ $row->text_en }}
                                             @else
                                                 {{ $row->text_ar }}
@@ -248,7 +245,7 @@
                             <div class="mt-3 row justify-content-center">
                                 <input type="text" style="opacity: 0;" id="lastdevice" value="{{$lastdevice_id}}">
                                 @if(count($advices) >= 1 && count($allAdvices) > count($advices))
-                                <div class="btn-submit"><button id="loadBtnAdvice" onclick="loadMoreAdvices(document.getElementById('lastdevice').value);" class="btn hero-btn">  المـزيد</button></div>
+                                <div class="btn-submit"><button id="loadBtnAdvice" onclick="loadMoreAdvices(document.getElementById('lastdevice').value);" class="btn hero-btn">  {{ __('links.show_more') }}</button></div>
                   @endif
                                                 </div>
                             </div>

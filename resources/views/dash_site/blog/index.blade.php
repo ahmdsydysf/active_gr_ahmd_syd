@@ -1,59 +1,42 @@
 @extends('layouts.dash.app')
 
-@section('page_title', 'المقالات')
 
 @section('content')
-<div class="box-body">
 
-    <a href="{{ route('blog.create') }}" class="btn bg-olive btn-lg pull-right">اضافة <i class="fa fa-plus"></i>
-    </a>
+    <div class="box">
+        <div class="box-header">
+          <h3 class="box-title" >المقالات </h3>
+        <a href="{{ route('blog.create') }}"  class="btn bg-olive btn-lg pull-right">اضافة <i class="fa fa-plus"></i>  </a>
 
-</div>
-            <div class="box" style="overflow: auto">
-                <div class="box-header bg-green">
-                    <h3 class="box-title">كل البيانات</h3>
+      </div>
 
-                </div>
-
+            <div class="box-body">
                 <div class="box-body">
-                    <div id="example1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <table id="example" class="table table-striped table-bordered" style="width:100%">
-                                    <thead>
+                    <table id="table" data-toggle="table" data-pagination="true" data-search="true"  data-resizable="true" data-cookie="true"
+                    data-show-export="true" data-locale="ar-SA"  style="direction: rtl" >
+       <thead>
 
                                         <tr role="row">
-                                            <th class="sorting_desc" tabindex="0" aria-controls="example1" rowspan="1"
-                                                colspan="1" aria-label="كود: activate to sort column ascending"
-                                                aria-sort="descending">كود
+                                            <th >كود
                                             </th>
-                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
-                                                colspan="1" aria-label="وقت المقال: activate to sort column ascending">وقت
+                                            <th >وقت
                                                 المقال
                                             </th>
-                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
-                                                colspan="1" aria-label="العنوان عربي: activate to sort column ascending">
+                                            <th>
                                                 العنوان عربي</th>
-                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
-                                                colspan="1" aria-label="العنوان انجليزي: activate to sort column ascending">
+                                            <th >
                                                 العنوان انجليزي</th>
-                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
-                                                colspan="1" aria-label="النص عربي: activate to sort column ascending">
+                                            <th>
                                                 النص عربي</th>
-                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
-                                                colspan="1" aria-label="النص انجليزي: activate to sort column ascending">
+                                            <th >
                                                 النص انجليزي</th>
-                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
-                                                colspan="1" aria-label="صورة المقال: activate to sort column ascending">
+                                            <th >
                                                 صورة المقال</th>
-                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
-                                                colspan="1" aria-label="نشط: activate to sort column ascending">
+                                            <th >
                                                 نشط</th>
-                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
-                                                colspan="1" aria-label="الترتيب: activate to sort column ascending">
+                                            <th >
                                                 الترتيب</th>
-                                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1"
-                                                colspan="1" aria-label="الاعدادات: activate to sort column ascending">
+                                            <th>
                                                 الاعدادات</th>
                                         </tr>
                                     </thead>

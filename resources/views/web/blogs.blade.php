@@ -5,7 +5,7 @@
         <div class="slider-area2">
             <div class="slider-height2 hero-overly2 d-flex align-items-center">
                 <div class="container">
-                    <div class="row">
+                    <div class="row dir">
                         <div class="col-xl-12">
                             <div class="hero-cap hero-cap2 text-center">
                                 <h2>{{ __('links.blogs') }}</h2>
@@ -24,7 +24,7 @@
         <!--================Blog Area =================-->
         <section class="blog_area section-padding">
             <div class="container">
-                <div class="row" dir="rtl">
+                <div class="row dir" >
                     <div class="col-lg-8 mb-5 mb-lg-0">
                         <div id="table_data">
 
@@ -44,11 +44,11 @@
                 <div class="col-lg-4">
                     <div class="blog_right_sidebar">
                         <aside class="single_sidebar_widget popular_post_widget">
-                            <h3 class="widget_title"><span> {{ __('links.latest_News') }}</span></h3>
+                            <h3 class="widget_title text-dir"><span> {{ __('links.latest_News') }}</span></h3>
                             @foreach ($latestPlogs as $latest)
                             <div class="media post_item">
                                 <img src="{{ asset('uploads/blogs') }}/{{ $latest->image ?? '' }}" alt="post">
-                                <div class="media-body">
+                                <div class="media-body text-dir px-2">
                                     <a href="{{ LaravelLocalization::localizeUrl('/single-blog/'.$latest->id.'/'.$latest->slug) }}">
                                         <h3>@if (LaravelLocalization::getCurrentLocale() === 'en')
                                             {!! $latest->title_en ?? '' !!}

@@ -167,5 +167,13 @@ return [
 'experance'=>'خبرات وارشادات',
 'active_group'=>'اكتيف جروب',
 'ten_years'=>'10 سنوات من الخبرة ',
-
+'useful_links'=>'لينكات تهمك',
+'fertilizers'=>'منتجاتنا فى الاسمده',
+'pesticides'=>'منتجاتنا فى المبيدات',
+'certificate'=>'الشهادات والعقود',
+'consult'=>'استشر متخصص',
+'general_tips'=>'نصائح عامة',
+'general_farm'=>'نصائح زراعية',
+'factory'=>'المصنع',
+'partner'=>'الوكيل',
 ];

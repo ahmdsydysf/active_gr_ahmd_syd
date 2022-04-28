@@ -242,11 +242,20 @@
 	right: 5px;
 	margin-top: -5px;
 }
-.slicknav_menu .slicknav_icon {
+.en .slicknav_menu .slicknav_icon {
 	margin-right: 6px;
 	margin-top: 3px;
 	position: relative;
-	right: 5px;
+	left: 90% !important;
+	top: -5px;
+	padding-bottom: 3px;
+}
+.ar .slicknav_menu .slicknav_icon {
+	width:100% !important;
+	margin-right: 6px;
+	margin-top: 3px;
+	position: relative;
+	right: 90% !important;
 	top: -5px;
 	padding-bottom: 3px;
 }

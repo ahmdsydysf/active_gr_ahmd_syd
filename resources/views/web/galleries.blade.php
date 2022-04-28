@@ -6,7 +6,7 @@
         <div class="slider-height2  d-flex align-items-center" background>
 
             <div class="container">
-                <div class="row">
+                <div class="row dir">
 
                     <div class="col-12 col-lg-6 offset-0 offset-lg-3">
                         <div class="hero-cap hero-cap2 text-center">
@@ -33,7 +33,7 @@
         <div class="container">
             <section>
                 <h3 class="filter-links mb-5">
-                    <ul class="row" dir="rtl">
+                    <ul class="row dir"  >
                         <li class="list col active" data-filter="all">كل الصور</li>
                         @foreach ($categories as $row)
 

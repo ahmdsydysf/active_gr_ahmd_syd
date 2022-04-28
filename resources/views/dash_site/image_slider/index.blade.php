@@ -1,28 +1,23 @@
 @extends('layouts.dash.app')
 
-@section('page_title', 'سلايدر الصور')
 
 @section('content')
-    <div class="box-body">
 
-        <a href="{{ route('slider_images.create') }}" class="btn bg-olive btn-lg pull-right">اضافة <i
-                class="fa fa-plus"></i>
-        </a>
+        <div class="box">
+            <div class="box-header">
+              <h3 class="box-title" >سلايدر الصور
+            </h3>
+            <a href="{{ route('slider_images.create') }}"  class="btn bg-olive btn-lg pull-right">اضافة <i class="fa fa-plus"></i>  </a>
 
-    </div>
-
-            <div class="box" style="overflow: auto">
-                <div class="box-header bg-green">
-                    <h3 class="box-title">كل البيانات</h3>
-
-                </div>
+          </div>
 
                 <div class="box-body">
-                    <div id="example1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <table id="example" class="table table-striped table-bordered" style="width:100%">
-                                    <thead>
+                    <div class="box-body">
+                        <table id="table" data-toggle="table" data-pagination="true" data-search="true"  data-resizable="true" data-cookie="true"
+                        data-show-export="true" data-locale="ar-SA"  style="direction: rtl" >
+           <thead>
+
+
 
 
                                         <tr role="row">

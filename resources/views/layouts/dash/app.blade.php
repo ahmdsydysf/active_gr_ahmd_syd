@@ -1,11 +1,11 @@
 @include('layouts.dash.header')
 
 
-@include('layouts.handle.session')
+{{-- @include('layouts.handle.session') --}}
 
-<div class="box-body">
+{{-- <div class="box-body"> --}}
 @yield('content')
-</div>
+ {{-- </div> --}}
 
 
 @include('layouts.dash.footer')

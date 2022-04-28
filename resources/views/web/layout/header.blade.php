@@ -7,7 +7,7 @@
                 <div class="container ml-3">
                     <div class="col-xl-12">
                         <div
-                            class="row d-flex justify-content-between align-items-center ml-xl-5 ml-lg-4 ml-md-3 ml-2">
+                            class="row d-flex justify-content-between align-items-center ml-xl-5 ml-lg-4 ml-md-3 ml-2 dir-x">
                             <div class="header-info-left">
                                 <ul>
                                     {{-- <li><a href="">English</a></li> --}}
@@ -46,10 +46,10 @@
             </div>
             <div class="header-bottom  header-sticky">
                 <div class=" ml-0 mr-0">
-                    <div class="row align-items-center" dir="rtl">
+                    <div class="row align-items-center dir text-dir " >
                         <!-- Logo -->
                         <div class="col-xl-3 col-lg-4">
-                            <div class="logo">
+                            <div class="logo mx-3">
                                 <a href="{{ LaravelLocalization::localizeUrl('/') }}">
                                     <img src="{{ asset('webassests/images/logo-1.png')}}" alt="logo" class="">
                                 </a>
@@ -68,8 +68,8 @@
                                             <li>
                                                 <a href="#"> {{ __('links.products') }}</a>
                                                 <ul class="submenu">
-                                                    <li><a href="{{ LaravelLocalization::localizeUrl('/vertProduct') }}">   الاسمدة</a>
-                                                        <li><a href="{{ LaravelLocalization::localizeUrl('/pesticideProduct') }}">  المبيدات </a>
+                                                    <li><a href="{{ LaravelLocalization::localizeUrl('/vertProduct') }}">  {{ __('links.fertilizers') }} </a>
+                                                        <li><a href="{{ LaravelLocalization::localizeUrl('/pesticideProduct') }}"> {{ __('links.pesticides') }}    </a>
                                                 </ul>
                                             </li>
                                               <li><a href="{{ LaravelLocalization::localizeUrl('/partners') }}"> {{ __('links.partenters') }}</a></li>

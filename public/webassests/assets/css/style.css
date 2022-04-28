@@ -3527,6 +3527,7 @@ hero-btn {
 /* line 226, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_headerMenu.scss */
 .mobile_menu .slicknav_menu .slicknav_btn {
   top: -28px;
+  width:100% !important;
 }
 
 /* line 229, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_headerMenu.scss */
@@ -3550,7 +3551,7 @@ hero-btn {
 .mobile_menu .slicknav_menu .slicknav_nav a {
   font-size: 17px;
   padding: 7px 10px;
-  text-align:right;
+  /*text-align:right;*/
 }
 
 /* line 245, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_headerMenu.scss */
@@ -5765,7 +5766,7 @@ font-size:18px;
 @media (min-width: 768px) {
   /* line 651, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_blog_page.scss */
   .blog_details {
-    padding: 60px 30px 35px 10px;
+    /*padding: 60px 30px 35px 10px;*/
   }
 }
 
@@ -8466,7 +8467,7 @@ del {
 	position:relative;
 	/* width:100%; */
 	margin-top:-50px;
-	margin-right:-50px;
+	/*padding-right:10px;*/
 }
 .logo-img{
 	max-height:150px;
@@ -10040,3 +10041,67 @@ section.sec {
 				text-align: center;
 				margin-bottom: 0px;
 			}
+
+/*////////////////////Lang////////////////////////*/
+.en .dir{
+direction:ltr;
+}
+.ar .dir{
+direction:rtl;
+}
+.ar .dir-x{
+direction:ltr;
+}
+.en .dir-x{
+direction:rtl;
+}
+.en .text-dir{
+text-align:left !important;
+}
+.ar .text-dir{
+text-align:right !important;
+}
+.en .text-x-dir{
+text-align:right !important;
+}
+.ar .text-x-dir{
+text-align:left !important;
+}
+.en .pl-2{
+padding-left:10px;
+}
+.ar .pl-2{
+padding-right:10px;
+}
+.en .pl-3{
+padding-right:20px;
+}
+.ar .pl-3{
+padding-left:20px;
+}
+
+.en .mr-4{
+margin-right:10px;
+}
+.ar .mr-4{
+margin-left:10px;
+}
+.en .float-dir{
+float: right !important;
+}
+.ar .float-dir{
+	float: left !important;
+}
+.en .float-x-dir{
+float: left !important;
+}
+.ar .float-x-dir{
+	float: right !important;
+}
+
+.en .p-0-dir{
+	padding-left:0 !important;
+}
+.ar .p-0-dir{
+	padding-right:0 !important;
+}

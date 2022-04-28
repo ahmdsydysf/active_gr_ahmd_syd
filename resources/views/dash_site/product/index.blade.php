@@ -1,27 +1,22 @@
 @extends('layouts.dash.app')
 
-@section('page_title', 'المنتجات')
 
 @section('content')
-<div class="box-body">
 
-    <a href="{{ route('product.create') }}" class="btn bg-olive btn-lg pull-right">اضافة <i class="fa fa-plus"></i>
-    </a>
 
-</div>
+    <div class="box">
+        <div class="box-header">
+          <h3 class="box-title" >المنتجات
+        </h3>
+        <a href="{{ route('product.create') }}"  class="btn bg-olive btn-lg pull-right">اضافة <i class="fa fa-plus"></i>  </a>
 
-            <div class="box" style="overflow: auto">
-                <div class="box-header bg-green">
-                    <h3 class="box-title">كل البيانات</h3>
+      </div>
 
-                </div>
-
+            <div class="box-body">
                 <div class="box-body">
-                    <div id="example1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <table id="example" class="table table-striped table-bordered" style="width:100%">
-                                    <thead>
+                    <table id="table" data-toggle="table" data-pagination="true" data-search="true"  data-resizable="true" data-cookie="true"
+                    data-show-export="true" data-locale="ar-SA"  style="direction: rtl" >
+       <thead>
 
                                         <tr role="row">
                                             <th class="sorting_desc" tabindex="0" aria-controls="example1" rowspan="1"
