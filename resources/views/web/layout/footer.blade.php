@@ -85,7 +85,7 @@
                             <div class="footer-tittle">
                                 <h3> {{ __('links.contact_us') }}</h3>
                                 <ul>
-                                    <li class="link"><a href="#"><i class="fas fa-phone"></i>
+                                    <li class="link"><a href="#" style="font-size: 14px"><i class="fas fa-phone"></i>
                                             {{ $companyContact->phones }} </a></li>
                                     <li class="link"><a href="#"><i class="fas fa-envelope"></i>
                                             {{ $companyContact->email }}
