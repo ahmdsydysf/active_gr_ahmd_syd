@@ -21,7 +21,7 @@
         </div>
         <div class="form-group">
             <label for="exampleInputuser1">اختر صورة</label>
-            <input type="file" name="image" class="form-control image" id="exampleInputuser1" >
+            <input type="file" name="img" class="form-control image" id="exampleInputuser1" >
           <dp-fbi></dp-fbi>
         </div>
 
