@@ -7,7 +7,7 @@
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.0
     </div>
-    <strong>Copyright &copy; 2014-2015 <a href="https://www.facebook.com/seniorsteps.it">Senior Steps</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2021-2022 <a href="https://www.facebook.com/seniorsteps.it">Senior Steps</a>.</strong> All rights reserved.
   </footer>
   </div>
 <!-- /.control-sidebar -->
