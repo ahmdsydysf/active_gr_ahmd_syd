@@ -1,13 +1,13 @@
 @extends('layouts.dash.app')
 
-@section('title', ' نصائح زراعية')
+@section('title', ' نصائح فنية')
 
 @section('content')
 
 
 <div class="box">
     <div class="box-header">
-      <h3 class="box-title"> نصائح زراعية</h3>
+      <h3 class="box-title"> نصائح فنية</h3>
       <a href="{{ route('technical-advices.create') }}" class="btn bg-olive btn-lg pull-right"> اضافة </a>
 
     </div><!-- /.box-header -->

@@ -149,7 +149,7 @@ class TechnicalAdvicesController extends Controller
         $input['active'] = 0;
 
     }
-    $input['service_type_id'] = 4;
+    $input['service_type_id'] = 2;
     $input['post_date'] = Carbon::parse($request->get('post_date'));
     Service::findOrFail($id)->update($input);
       return redirect()->route($this->routeName . 'index')->with('flash_success', 'تم الحفظ بنجاح');
