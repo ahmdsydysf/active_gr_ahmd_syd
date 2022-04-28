@@ -214,24 +214,106 @@
                 </a>
 
               </li>
-            {{-- <li class="treeview {{  request()->routeIs('users.*') ? 'active' : ''  }}">
-              <a href="{{ route('users.index') }}">
-                <i class="ion ion-ios-people-outline"></i> <span>المستخدميين</span>
-              </a>
-            </li> --}}
-            <li class="treeview {{  request()->routeIs('team_member.*') ? 'active' : ''  }}">
-              <a href="{{ route('team_member.index') }}">
-                <i class="fa  fa-male"></i> <span>اعضاء الفريق</span>
-              </a>
+
+
+              <li class="treeview">
+                <a href="#">
+                  <i class="fa fa-files-o"></i>
+                  <span> إعدادات الموقع</span>
+                  <i class="fa fa-angle-left pull-right"></i>
+                  {{-- <span class="label label-primary pull-right">4</span> --}}
+                </a>
+                <ul class="treeview-menu">
+                  <li><a href="{{ route('slider_images.index') }}"><i class="fa fa-circle-o"></i> السلايدر الرئيسي </a></li>
+                  <li><a href="{{ route('company_contact.index') }}"><i class="fa fa-circle-o"></i> بيانات التواصل</a></li>
+                  <li><a href="{{ route('partner.index') }}"><i class="fa fa-circle-o"></i> شركاء النجاح</a></li>
+                  <li><a href="{{ route('feedback.index') }}"><i class="fa fa-circle-o"></i> اراء العملاء </a></li>
+                  <li><a href="{{ route('message.index') }}"><i class="fa fa-circle-o"></i> رسائل العملاء </a></li>
+
+
+
+
+                </ul>
+              </li>
+
+
+              <li class="treeview">
+                <a href="#">
+                  <i class="fa fa-edit"></i> <span>الشركة</span>
+                  <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                  <li><a href="{{ route('company.index') }}"><i class="fa fa-circle-o"></i> عن الشركه </a></li>
+                  <li><a href="{{ route('why_us.index') }}"><i class="fa fa-circle-o"></i>  لماذا نحن</a></li>
+                  <li><a href="{{ route('team_member.index') }}"><i class="fa fa-circle-o"></i> فريق العمل</a></li>
+                  <li><a href="{{ route('contract.index') }}"><i class="fa fa-circle-o"></i> العقود والشهادات </a></li>
+
+              </ul>
+              </li>
+
+
+              <li class="treeview">
+                <a href="#">
+                  <i class="fa fa-laptop"></i>
+                  <span>المقالات</span>
+                  <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                   <li><a href="{{ route('blog.index') }}"><i class="fa fa-circle-o"></i> عرض المقالات </a></li>
+                  <li><a href="{{ route('blog.create') }}"><i class="fa fa-circle-o"></i> انشاء مقالة </a></li>
+
+
+                </ul>
+              </li>
+
+
+
+              <li class="treeview">
+                <a href="#">
+                  <i class="fa  fa-image"></i> <span>الخدمات</span>
+                  <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu ">
+                    <li class="{{  request()->routeIs(' company-service.*') ? 'active' : ''  }}">
+                       <a href="{{ route('company-service.index') }}">
+                         <i class="fa fa-tags"></i> <span> استشارات فنية </span>
+                        </a>
+                    </li>
+                    <li class="{{  request()->routeIs('general-advices.*') ? 'active' : ''  }}">
+                       <a href="{{ route('general-advices.index') }}">
+                         <i class="fa fa-tags"></i> <span>نصائح عامة</span>
+                        </a>
+                    </li>
+                    <li class="{{  request()->routeIs('farmer-advices.*') ? 'active' : ''  }}">
+                        <a href="{{ route('farmer-advices.index') }}">
+                          <i class="fa fa-tags"></i> <span>نصائح زراعية</span>
+                         </a>
+                     </li>
+                     <li class="{{  request()->routeIs('technical-advices.*') ? 'active' : ''  }}">
+                        <a href="{{ route('technical-advices.index') }}">
+                          <i class="fa fa-tags"></i> <span>نصائح فنية</span>
+                         </a>
+                     </li>
+                </ul>
+
             </li>
 
-            {{-- <li class="header">ادارة المنتجات</li> --}}
 
-            <li class="treeview {{  request()->routeIs('product.*') ? 'active' : ''  }}">
+
+
+
+
+
+
+
+
+
+
+            {{-- <li class="treeview {{  request()->routeIs('product.*') ? 'active' : ''  }}">
               <a href="{{ route('product.index') }}">
                 <i class="fa  fa-shopping-cart"></i> <span>المنتجات</span>
               </a>
-            </li>
+            </li> --}}
 
 
             <li class="treeview">
@@ -278,131 +360,20 @@
                 </ul>
 
             </li>
-            <li class="treeview">
-                <a href="#">
-                  <i class="fa  fa-image"></i> <span>الخدمات</span>
-                  <i class="fa fa-angle-left pull-right"></i>
-                </a>
-                <ul class="treeview-menu ">
-                    <li class="{{  request()->routeIs(' company-service.*') ? 'active' : ''  }}">
-                       <a href="{{ route('company-service.index') }}">
-                         <i class="fa fa-tags"></i> <span> استشارات فنية </span>
-                        </a>
-                    </li>
-                    <li class="{{  request()->routeIs('general-advices.*') ? 'active' : ''  }}">
-                       <a href="{{ route('general-advices.index') }}">
-                         <i class="fa fa-tags"></i> <span>نصائح عامة</span>
-                        </a>
-                    </li>
-                    <li class="{{  request()->routeIs('farmer-advices.*') ? 'active' : ''  }}">
-                        <a href="{{ route('farmer-advices.index') }}">
-                          <i class="fa fa-tags"></i> <span>نصائح زراعية</span>
-                         </a>
-                     </li>
-                     <li class="{{  request()->routeIs('technical-advices.*') ? 'active' : ''  }}">
-                        <a href="{{ route('technical-advices.index') }}">
-                          <i class="fa fa-tags"></i> <span>نصائح فنية</span>
-                         </a>
-                     </li>
-                </ul>
 
-            </li>
-            {{-- <li class="header">ادارة الخدمات</li> --}}
-            {{-- <li class="treeview {{  request()->routeIs('service.*') ? 'active' : ''  }}">
-              <a href="{{ route('service.index') }}">
-                <i class="fa  fa-bullhorn"></i> <span>الخدمات</span>
-              </a>
-            </li> --}}
 
-            {{-- <li class="header">ادارة المصانع</li> --}}
             <li class="treeview {{  request()->routeIs('factory.*') ? 'active' : ''  }}">
                 <a href="{{ route('factory.index') }}">
                   <i class="fa  fa-shopping-cart"></i> <span>المصانع</span>
                 </a>
             </li>
-            <li class="treeview {{  request()->routeIs('partner.*') ? 'active' : ''  }}">
-                <a href="{{ route('partner.index') }}">
-                  <i class="fa fa-user-secret"></i> <span>الشركاء</span>
-                </a>
-            </li>
-            <li class="treeview {{  request()->routeIs('contract.*') ? 'active' : ''  }}">
-                <a href="{{ route('contract.index') }}">
-                  <i class="fa fa-pencil"></i> <span>التعاقدات</span>
-                </a>
-            </li>
-
-            <li class="treeview {{  request()->routeIs('feedback.*') ? 'active' : ''  }}">
-                <a href="{{ route('feedback.index') }}">
-                  <i class="fa fa-pencil"></i> <span>اراء العملاء</span>
-                </a>
-            </li>
-            {{-- <li class="header">خاص بالموقع</li> --}}
-            <li class="treeview">
-                <a href="#">
-                  <i class="fa fa-home"></i> <span>الموقع</span>
-                  <i class="fa fa-angle-left pull-right"></i>
-                </a>
-                <ul class="treeview-menu" >
-                    <li class="{{  request()->routeIs('slider_images.*') ? 'active' : ''  }}">
-                       <a href="{{ route('slider_images.index') }}">
-                         <i class="fa fa-image"></i> <span>الصور الرئيسية</span>
-                        </a>
-                    </li>
-                    <li class="{{  request()->routeIs('company.*') ? 'active' : ''  }}">
-                       <a href="{{ route('company.index') }}">
-                         <i class="fa fa-weixin"></i> <span>عن الشركة</span>
-                        </a>
-                    </li>
-                    <li class="{{  request()->routeIs('company_contact.*') ? 'active' : ''  }}">
-                       <a href="{{ route('company_contact.index') }}">
-                         <i class="fa fa-tty"></i> <span>التواصل</span>
-                        </a>
-                    </li>
-                    <li class="{{  request()->routeIs('why_us.*') ? 'active' : ''  }}">
-                       <a href="{{ route('why_us.index') }}">
-                         <i class="fa fa-graduation-cap"></i> <span>لماذا نحن</span>
-                        </a>
-                    </li>
 
 
-                </ul>
-            </li>
-            <li class="treeview">
-                <a href="#">
-                  <i class="fa  fa-leanpub"></i> <span>المقالات</span>
-                  <i class="fa fa-angle-left pull-right"></i>
-                </a>
-                <ul class="treeview-menu " >
-                    <li class="{{  request()->routeIs('blog.*') ? 'active' : ''  }}">
-                       <a href="{{ route('blog.index') }}">
-                         <i class="fa fa-pencil-square"></i> <span>المقالات الرئيسية</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="treeview">
-                <a href="#">
-                  <i class="fa   fa-envelope"></i> <span>الرسائل</span>
-                  <i class="fa fa-angle-left pull-right"></i>
-                </a>
-                <ul class="treeview-menu " >
-                    <li class="{{  request()->routeIs('message.*') ? 'active' : ''  }}">
-                       <a href="{{ route('message.index') }}">
-                         <i class="fa fa-envelope-o"></i> <span>كل الرسائل</span>
-                        </a>
-                    </li>
-                    <li class="{{  request()->routeIs('message_type.*') ? 'active' : ''  }}">
-                       <a href="{{ route('message_type.index') }}">
-                         <i class="fa fa-envelope-square"></i> <span>انواع الرسائل</span>
-                        </a>
-                    </li>
-                    <li class="{{  request()->routeIs('newsletter.*') ? 'active' : ''  }}">
-                       <a href="{{ route('newsletter.index') }}">
-                         <i class="fa  fa-newspaper-o"></i> <span>الاخبار</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
+
+
+
+
+
           </ul>
         </section>
         <!-- /.sidebar -->
