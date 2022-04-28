@@ -42,7 +42,7 @@
 
                                 <td>{!! $row->text_en !!} </td>
 
-                                <td>{{$row->vedio}} </td>
+                                <td>{{$row->video}} </td>
                                       <td>
                                         <div class="btn-group">
 
