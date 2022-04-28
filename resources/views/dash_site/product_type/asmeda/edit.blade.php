@@ -111,7 +111,7 @@
         <div class="form-group">
             <label>نوع المنتج</label>
             <select class="form-control" name="type_id">
-
+                <option value="">اختر نوع المنتج</option>
                 @foreach ( $pro_typ as $typ )
                 <option value="{{$typ->id}}"  {{ $row->type_id == $typ->id  ? 'selected' : '' }} >{{$typ->type_ar}}</option>
                 @endforeach
