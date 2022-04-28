@@ -6,7 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Gallary;
 use App\Models\Gallary_category;
 use Illuminate\Http\Request;
-
+use Illuminate\Database\QueryException;
+use File;
 class GallaryController extends Controller
 {
     /**
@@ -28,7 +29,8 @@ class GallaryController extends Controller
     public function create()
     {
         $gallary_cat = Gallary_category::all();
-        return view('dash_site.gallary.create')->with('gallary_cat', $gallary_cat);
+
+        return view('dash_site.gallary.create')->with('categories', $gallary_cat);
     }
 
     /**
@@ -39,40 +41,28 @@ class GallaryController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate(
-            $request,
-            [
-                'path'    => ['required'],
-                'type'    => ['required'],
-                'category_id'    => ['required'],
-                'description_en'    => ['required'],
-                'description_ar'    => ['required'],
-                'order'    => ['required'],
-                'active'    => ['required'],
-            ],
-            [
-                'path.required' => 'هذا الحقل مطلوب',
-                'type.required' => 'هذا الحقل مطلوب',
-                'description_ar.required' => 'هذا الحقل مطلوب',
-                'description_en.required' => 'هذا الحقل مطلوب',
-                'category_id.required' => 'هذا الحقل مطلوب',
-                'order.required' => 'هذا الحقل مطلوب',
-                'active.required' => 'هذا الحقل مطلوب',
-            ]
-        );
+        $input = $request->except(['_token','img','active']);
 
+        if($request->get('type')==1){
+            if ($request->hasFile('img')) {
 
-        $request_data = $request->except('_token', 'active');
+                $attach_image = $request->file('img');
 
+                $input['path'] = $this->UplaodImage($attach_image);
 
-        if ($request->has('active')) {
-            $request_data['active'] = 1;
-        } else {
-            $request_data['active'] = 0;
+            }
+        }else{
+
+            $input['path'] =$request->get('image');
+        }
+        if($request->has('active')){
+            $input['active'] = 1;
+        }else{
+            $input['active'] = 0;
+
         }
 
-
-        Gallary::create($request_data);
+        Gallary::create($input);
 
         return redirect()->route('gallary.index')->with('flash_success', 'تم الاضافة بنجاح');
     }
@@ -98,7 +88,7 @@ class GallaryController extends Controller
     {
         $gallary = Gallary::find($id);
         $gallary_cat = Gallary_category::all();
-        return view('dash_site.gallary.edit', ['row' => $gallary, 'gallary_cat' => $gallary_cat]);
+        return view('dash_site.gallary.edit', ['row' => $gallary, 'categories' => $gallary_cat]);
     }
 
     /**
@@ -110,41 +100,31 @@ class GallaryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate(
-            $request,
-            [
-                'path'    => ['required'],
-                'type'    => ['required'],
-                'category_id'    => ['required'],
-                'description_en'    => ['required'],
-                'description_ar'    => ['required'],
-                'order'    => ['required'],
-                'active'    => ['required'],
-            ],
-            [
-                'path.required' => 'هذا الحقل مطلوب',
-                'type.required' => 'هذا الحقل مطلوب',
-                'description_ar.required' => 'هذا الحقل مطلوب',
-                'description_en.required' => 'هذا الحقل مطلوب',
-                'category_id.required' => 'هذا الحقل مطلوب',
-                'order.required' => 'هذا الحقل مطلوب',
-                'active.required' => 'هذا الحقل مطلوب',
-            ]
-        );
+        $row=Gallary::where('id',$id)->first();
+        $input = $request->except(['_token','img','active']);
 
+        if($row->type==1){
+            if ($request->hasFile('img')) {
 
-        $request_data = $request->except('_token', 'active');
+                $attach_image = $request->file('img');
 
-        $gallary = Gallary::find($id);
+                $input['path'] = $this->UplaodImage($attach_image);
 
-        if ($request->has('active')) {
-            $request_data['active'] = 1;
-        } else {
-            $request_data['active'] = 0;
+            }
+        }else{
+
+            $input['path'] =$request->get('image');
         }
 
-        $gallary->update($request_data);
+        if($request->has('active')){
+            $input['active'] = 1;
+        }else{
+            $input['active'] = 0;
 
+        }
+
+
+    Gallary::findOrFail($id)->update($input);
         return redirect()->route('gallary.index')->with('flash_success', 'تم التعديل بنجاح');
     }
 
@@ -156,9 +136,42 @@ class GallaryController extends Controller
      */
     public function destroy($id)
     {
-        $gallary = Gallary::find($id);
+        $row=Gallary::where('id',$id)->first();
+        // Delete File ..
+        $file = $row->image;
+        $file_name = public_path('uploads/categories/' . $file);
+        try {
+            File::delete($file_name);
+            $row->delete();
+            return redirect()->back()->with('flash_success', 'تم الحذف بنجاح !');
 
-        $gallary->delete();
-        return redirect()->route('gallary.index')->with('flash_success', 'تم الحذف بنجاح');
+        } catch (QueryException $q) {
+            return redirect()->back()->withInput()->with('flash_danger', $q->getMessage());
+
+            // return redirect()->back()->with('flash_danger', 'هذه القضية مربوطه بجدول اخر ..لا يمكن المسح');
+        }
+    }
+
+
+       /* uplaud image
+     */
+    public function UplaodImage($file_request)
+    {
+        //  This is Image Info..
+        $file = $file_request;
+        $name = $file->getClientOriginalName();
+        $ext = $file->getClientOriginalExtension();
+        $size = $file->getSize();
+        $path = $file->getRealPath();
+        $mime = $file->getMimeType();
+
+        // Rename The Image ..
+        $imageName = $name;
+        $uploadPath = public_path('uploads/galleries');
+
+        // Move The image..
+        $file->move($uploadPath, $imageName);
+
+        return $imageName;
     }
 }

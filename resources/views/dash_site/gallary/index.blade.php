@@ -56,7 +56,15 @@
                                                     <td></td>
                                                     <td class="sorting_1">- {{ $r->id }} -</td>
 
-                                                    <td>{{ $r->path }}</td>
+                                                    <td> @if ($r->type==1)
+                                                        <img width="200" src="{{ asset('uploads/galleries') }}/{{ $r->path }}" />
+
+                                                        @else
+                                                        {{ $r->path }}
+                                                        {{-- <video autoplay muted loop width="200">
+                                                            <source src="{{ $row->path }}" type="video/mp4" />
+                                                        </video> --}}
+                                                        @endif</td>
                                                     <td>{{ $r->type }}</td>
                                                     <td>{{ $r->gallary_category->category_ar ?? ' ' }}</td>
                                                     <td>{{ $r->description_en }}</td>
