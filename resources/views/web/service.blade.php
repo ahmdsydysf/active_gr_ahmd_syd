@@ -73,9 +73,9 @@
                                 @else
                                     {{ $row->title_ar }}
                                 @endif<a @if (LaravelLocalization::getCurrentLocale() === 'en')
-                                href=" {{ $row->pdf_en }}"
+                                href="{{asset('uploads/services')}}/{{ $row->pdf_en }}"
                             @else
-                            href=" {{ $row->pdf_ar }}"
+                            href="{{asset('uploads/services')}}/{{ $row->pdf_ar }}"
                             @endif
                                 download="download"
                                         target="_blank"><i class="far fa-file-pdf dwn-icon"></i></a></h3>
@@ -152,7 +152,11 @@
                                         {{ $row->title_en }}
                                     @else
                                         {{ $row->title_ar }}
-                                    @endif<a href="images/01.png" download="download"
+                                    @endif<a @if (LaravelLocalization::getCurrentLocale() === 'en')
+                                    href="{{asset('uploads/services')}}/{{ $row->pdf_en }}"
+                                @else
+                                href="{{asset('uploads/services')}}/{{ $row->pdf_ar }}"
+                                @endif download="download"
                                             target="_blank"><i class="far fa-file-pdf dwn-icon"></i></a></h3>
                                     <p class="col-12 text-dir">
                                     @if (LaravelLocalization::getCurrentLocale() === 'en')
