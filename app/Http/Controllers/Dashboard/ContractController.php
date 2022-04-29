@@ -5,7 +5,8 @@ namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 use App\Models\Contract;
 use Illuminate\Http\Request;
-
+use Illuminate\Database\QueryException;
+use File;
 class ContractController extends Controller
 {
     /**
@@ -185,12 +186,23 @@ class ContractController extends Controller
      */
     public function destroy($id)
     {
-        $con = Contract::find($id);
-        if ($con->image != 'default_1.jpg') {
-            $image_path = public_path() . '/uploads/contracts/' . $con->image;
-            unlink($image_path);
+
+
+        $row=Contract::where('id',$id)->first();
+        // Delete File ..
+        $file = $row->image;
+        $file_name = public_path('uploads/contracts/' . $file);
+
+        try {
+            File::delete($file_name);
+
+            $row->delete();
+            return redirect()->back()->with('flash_success', 'تم الحذف بنجاح !');
+
+        } catch (QueryException $q) {
+            return redirect()->back()->withInput()->with('flash_danger', $q->getMessage());
+
+            // return redirect()->back()->with('flash_danger', 'هذه القضية مربوطه بجدول اخر ..لا يمكن المسح');
         }
-        $con->delete();
-        return redirect()->route('contract.index')->with('flash_success', 'تم الحذف بنجاح');
     }
 }
