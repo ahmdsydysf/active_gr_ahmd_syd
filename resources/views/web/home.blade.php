@@ -475,7 +475,8 @@
                                                 @else
                                                     {!! $blog->title_ar ?? '' !!}
                                                 @endif
-                                             </a>
+
+                                            </a>
                                                 <p class="text-dir" >
                                                     @if (LaravelLocalization::getCurrentLocale() === 'en')
                                                     {{ strip_tags(str_limit($blog->text_en ?? '', $limit = 200, $end = '...')) }}
