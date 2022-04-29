@@ -12044,7 +12044,8 @@ section ul li.active::after {
 }
 
 .filter-3 .itemBox div img {
-    max-height: 310px;
+    /* max-height: 310px; */
+    height: 310px;
 }
 
 .filter-3 .itemBox .bottom-lorem p {
