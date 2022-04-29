@@ -212,7 +212,7 @@
                                     <div
                                         class="media-body col-12 col-md-6 col-lg-9  align-self-start mt-3 mt-lg-0 p-0 p-lg-3">
                                         <div class="col-12 text-dir">
-                                            <h3><a href="#"> @if (LaravelLocalization::getCurrentLocale() === 'en')
+                                            <h3 style="font-size: 22px"><a href="#"> @if (LaravelLocalization::getCurrentLocale() === 'en')
                                                 {{ $row->title_en }}
                                             @else
                                                 {{$row->title_ar }}
