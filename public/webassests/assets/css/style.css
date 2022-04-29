@@ -11138,7 +11138,8 @@ Latest Reviews
 
 .pro_image img {
     width: 100% !important;
-    max-height: 300px;
+    /* max-height: 300px; */
+    height: 300px;
 }
 
 .pro_title {
