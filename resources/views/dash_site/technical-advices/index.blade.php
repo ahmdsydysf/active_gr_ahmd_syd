@@ -38,9 +38,11 @@
                                 <td>{{$row->title_ar}}</td>
                                 <td>{{$row->title_en}}</td>
 
-                                <td>{!! $row->text_ar !!} </td>
+                                <td>
+                                    {{ strip_tags(str_limit($row->text_ar ?? '', $limit = 500, $end = '...')) }}
+                                    </td>
 
-                                <td>{!! $row->text_en !!} </td>
+                                <td>                                    {{ strip_tags(str_limit($row->text_en ?? '', $limit = 500, $end = '...')) }} </td>
 
                                 <td><img src="{{ asset('uploads/services') }}/{{ $row->image }}" width="100" height="100"> </td>
                                       <td>
