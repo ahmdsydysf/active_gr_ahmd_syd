@@ -33,7 +33,7 @@
 
 
                     <div class="col-12 col-lg-4">
-                        <a class="play-btn video-view" href="https://www.youtube.com/watch?v=JCfkJNtgQ1U"></a>
+                        <a class="play-btn video-view" target="_blank" href="https://www.youtube.com/watch?v=JCfkJNtgQ1U"></a>
 
                         <div class="pro_image d-flex flex-column align-items-center justify-content-center"><img
                                 src="{{ asset('webassests/images/06.png')}}" alt=""></div>
