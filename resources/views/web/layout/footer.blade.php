@@ -18,9 +18,9 @@
                                     <p class="info1">
 
                                         @if (LaravelLocalization::getCurrentLocale() === 'en')
-                                        {!! str_limit( $company->overview_en ?? '', $limit = 222, $end = '..') !!}
+                                        {!! str_limit( $company->overview_en ?? '', $limit = 216, $end = '..') !!}
                                     @else
-                                        {!! str_limit($company->overview_ar ?? '', $limit = 222, $end = '..') !!}
+                                        {!! str_limit($company->overview_ar ?? '', $limit = 216, $end = '..') !!}
                                     @endif
                                     </p>
                                 </div>
@@ -99,14 +99,14 @@
                                         </a></li>
                                 </ul>
                                 <!-- Form -->
-                                <div class="input-group mb-3">
+                                {{-- <div class="input-group mb-3">
                                     <input type="text" class="form-control" placeholder="  {{ __('links.email') }}"
                                         aria-label="  {{ __('links.email') }}" aria-describedby="basic-addon1">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="basic-addon1"><i
                                                 class="fab fa-telegram-plane"></i></span>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>
