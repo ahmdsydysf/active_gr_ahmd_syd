@@ -14,11 +14,11 @@
 
             <div class="trends_info clearfix">
                 <div class="trends_name text-dir">
-                    <a href="{{ LaravelLocalization::localizeUrl('/single-blog/'.$blog->id.'/'.$blog->slug) }}" >
+                    <a style="color: #389A1B !important;" href="{{ LaravelLocalization::localizeUrl('/single-blog/'.$blog->id.'/'.$blog->slug) }}" >
                         @if (LaravelLocalization::getCurrentLocale() === 'en')
-                        {!! $blog->title_en ?? '' !!}
-                    @else
-                        {!! $blog->title_ar ?? '' !!}
+                        {{ strip_tags( $blog->title_en ?? '') }}
+                        @else
+                        {{ strip_tags( $blog->title_ar ?? '') }}
                     @endif</a>
                     <p class="text-dir" >
                     @if (LaravelLocalization::getCurrentLocale() === 'en')

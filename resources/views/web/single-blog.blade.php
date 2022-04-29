@@ -76,13 +76,13 @@
                                     <div class="media post_item">
                                         <img src="{{ asset('uploads/blogs') }}/{{ $latest->image ?? '' }}" alt="post">
                                         <div class="media-body text-dir px-2">
-                                            <a
+                                            <a style="color: #389A1B !important;"
                                                 href="{{ LaravelLocalization::localizeUrl('/single-blog/' . $latest->id . '/' . $latest->slug) }}">
                                                 <h3>
                                                     @if (LaravelLocalization::getCurrentLocale() === 'en')
-                                                        {!! $latest->title_en ?? '' !!}
+                                                    {{ strip_tags( $latest->title_en ?? '') }}
                                                     @else
-                                                        {!! $latest->title_ar ?? '' !!}
+                                                    {{ strip_tags( $latest->title_ar ?? '') }}
                                                     @endif
                                                 </h3>
                                             </a>
