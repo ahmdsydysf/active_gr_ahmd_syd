@@ -469,8 +469,8 @@
                                     <div class="trends_content">
 
                                         <div class="trends_info clearfix">
-                                            <div class="trends_name text-dir clr-green">
-                                                <a href="{{ LaravelLocalization::localizeUrl('/single-blog/'.$blog->id.'/'.$blog->slug) }}">  @if (LaravelLocalization::getCurrentLocale() === 'en')
+                                            <div class="trends_name text-dir">
+                                                <a  class=" clr-green" href="{{ LaravelLocalization::localizeUrl('/single-blog/'.$blog->id.'/'.$blog->slug) }}">  @if (LaravelLocalization::getCurrentLocale() === 'en')
                                                     {!! $blog->title_en ?? '' !!}
                                                 @else
                                                     {!! $blog->title_ar ?? '' !!}
