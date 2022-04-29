@@ -47,7 +47,17 @@
         #loadBtnAdvice:hover {
             color: #389A1B !important;
         }
+        #navigation > .active{
+            text-decoration: underline;
+    color: #000 !important;
 
+}
+#navigation > .active > a,
+#navigation > .active > a:hover,
+#navigation > .active > a:focus {
+    text-decoration: underline;
+    color: #000 !important;
+}
     </style>
     @yield('style')
 </head>

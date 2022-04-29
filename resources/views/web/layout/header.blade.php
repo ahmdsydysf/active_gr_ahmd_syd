@@ -60,24 +60,24 @@
                                 <!-- Main-menu -->
                                 <div class="main-menu col-md-12 d-none d-lg-block">
                                     <nav class="">
-                                        <ul id="navigation" class="d-flex justify-content-around">
-                                            <li><a href="{{ LaravelLocalization::localizeUrl('/') }}">{{ __('links.home') }}</a></li>
-                                            <li><a href="{{ LaravelLocalization::localizeUrl('/about') }}">{{ __('links.about_us') }} </a></li>
-                                            <li><a href="{{ LaravelLocalization::localizeUrl('/service') }}">{{ __('links.services') }}</a></li>
+                                        <ul id="navigation" class="d-flex justify-content-around ">
+                                            <li class="nav-item {{ request()->is('/') ? 'active' : ''}}"><a href="{{ LaravelLocalization::localizeUrl('/') }}">{{ __('links.home') }}</a></li>
+                                            <li class="nav-item {{ request()->is('about') ? 'active' : ''}}"><a href="{{ LaravelLocalization::localizeUrl('/about') }}">{{ __('links.about_us') }} </a></li>
+                                            <li  class="nav-item {{ request()->is('service') ? 'active' : ''}}" ><a href="{{ LaravelLocalization::localizeUrl('/service') }}">{{ __('links.services') }}</a></li>
 
                                             <li>
                                                 <a href="#"> {{ __('links.products') }}</a>
                                                 <ul class="submenu">
-                                                    <li><a href="{{ LaravelLocalization::localizeUrl('/vertProduct') }}">  {{ __('links.fertilizers') }} </a>
-                                                        <li><a href="{{ LaravelLocalization::localizeUrl('/pesticideProduct') }}"> {{ __('links.pesticides') }}    </a>
+                                                    <li class="nav-item {{ request()->is('vertProduct') ? 'active' : ''}}" ><a href="{{ LaravelLocalization::localizeUrl('/vertProduct') }}">  {{ __('links.fertilizers') }} </a>
+                                                        <li class="nav-item {{ request()->is('pesticideProduct') ? 'active' : ''}}" ><a href="{{ LaravelLocalization::localizeUrl('/pesticideProduct') }}"> {{ __('links.pesticides') }}    </a>
 
-                                                            <li><a href="{{ LaravelLocalization::localizeUrl('/growProduct') }}"> منتجاتنا في منظمات النمو   </a>
+                                                            <li class="nav-item {{ request()->is('growProduct') ? 'active' : ''}}" ><a href="{{ LaravelLocalization::localizeUrl('/growProduct') }}"> منتجاتنا في منظمات النمو   </a>
                                                         </ul>
                                             </li>
-                                              <li><a href="{{ LaravelLocalization::localizeUrl('/partners') }}"> {{ __('links.partenters') }}</a></li>
-                                            <li><a href="{{ LaravelLocalization::localizeUrl('/blog') }}">{{ __('links.blogs') }}</a></li>
-                                            <li><a href="{{ LaravelLocalization::localizeUrl('/gallery') }}">{{ __('links.gallery') }}</a></li>
-                                            <li><a href="{{ LaravelLocalization::localizeUrl('/contact') }}">{{ __('links.contact_us') }}</a></li>
+                                              <li  class="nav-item {{ request()->is('partners') ? 'active' : ''}}" ><a href="{{ LaravelLocalization::localizeUrl('/partners') }}"> {{ __('links.partenters') }}</a></li>
+                                            <li  class="nav-item {{ request()->is('blog') ? 'active' : ''}}" ><a href="{{ LaravelLocalization::localizeUrl('/blog') }}">{{ __('links.blogs') }}</a></li>
+                                            <li  class="nav-item {{ request()->is('gallery') ? 'active' : ''}}" ><a href="{{ LaravelLocalization::localizeUrl('/gallery') }}">{{ __('links.gallery') }}</a></li>
+                                            <li  class="nav-item {{ request()->is('contact') ? 'active' : ''}}"><a href="{{ LaravelLocalization::localizeUrl('/contact') }}">{{ __('links.contact_us') }}</a></li>
                                         </ul>
                                     </nav>
 
