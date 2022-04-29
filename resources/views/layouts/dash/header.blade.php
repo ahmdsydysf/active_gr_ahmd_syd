@@ -286,11 +286,11 @@
             </li>
 
 
-            {{-- <li class="treeview {{  request()->routeIs('product.*') ? 'active' : ''  }}">
-              <a href="{{ route('product.index') }}">
-                <i class="fa  fa-shopping-cart"></i> <span>المنتجات</span>
+            <li class="treeview {{  request()->routeIs('pro-types.*') ? 'active' : ''  }}">
+              <a href="{{ route('pro-types.index') }}">
+                <i class="fa  fa-shopping-cart"></i> <span>انواع المنتجات</span>
               </a>
-            </li> --}}
+            </li>
 
 
             <li class="treeview">

@@ -113,6 +113,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'dashboard'], function () {
     Route::resource('general-advices', 'Dashboard\GeneralAdvicesController');
     Route::resource('farmer-advices', 'Dashboard\FarmerAdvicesController');
     Route::resource('technical-advices', 'Dashboard\TechnicalAdvicesController');
+    Route::resource('pro-types', 'Dashboard\ProductTypeController');
 });
 
 require __DIR__ . '/auth.php';
