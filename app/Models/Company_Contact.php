@@ -23,7 +23,12 @@ class Company_contact extends Model
         'twitter',
         'linkedin',
         'instagram',
-        'youtube'
+        'youtube',
+        'address_en2',
+    'address_ar2',
+    'phones2',
+    'email2',
+    'google_map2'
 
     ];
 }

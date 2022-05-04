@@ -32,12 +32,19 @@
                 <div class="row dir">
 
 
-                    <div class="col-12 col-lg-4">
-                        <a class="play-btn video-view" target="_blank" href="https://www.youtube.com/watch?v=JCfkJNtgQ1U"></a>
+                    {{-- <div class="col-12 col-lg-4">
+                        <a class="play-btn video-view"  href="https://www.youtube.com/watch?v=JCfkJNtgQ1U"></a>
 
                         <div class="pro_image d-flex flex-column align-items-center justify-content-center"><img
                                 src="{{ asset('webassests/images/06.png')}}" alt=""></div>
-                    </div>
+                    </div> --}}
+                    <div class="col-12 col-lg-4">
+						<a class="play-btn video-view" href="https://www.youtube.com/watch?v=JCfkJNtgQ1U"></a>
+
+						<div class="pro_image d-flex flex-column align-items-center justify-content-center">
+							<img src="{{ asset('webassests/images/06.png')}}" alt="">
+						</div>
+					</div>
                     <div class="pro_title text-right col-12 col-lg-8">
                         <h3 class="mb-2 text-dir">
                             اكبر الشركات العاملة في المجال الزراعي في العالم

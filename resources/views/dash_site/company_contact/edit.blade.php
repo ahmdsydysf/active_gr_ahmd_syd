@@ -52,6 +52,34 @@
             <div class="alert alert-danger">{{ $message }}</div>
             @enderror
 
+
+            <div class="form-group">
+                <label>عنوان الفرع الثانى انجليزى</label>
+                <textarea  name="address_en2" class="form-control" rows="3" placeholder="النص">{{$row->address_en2}}</textarea>
+            </div>
+            @error('address_en')
+            <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+            <div class="form-group">
+                <label>عنوان الفرع الثاني عربى</label>
+                <textarea  name="address_ar2" class="form-control" rows="3" placeholder="النص">{{$row->address_ar2}}</textarea>
+            </div>
+
+
+            <div class="form-group">
+                <label  >تليفون الفرع الثانى</label>
+                    <input type="text" id="newTitle" name="phones2" value="{{$row->phones2}}" class="form-control"
+                       placeholder=" التليفون">
+            </div>
+
+
+            <div class="form-group">
+                <label  >ايميل الفرع الثانى</label>
+                    <input type="email"  name="email2" value="{{$row->email2}}" class="form-control"
+                       placeholder=" الايميل">
+            </div>
+
+
             <div class="form-group">
                 <label  >الفاكس</label>
                     <input type="text" id="newTitle" name="fax" value="{{$row->fax}}" class="form-control"

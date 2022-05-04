@@ -16,6 +16,9 @@ class Team_member extends Model
         'position_ar',
         'order',
         'active',
-        'image'
+        'image',
+        'facebook',
+        'twitter',
+        'instagram'
     ];
 }

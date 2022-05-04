@@ -71,6 +71,7 @@ class TeamMemberController extends Controller
         } else {
             $request_data['active'] = 0;
         }
+
         Team_member::create($request_data);
 
         return redirect()->route('team_member.index')->with('flash_success', 'تم الاضافة بنجاح');

@@ -54,13 +54,35 @@
         @error('position_en')
         <div class="alert alert-danger">{{ $message }}</div>
         @enderror
+        <div class="form-group">
+            <label  >فيسبوك</label>
+                <input type="text" id="newTitle" name="facebook" value="{{old('facebook')}}" class="form-control"
+                   placeholder=" فيسبوك">
+        </div>
+
+
+        <div class="form-group">
+            <label  >تويتر</label>
+                <input type="text" id="newTitle" name="twitter" value="{{old('twitter')}}" class="form-control"
+                   placeholder=" تويتر">
+        </div>
+
+
+
+
+        <div class="form-group">
+            <label  >انستجرام</label>
+                <input type="text" id="newTitle" name="instagram" value="{{old('instagram')}}" class="form-control"
+                   placeholder=" انستجرام">
+        </div>
 
 
         <div class="col-md-6">
             <div class="form-group">
                 <label for="">اضافة  صورة</label>
 
-                <input type="file" name="img" class="custom-file-input"
+                <input type="file" name="img"
+                class="custom-file-input"
                 id="inputGroupFile02" />
 
 

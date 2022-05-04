@@ -34,7 +34,13 @@
 <!-- Jquery Plugins, main Jquery -->
 <script src="{{ asset('webassests/assets/js/plugins.js')}}"></script>
 <script src="{{ asset('webassests/assets/js/main.js')}}"></script>
-
+<script>
+    // pop-Up-videos
+    $('.video-view').magnificPopup({
+        type: 'iframe'
+        // other options
+    });
+</script>
 <script src="{{ asset('webassests/assets/plugins/OwlCarousel2-2.2.1/owl.carousel.js')}}"></script>
 <script src="{{ asset('webassests/assets/js/custom.js')}}"></script>
 
@@ -52,6 +58,7 @@
     }
 </style>
 <script>
+
     $(document).ready(function () {
 
         $("#owl-demo").owlCarousel({

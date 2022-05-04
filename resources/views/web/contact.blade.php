@@ -37,105 +37,113 @@
          </div>
      </div>
  @endif
-    <!-- ================ contact section start ================= -->
-    <section class="contact-section">
-        <div class="container">
-            <div class="row contact-data dir" >
-                <div class="col-8">
-                    <h2 class="contact-title text-dir">يسعدنا تواصلك معنا</h2>
-                    <p class="title-p text-dir">خلافاَ للاعتقاد السائد فإن لوريم إيبسوم ليس نصاَ عشوائياً، بل إن له جذور في
-                        الأدب اللاتيني الكلاسيكي منذ العام قبل الميلاد، مما يجعله أكثر من عام في القدم. قام
-                        البروفيسور ريتشارد ماك لينتوك وهو بروفيسور</p>
-                </div>
-                <div class="col-lg-6 contact-data1">
-                    <div class="media contact-info">
-                        <span class="contact-info__icon"><i class="fas fa-phone"></i></span>
-                        <div class="media-body text-dir">
-                            <h3>{{ __('links.phone') }}</h3>
-                            <p>{{ $companyContact->phones }}</p>
-                        </div>
-                    </div>
-                    <div class="media contact-info">
-                        <span class="contact-info__icon"><i class="fas fa-envelope"></i></span>
-                        <div class="media-body text-dir">
-                            <h3>{{ __('links.email') }}</h3>
-                            <p>{{ $companyContact->email }}</p>
-                        </div>
-                    </div>
-                    <div class="media contact-info">
-                        <span class="contact-info__icon"><i class="fas fa-map-marker-alt"></i></span>
-                        <div class="media-body text-dir">
-                            <h3>{{ __('links.address') }}</h3>
-                            <p>@if (LaravelLocalization::getCurrentLocale() === 'en')
-                                {{ $companyContact->address_en }}
-                            @else
-                                {{ $companyContact->address_ar }}
-                            @endif</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <form class="form-contact contact_form" action="{{ LaravelLocalization::localizeUrl('/contact-message') }}"
-                    method="post" >
-                    @csrf
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <input class="form-control " name="name"  type="text"
+ <section class="contact-section">
+    <div class="container">
+        <div class="row contact-data dir">
+            <div class="col-8">
+                <h2 class="contact-title text-dir">يسعدنا تواصلك معنا</h2>
+                <p class="title-p text-dir">خلافاَ للاعتقاد السائد فإن لوريم إيبسوم ليس نصاَ عشوائياً، بل إن له جذور في
+                    الأدب اللاتيني الكلاسيكي منذ العام قبل الميلاد، مما يجعله أكثر من عام في القدم. قام
+                    البروفيسور ريتشارد ماك لينتوك وهو بروفيسور </p>
+            </div>
+            <div class="col-lg-12">
+                <form class="form-contact contact_form" action="{{ LaravelLocalization::localizeUrl('/contact-message') }}"
+                method="post" >
+                @csrf
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input class="form-control " name="name"  type="text"
 
                                         placeholder="{{ __('links.name') }}">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <input class="form-control " name="email"  type="email"
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input class="form-control " name="email"  type="email"
 
                                         placeholder=" {{ __('links.email') }}">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="form-group">
-                                    <input class="form-control" name="subject"  type="text"
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <input class="form-control" name="subject"  type="text"
 
                                         placeholder="{{ __('links.subject') }}">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="form-group">
-                                    <input class="form-control" name="mobile" id="mobile" type="text"
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <input class="form-control" name="mobile" id="mobile" type="text"
 
                                         placeholder=" {{ __('links.phone') }}">
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-12">
-                                <div class="form-group">
-                                    <textarea class="form-control w-100" name="message"  cols="30"
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <textarea class="form-control w-100" name="message"  cols="30"
                                         rows="6"
                                         placeholder="{{ __('links.message') }}"></textarea>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group mt-3">
-                            <div class="btn-submit">
-                                <input type="submit" value="{{ __('links.send_msg') }}" class="btn hero-btn">
-                                {{-- <a href="" class="btn hero-btn" tabindex="0">إرسال</a> --}}
+                        <div class="col-sm-12">
+                            <div class="form-group mt-3">
+                                <div class="hero__btn text-dir" data-animation="fadeInLeft" data-delay="1.1s">
+                                    <input type="submit" value="{{ __('links.send_msg') }}" class="btn hero-btn">
+                                </div>
                             </div>
                         </div>
-                    </form>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row dir">
+            <div class="col-lg-6 contact-data1">
+                <div class="media contact-info">
+                    <span class="contact-info__icon"><i class="fas fa-phone"></i></span>
+                    <div class="media-body text-dir">
+                        <h3>{{ __('links.phone') }}</h3>
+                        <p>{{ $companyContact->phones }}</p>
+                    </div>
+                </div>
+                <div class="media contact-info">
+                    <span class="contact-info__icon"><i class="fas fa-envelope"></i></span>
+                    <div class="media-body text-dir">
+                        <h3>{{ __('links.email') }}</h3>
+                            <p>{{ $companyContact->email }}</p>
+                    </div>
+                </div>
+                <div class="media contact-info">
+                    <span class="contact-info__icon"><i class="fas fa-map-marker-alt"></i></span>
+                    <div class="media-body text-dir">
+                        <h3>{{ __('links.address') }}</h3>
+                        <p>@if (LaravelLocalization::getCurrentLocale() === 'en')
+                            {{ $companyContact->address_en }}
+                        @else
+                            {{ $companyContact->address_ar }}
+                        @endif</p>
+                    </div>
                 </div>
             </div>
-            <div>
+            <div class="col-sm-6">
                 <div class="mapouter">
                     <div class="gmap_canvas">
-                        <iframe width="100%" height="500" id="gmap_canvas"
-                            src="{{$companyContact->google_map }}"
-                            frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
-                            href="https://123movies-to.org">123movies</a><br>
+                        <iframe width="100%" height="335" id="gmap_canvas"
+                                src="{{$companyContact->google_map }}"
+                                frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org">123movies</a><br>
                         <style>
                             .mapouter {
                                 position: relative;
                                 text-align: right;
-                                height: 500px;
+                                height: 335px;
                                 width: 100%;
                             }
                         </style><a href="https://www.embedgooglemap.net">google maps iframe code</a>
@@ -143,7 +151,7 @@
                             .gmap_canvas {
                                 overflow: hidden;
                                 background: none !important;
-                                height: 500px;
+                                height: 335px;
                                 width: 100%;
                             }
                         </style>
@@ -151,8 +159,63 @@
                 </div>
             </div>
         </div>
-    </section>
-    <!-- ================ contact section end ================= -->
+        <hr />
+        <div class="row dir">
+            <div class="col-lg-6 contact-data1">
+                <div class="media contact-info">
+                    <span class="contact-info__icon"><i class="fas fa-phone"></i></span>
+                    <div class="media-body text-dir">
+                        <h3>{{ __('links.phone') }}</h3>
+                        <p>{{ $companyContact->phones2 }}</p>
+                    </div>
+                </div>
+                <div class="media contact-info">
+                    <span class="contact-info__icon"><i class="fas fa-envelope"></i></span>
+                    <div class="media-body text-dir">
+                        <h3>{{ __('links.email') }}</h3>
+                        <p>{{ $companyContact->email2 }}</p>
+                    </div>
+                </div>
+                <div class="media contact-info">
+                    <span class="contact-info__icon"><i class="fas fa-map-marker-alt"></i></span>
+                    <div class="media-body text-dir">
+                        <h3>{{ __('links.address') }}</h3>
+                        <p>@if (LaravelLocalization::getCurrentLocale() === 'en')
+                            {{ $companyContact->address_en2 }}
+                        @else
+                            {{ $companyContact->address_ar2 }}
+                        @endif</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="mapouter">
+                    <div class="gmap_canvas">
+                        <iframe width="100%" height="335" id="gmap_canvas"
+                                src="{{$companyContact->google_map2 }}"
+                                frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org">123movies</a><br>
+                        <style>
+                            .mapouter {
+                                position: relative;
+                                text-align: right;
+                                height: 335px;
+                                width: 100%;
+                            }
+                        </style><a href="https://www.embedgooglemap.net">google maps iframe code</a>
+                        <style>
+                            .gmap_canvas {
+                                overflow: hidden;
+                                background: none !important;
+                                height: 335px;
+                                width: 100%;
+                            }
+                        </style>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ================ contact section end ================= -->
 </main>
-
 @endsection

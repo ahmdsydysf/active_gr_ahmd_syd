@@ -378,13 +378,22 @@
             <div class="row justify-content-center text-center">
                 <div class="col-lg-12">
                     <div class="owl-carousel owl-theme" id="staff">
+
                         @foreach ($teams as $team)
                         <div class="item">
                             <div class="box-b staff">
                                 <div class="box-img">
-                                    <img src="{{asset('uploads/teams')}}/{{$team->image ?? ''}}">
+                                    <div class="wrapper">
+                                        <div class="img-team">
+                                            <ul class="social-icons">
+                                                <li><a href="{{$team->facebook}}" target="_blank" class="hvr-icon-spin"><i class="fab fa-facebook-f hvr-icon"></i></a></li>
+                                                <li><a href="{{$team->twitter}}" target="_blank" class="hvr-icon-spin"><i class="fab fa-twitter hvr-icon"></i></a></li>
+                                                <li><a href="{{$team->instagram}}" target="_blank" class="hvr-icon-spin"><i class="fab fa-instagram hvr-icon"></i></a></li>
+                                            </ul><img src="{{asset('uploads/teams')}}/{{$team->image ?? ''}}" />
+                                        </div>
+                                    </div>
                                 </div>
-                                <h3>@if( LaravelLocalization::getCurrentLocale() === "en")
+                                <h3> @if( LaravelLocalization::getCurrentLocale() === "en")
                                     {{$team->name_en}}
                                     @else
                                     {{$team->name_ar}}
@@ -393,7 +402,7 @@
                                     {{$team->position_en}}
                                     @else
                                     {{$team->position_ar}}
-                                    @endif</p>
+                                    @endif </p>
                             </div>
                         </div>
 @endforeach

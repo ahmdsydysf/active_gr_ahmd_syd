@@ -32,6 +32,8 @@
                                         class="fab fa-twitter hvr-icon"></i></a>
                                 <a href="{{ $companyContact->instagram }}" class="hvr-icon-spin"><i
                                         class="fab fa-instagram hvr-icon"></i></a>
+                                        <a href="{{ $companyContact->linkedin }}" class="hvr-icon-spin"><i
+                                            class="fab fa-linkedin hvr-icon"></i></a>
                             </div>
                         </div>
                     </div>
